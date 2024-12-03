@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="20000cm"
+   height="20000cm"
+   viewBox="0 0 200000 200000"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="groundfloor_test1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showguides="true"
+     inkscape:zoom="0.019943532"
+     inkscape:cx="45227.695"
+     inkscape:cy="16321.081"
+     inkscape:window-width="1832"
+     inkscape:window-height="1076"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <sodipodi:guide
+       position="2743.974,197649.66"
+       orientation="0,-1"
+       id="guide1"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="EG, h=0.0"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#dfdfd8;stroke-width:16.986"
+       id="rect1"
+       width="5000"
+       height="3000"
+       x="1422.8307"
+       y="2350.2554"
+       inkscape:label="office2" />
+    <rect
+       style="fill:#dfdfd8;stroke-width:16.986"
+       id="rect1-5"
+       width="5000"
+       height="3000"
+       x="6595.2759"
+       y="2356.9751"
+       inkscape:label="office1" />
+    <rect
+       style="fill:#dfdfd8;stroke-width:14.0018"
+       id="rect1-5-2"
+       width="10143.407"
+       height="1004.8242"
+       x="1477.3208"
+       y="5457.2461"
+       inkscape:label="office1" />
+    <path
+       style="fill:#dfdfd8;stroke-width:0.264583"
+       d="m 11714.428,2321.6591 v 4258.586 H 1419.5287 l 7097.6434,4258.5859 v 0 L 17060.877,7084.3769 15150.484,2348.1923 Z"
+       id="path1" />
+  </g>
+</svg>
