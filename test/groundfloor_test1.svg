@@ -22,57 +22,108 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
+     inkscape:document-units="cm"
      showguides="true"
-     inkscape:zoom="0.01"
-     inkscape:cx="46800"
-     inkscape:cy="26250"
+     inkscape:zoom="0.030412408"
+     inkscape:cx="15355.574"
+     inkscape:cy="10538.462"
      inkscape:window-width="1832"
      inkscape:window-height="1076"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1">
+     inkscape:current-layer="layer2"
+     showgrid="true">
     <sodipodi:guide
-       position="2743.974,197649.66"
+       position="2720,199200"
        orientation="0,-1"
        id="guide1"
        inkscape:locked="false" />
+    <inkscape:grid
+       id="grid1"
+       units="cm"
+       originx="0"
+       originy="0"
+       spacingx="125"
+       spacingy="125"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
   </sodipodi:namedview>
   <defs
      id="defs1" />
   <g
      inkscape:label="EG, h=0.0"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     sodipodi:insensitive="true">
     <rect
-       style="fill:#dfdfd8;stroke-width:16.986"
-       id="rect1"
-       width="5000"
-       height="3000"
-       x="1422.8307"
-       y="2350.2554"
-       inkscape:label="office2" />
+       style="fill:#dfdfd8;stroke-width:0.264583"
+       id="rect2"
+       width="1875.0001"
+       height="2949.9971"
+       x="1250"
+       y="800.00311"
+       inkscape:label="Office" />
     <rect
-       style="fill:#dfdfd8;stroke-width:16.986"
-       id="rect1-5"
-       width="5000"
-       height="3000"
-       x="6595.2759"
-       y="2356.9751"
-       inkscape:label="office1" />
+       style="fill:#dfdfd8;stroke-width:0.264583"
+       id="rect3"
+       width="1750.0001"
+       height="2949.9971"
+       x="3250.0002"
+       y="800.00311"
+       inkscape:label="Office" />
     <rect
-       style="fill:#dfdfd8;stroke-width:14.0018"
-       id="rect1-5-2"
-       width="10143.407"
-       height="1004.8242"
-       x="1477.3208"
-       y="5457.2461"
-       inkscape:label="office1" />
+       style="fill:#dfdfd8;stroke-width:0.264583"
+       id="rect4"
+       width="3750.0002"
+       height="875.00006"
+       x="1250"
+       y="3875"
+       inkscape:label="Office" />
     <path
        style="fill:#dfdfd8;stroke-width:0.264583"
-       d="m 11714.428,2321.6591 v 4258.586 H 1419.5287 l 7097.6434,4258.5859 5794.3749,-793.75 2749.33,-2960.7041 -1910.393,-4736.1846 z"
-       id="path1"
-       sodipodi:nodetypes="cccccccc" />
+       d="m 5125.0005,808.70298 h 750.0001 L 6750.0008,4758.6999 H 5125.0005 Z"
+       id="path4"
+       inkscape:label="Entrance" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="O1, h=3"
+     style="display:inline">
+    <rect
+       style="display:inline;fill:#dfdfd8;stroke-width:0.264583"
+       id="rect2-7"
+       width="1875.0001"
+       height="2949.9971"
+       x="1249.9995"
+       y="775.00146"
+       inkscape:label="Office" />
+    <rect
+       style="display:inline;fill:#dfdfd8;stroke-width:0.264583"
+       id="rect3-0"
+       width="1750.0001"
+       height="2949.9971"
+       x="3249.9998"
+       y="775.00146"
+       inkscape:label="Office" />
+    <rect
+       style="display:inline;fill:#dfdfd8;stroke-width:0.264583"
+       id="rect4-9"
+       width="3750.0002"
+       height="875.00006"
+       x="1249.9995"
+       y="3849.9985"
+       inkscape:label="Office" />
+    <path
+       style="display:inline;fill:#dfdfd8;stroke-width:0.264583"
+       d="m 5125,783.70135 h 750.0001 L 6750.0003,4733.6983 H 5125 Z"
+       id="path4-3"
+       inkscape:label="Entrance" />
   </g>
 </svg>
