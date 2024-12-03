@@ -5,6 +5,13 @@
 python 3.9.20
 
 
+# Workflow
+
+## SVG
+- Work in a svg editor in scale 1:1 e.g. Inkscape
+- Units in cm
+- 
+
 # TODO
 
 Workflow:

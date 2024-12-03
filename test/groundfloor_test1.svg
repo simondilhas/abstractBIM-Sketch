@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showguides="true"
-     inkscape:zoom="0.019943532"
-     inkscape:cx="45227.695"
-     inkscape:cy="16321.081"
+     inkscape:zoom="0.01"
+     inkscape:cx="46800"
+     inkscape:cy="26250"
      inkscape:window-width="1832"
      inkscape:window-height="1076"
      inkscape:window-x="0"
@@ -71,7 +71,8 @@
        inkscape:label="office1" />
     <path
        style="fill:#dfdfd8;stroke-width:0.264583"
-       d="m 11714.428,2321.6591 v 4258.586 H 1419.5287 l 7097.6434,4258.5859 v 0 L 17060.877,7084.3769 15150.484,2348.1923 Z"
-       id="path1" />
+       d="m 11714.428,2321.6591 v 4258.586 H 1419.5287 l 7097.6434,4258.5859 5794.3749,-793.75 2749.33,-2960.7041 -1910.393,-4736.1846 z"
+       id="path1"
+       sodipodi:nodetypes="cccccccc" />
   </g>
 </svg>

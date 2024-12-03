@@ -19,6 +19,17 @@ def create_ifc_space_model(svg_file, ifc_file):
     context = ifc.create_entity("IfcGeometricRepresentationContext", ContextType="Model")
     project.RepresentationContexts = [context]
     
+    # Define units in meters
+    units = ifc.create_entity(
+        "IfcUnitAssignment",
+        Units=[
+            ifc.create_entity("IfcSIUnit", UnitType="LENGTHUNIT", Name="METRE"),
+            ifc.create_entity("IfcSIUnit", UnitType="AREAUNIT", Name="SQUARE_METRE"),
+            ifc.create_entity("IfcSIUnit", UnitType="VOLUMEUNIT", Name="CUBIC_METRE")
+        ]
+    )
+    project.UnitsInContext = units
+    
     # Create site, building, and storey
     site = ifc.create_entity("IfcSite", GlobalId=new_guid(), Name="Default Site")
     building = ifc.create_entity("IfcBuilding", GlobalId=new_guid(), Name="Default Building")
@@ -48,27 +59,27 @@ def create_ifc_space_model(svg_file, ifc_file):
         RelatedObjects=[building_storey]
     )
     
-    # Process SVG paths to create IfcSpace
+    # Convert SVG dimensions (in cm) to meters
     for attr in attributes:
         if 'x' in attr and 'y' in attr and 'width' in attr and 'height' in attr:
             # Handle rectangles
-            x = float(attr.get('x', 0))
-            y = float(attr.get('y', 0))
-            width = float(attr.get('width', 0))
-            height = float(attr.get('height', 0))
+            x = float(attr.get('x', 0)) / 100  # Convert to meters
+            y = float(attr.get('y', 0)) / 100
+            width = float(attr.get('width', 0)) / 100
+            height = float(attr.get('height', 0)) / 100
             
             coordinates = [
-                [x, y, 0.0],
-                [x + width, y, 0.0],
-                [x + width, y + height, 0.0],
-                [x, y + height, 0.0],
-                [x, y, 0.0]  # Close the loop
+                [x, y],
+                [x + width, y],
+                [x + width, y + height],
+                [x, y + height],
+                [x, y]  # Close the loop
             ]
         elif 'points' in attr:
             # Handle polygons
             points = attr['points'].strip().split()
             coordinates = [
-                [float(coord) for coord in point.split(',')] + [0.0]
+                [float(coord) / 100 for coord in point.split(',')]
                 for point in points
             ]
         else:
@@ -82,19 +93,36 @@ def create_ifc_space_model(svg_file, ifc_file):
             Name=f"Space"
         )
         
-        # Create IfcGeometric representation
-        polyline = ifc.create_entity(
-            "IfcPolyline",
-            Points=[
-                ifc.create_entity("IfcCartesianPoint", Coordinates=[float(c) for c in coord])  # Ensure flat list of floats
-                for coord in coordinates
-            ]
+        # Create IfcArbitraryClosedProfileDef for boundary
+        boundary = ifc.create_entity(
+            "IfcArbitraryClosedProfileDef",
+            ProfileType="AREA",
+            OuterCurve=ifc.create_entity(
+                "IfcPolyline",
+                Points=[
+                    ifc.create_entity("IfcCartesianPoint", Coordinates=coord)
+                    for coord in coordinates
+                ]
+            )
         )
+        
+        # Create IfcExtrudedAreaSolid for 3D representation
+        extruded_solid = ifc.create_entity(
+            "IfcExtrudedAreaSolid",
+            SweptArea=boundary,
+            ExtrudedDirection=ifc.create_entity(
+                "IfcDirection", DirectionRatios=[0.0, 0.0, 1.0]
+            ),
+            Depth=3.0  # Extrusion height in meters
+        )
+        
+        # Create IfcShapeRepresentation
         geometry_representation = ifc.create_entity(
             "IfcShapeRepresentation",
             ContextOfItems=context,
-            RepresentationType="Curve2D",
-            Items=[polyline]
+            RepresentationIdentifier="Body",
+            RepresentationType="SweptSolid",
+            Items=[extruded_solid]
         )
         ifc_space.Representation = geometry_representation
         
@@ -109,6 +137,7 @@ def create_ifc_space_model(svg_file, ifc_file):
     # Write the IFC file
     ifc.write(ifc_file)
     print(f"IFC file created: {ifc_file}")
+
 
 
 # Example Usage
