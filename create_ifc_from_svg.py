@@ -570,6 +570,44 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
     site_layer = root.find(".//*[@inkscape:label='Site=Perimeter1']", ns)
     site_name = site_layer.get(f'{{{ns["inkscape"]}}}label').split('=')[1]
 
+    def parse_transform_matrix(transform_str):
+        if not transform_str or 'matrix' not in transform_str:
+            return None
+        values = [float(x) for x in transform_str.split('(')[1].split(')')[0].split(',')]
+        return values
+
+    def apply_transform(point: Point3D, matrix) -> Point3D:
+        if not matrix:
+            return point
+        x = point.x * matrix[0] + point.y * matrix[2] + matrix[4]
+        y = point.x * matrix[1] + point.y * matrix[3] + matrix[5]
+        return Point3D(x, y)
+
+    def get_accumulated_transform(element):
+        transform_matrix = None
+        current = element
+        while current is not None and current != root:
+            transform = current.get('transform')
+            if transform:
+                matrix = parse_transform_matrix(transform)
+                if matrix:
+                    if transform_matrix is None:
+                        transform_matrix = matrix
+                    else:
+                        # Combine matrices
+                        a1, b1, c1, d1, e1, f1 = transform_matrix
+                        a2, b2, c2, d2, e2, f2 = matrix
+                        transform_matrix = [
+                            a1*a2 + c1*b2,
+                            b1*a2 + d1*b2,
+                            a1*c2 + c1*d2,
+                            b1*c2 + d1*d2,
+                            a1*e2 + c1*f2 + e1,
+                            b1*e2 + d1*f2 + f1
+                        ]
+            current = current.getparent() if hasattr(current, 'getparent') else None
+        return transform_matrix
+
     for building_layer in site_layer.findall("*[@inkscape:label]", ns):
         label = building_layer.get(f'{{{ns["inkscape"]}}}label')
         if not label.startswith('Building='):
@@ -577,12 +615,6 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
             
         building_name = label.split('=')[1]
         ifc_file = f"{output_dir}/{project_name}_{building_name}.ifc"
-        
-        transform = building_layer.get('transform')
-        transform_matrix = None
-        if transform and 'matrix' in transform:
-            matrix_values = [float(x) for x in transform.split('(')[1].split(')')[0].split(',')]
-            transform_matrix = matrix_values
         
         creator = IfcModelCreator()
         creator.create_owner_history()
@@ -602,39 +634,41 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
             
             for space_layer in storey_layer.findall(".//*[@inkscape:label]", ns):
                 space_label = space_layer.get(f'{{{ns["inkscape"]}}}label')
-                if not space_label.startswith('Space'):
+                if not (space_label and ('Space' in space_label)):
                     continue
                 
                 space_height = float(space_label.split('h=')[1].strip())              
 
-
                 for elem in space_layer:
                     tag = elem.tag.split('}')[-1]
-                    coords = None
-                    space_name = elem.get(f'{{{ns["inkscape"]}}}label')  # Get the shape's label
+                    space_name = elem.get(f'{{{ns["inkscape"]}}}label')
+                    if not space_name:
+                        continue
+
+                    # Get accumulated transform from all parent layers
+                    transform_matrix = get_accumulated_transform(elem)
                     
+                    coords = None
                     if tag == 'rect':
                         coords = creator.geometry_parser.parse_rect(elem.attrib)
                     elif tag == 'path':
                         d = elem.get('d')
                         if d:
                             paths = svgpathtools.svg2paths(svg_file)[0]
-                            coords = creator.geometry_parser.parse_path(paths[0])
+                            # Find the matching path in the SVG
+                            for p in paths:
+                                if str(p.d()) == d:
+                                    coords = creator.geometry_parser.parse_path(p)
+                                    break
                     
-                    if coords and space_name:  # Only create space if we have both coordinates and a name
+                    if coords and space_name:
+                        # Apply transformation if exists
                         if transform_matrix:
-                            transformed_coords = []
-                            for point in coords:
-                                x = point.x * transform_matrix[0] + point.y * transform_matrix[2] + transform_matrix[4]
-                                y = point.x * transform_matrix[1] + point.y * transform_matrix[3] + transform_matrix[5]
-                                transformed_coords.append(Point3D(x, y))
-                            coords = transformed_coords
-                        
+                            coords = [apply_transform(point, transform_matrix) for point in coords]
                         creator.create_space(coords, space_height, storey_name, space_name)
 
-        
         os.makedirs(output_dir, exist_ok=True)
         creator.ifc.write(ifc_file)
-#
+
 if __name__ == "__main__":
     process_svg_layers("test/groundfloor_test1.svg", "output")

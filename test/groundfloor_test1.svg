@@ -25,14 +25,14 @@
      inkscape:document-units="cm"
      showguides="true"
      inkscape:zoom="0.01"
-     inkscape:cx="60750"
-     inkscape:cy="90650"
+     inkscape:cx="55850"
+     inkscape:cy="89150"
      inkscape:window-width="1832"
      inkscape:window-height="1076"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer6"
+     inkscape:current-layer="layer8-2"
      showgrid="true">
     <sodipodi:guide
        position="2719.9999,9199.9929"
@@ -263,13 +263,14 @@
              id="layer8-2"
              inkscape:label="IfcSpace, h=2.5">
             <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               style="fill:#c83737;stroke:#000000;stroke-width:0.115208"
                id="rect1-2-3"
-               width="2750.0024"
-               height="3749.9673"
-               x="7500.0059"
-               y="13124.992"
-               inkscape:label="Office" />
+               width="3731.5159"
+               height="5550.2617"
+               x="2504.3203"
+               y="11352.619"
+               inkscape:label="Office"
+               transform="matrix(0.99894813,0.04585442,0.23122316,0.97290074,0,0)" />
             <rect
                style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
                id="rect1-5-9-7"
