@@ -299,8 +299,7 @@ class IfcModelCreator:
         self.storeys[name] = storey
 
 
-    def create_space(self, coordinates: List[Point3D], space_height: float, storey_name: str, name: Optional[str] = None) -> None:
-        """Create an IFC space with given coordinates and height in specified storey."""
+    def create_space(self, coordinates: List[Point3D], space_height: float, storey_name: str, long_name: Optional[str] = None) -> None:
         storey = self.storeys.get(storey_name)
         if not storey:
             print(f"Warning: Storey {storey_name} not found - skipping space")
@@ -312,9 +311,10 @@ class IfcModelCreator:
         space_placement = self._create_local_placement(storey.ObjectPlacement)
         ifc_space = self._create_spatial_element(
             "IfcSpace",
-            name or "Space",
+            long_name or "Space",
             space_placement
         )
+        ifc_space.LongName = long_name
         geometry = self._create_space_geometry(simplified_coords, space_height)
         ifc_space.Representation = geometry
         self._create_aggregation(storey, [ifc_space])
@@ -589,32 +589,29 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
         creator.create_project_context(project_name=project_name)
         creator.create_spatial_hierarchy(site_name=site_name, building_name=building_name)
         
-        # Process storeys
         for storey_layer in building_layer.findall(".//*[@inkscape:label]", ns):
             storey_label = storey_layer.get(f'{{{ns["inkscape"]}}}label')
             if not storey_label.startswith('Storey='):
                 continue
                 
-            # Parse storey information
             parts = storey_label.split(',')
             storey_name = parts[0].split('=')[1].strip()
             z_position = float(parts[1].split('h=')[1].strip())
             
-            # Create storey at specified height
             creator.create_storey(storey_name, z_position)
             
-            # Process spaces in this storey
             for space_layer in storey_layer.findall(".//*[@inkscape:label]", ns):
                 space_label = space_layer.get(f'{{{ns["inkscape"]}}}label')
                 if not space_label.startswith('Space'):
                     continue
                 
-                space_height = float(space_label.split('h=')[1].strip())
-                
-                # Process geometry elements
+                space_height = float(space_label.split('h=')[1].strip())              
+
+
                 for elem in space_layer:
                     tag = elem.tag.split('}')[-1]
                     coords = None
+                    space_name = elem.get(f'{{{ns["inkscape"]}}}label')  # Get the shape's label
                     
                     if tag == 'rect':
                         coords = creator.geometry_parser.parse_rect(elem.attrib)
@@ -624,8 +621,7 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                             paths = svgpathtools.svg2paths(svg_file)[0]
                             coords = creator.geometry_parser.parse_path(paths[0])
                     
-                    if coords:
-                        # Apply building transformation if exists
+                    if coords and space_name:  # Only create space if we have both coordinates and a name
                         if transform_matrix:
                             transformed_coords = []
                             for point in coords:
@@ -634,7 +630,8 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                                 transformed_coords.append(Point3D(x, y))
                             coords = transformed_coords
                         
-                        creator.create_space(coords, space_height, storey_name)
+                        creator.create_space(coords, space_height, storey_name, space_name)
+
         
         os.makedirs(output_dir, exist_ok=True)
         creator.ifc.write(ifc_file)
