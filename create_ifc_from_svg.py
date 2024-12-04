@@ -109,8 +109,15 @@ class IfcModelCreator:
         self.owner_history = None
         self.context = None
         self.project = None
-        self.building_storey = None
+        self.building = None
+        self.storeys = {}  # Store storeys by name
         self.geometry_parser = SVGGeometryParser()
+
+    @staticmethod
+    def _create_guid() -> str:
+        """Create a new valid IFC GUID."""
+        return ifcopenshell.guid.compress(uuid.uuid4().hex)
+
 
     def create_owner_history(self) -> None:
         """Create IfcOwnerHistory with required entities."""
@@ -242,68 +249,75 @@ class IfcModelCreator:
         )
         self.project.UnitsInContext = units
 
+    def create_spatial_hierarchy(self, site_name: str = "Default Site", building_name: str = "Default Building") -> None:
+            site = self.ifc.create_entity(
+                "IfcSite",
+                GlobalId=self._create_guid(),
+                OwnerHistory=self.owner_history,
+                Name=site_name,
+                ObjectPlacement=self._create_local_placement(),
+                CompositionType="ELEMENT"
+            )
+                    
+            self.building = self.ifc.create_entity(
+                "IfcBuilding",
+                GlobalId=self._create_guid(),
+                OwnerHistory=self.owner_history,
+                Name=building_name,
+                ObjectPlacement=self._create_local_placement(site.ObjectPlacement),
+                CompositionType="ELEMENT"
+            )
+            
+            self._create_aggregation(self.project, [site])
+            self._create_aggregation(site, [self.building])
 
-    def create_spatial_hierarchy(self, site_name:str = "Default Site", building_name: str = "Default Building") -> None:
-        # Create site
-        site = self.ifc.create_entity(
-            "IfcSite",
-            GlobalId=self._create_guid(),
-            OwnerHistory=self.owner_history,
-            Name=site_name,
-            ObjectPlacement=self._create_local_placement(),
-            CompositionType="ELEMENT"
+    def create_storey(self, name: str, height: float) -> None:
+        """Create a building storey at specified height."""
+        origin = self.ifc.create_entity(
+            "IfcCartesianPoint", 
+            Coordinates=(0.0, 0.0, float(height))  # Convert to tuple of floats
         )
-                
-        # Create building with provided name
-        building = self.ifc.create_entity(
-            "IfcBuilding",
-            GlobalId=self._create_guid(),
-            OwnerHistory=self.owner_history,
-            Name=building_name,  # Use provided name
-            ObjectPlacement=self._create_local_placement(site.ObjectPlacement),
-            CompositionType="ELEMENT"
+        axis_placement = self.ifc.create_entity(
+            "IfcAxis2Placement3D",
+            Location=origin
+        )
+        storey_placement = self._create_local_placement(
+            self.building.ObjectPlacement,
+            axis_placement
         )
         
-        # Create storey
-        self.building_storey = self.ifc.create_entity(
+        storey = self.ifc.create_entity(
             "IfcBuildingStorey",
             GlobalId=self._create_guid(),
             OwnerHistory=self.owner_history,
-            Name="Ground Floor",
-            ObjectPlacement=self._create_local_placement(building.ObjectPlacement),
+            Name=name,
+            ObjectPlacement=storey_placement,
             CompositionType="ELEMENT"
         )
         
-        # Create aggregation relationships
-        self._create_aggregation(self.project, [site])
-        self._create_aggregation(site, [building])
-        self._create_aggregation(building, [self.building_storey])
-            
-        
-    def create_space(self, coordinates: List[Point3D], space_height: float, name: Optional[str] = None) -> None:
-        """Create an IFC space with given coordinates and height."""
-        # Simplify the polygon before creating the space
+        self._create_aggregation(self.building, [storey])
+        self.storeys[name] = storey
+
+
+    def create_space(self, coordinates: List[Point3D], space_height: float, storey_name: str, name: Optional[str] = None) -> None:
+        """Create an IFC space with given coordinates and height in specified storey."""
+        storey = self.storeys.get(storey_name)
+        if not storey:
+            print(f"Warning: Storey {storey_name} not found - skipping space")
+            return
         simplified_coords = SVGGeometryParser.simplify_polygon(coordinates)
-        
         if len(simplified_coords) < 4:
             print(f"Warning: Invalid polygon with {len(simplified_coords)} points - skipping")
             return
-
-        space_placement = self._create_local_placement(
-            self.building_storey.ObjectPlacement
-        )
-        
+        space_placement = self._create_local_placement(storey.ObjectPlacement)
         ifc_space = self._create_spatial_element(
             "IfcSpace",
             name or "Space",
             space_placement
         )
-
         geometry = self._create_space_geometry(simplified_coords, space_height)
         ifc_space.Representation = geometry
-
-        # Use IfcRelAggregates instead of IfcRelContainedInSpatialStructure
-        self._create_aggregation(self.building_storey, [ifc_space])
+        self._create_aggregation(storey, [ifc_space])
 
     def _create_aggregation(self, relating_object: Any, related_objects: List[Any]) -> None:
         """Create an aggregation relationship."""
@@ -544,67 +558,83 @@ class IfcModelCreator:
                     return False
         return True
 
-    @staticmethod
-    def _create_guid() -> str:
-        """Create a new valid IFC GUID."""
-        return ifcopenshell.guid.compress(uuid.uuid4().hex)
-
 
 def process_svg_layers(svg_file: str, output_dir: str) -> None:
     tree = ET.parse(svg_file)
     root = tree.getroot()
+    ns = {'inkscape': 'http://www.inkscape.org/namespaces/inkscape'}
     
-    # Get Project and Site names from layers
-    project_layer = root.find(".//*[@inkscape:label][@inkscape:label='Project=Testprojekt']", 
-                            namespaces={'inkscape': 'http://www.inkscape.org/namespaces/inkscape'})
-    project_name = project_layer.get('{http://www.inkscape.org/namespaces/inkscape}label').split('=')[1]
+    project_layer = root.find(".//*[@inkscape:label='Project=Testprojekt']", ns)
+    project_name = project_layer.get(f'{{{ns["inkscape"]}}}label').split('=')[1]
     
-    site_layer = root.find(".//*[@inkscape:label][@inkscape:label='Site=Perimeter1']",
-                            namespaces={'inkscape': 'http://www.inkscape.org/namespaces/inkscape'})  
-    site_name = site_layer.get('{http://www.inkscape.org/namespaces/inkscape}label').split('=')[1]
+    site_layer = root.find(".//*[@inkscape:label='Site=Perimeter1']", ns)
+    site_name = site_layer.get(f'{{{ns["inkscape"]}}}label').split('=')[1]
 
-    for building_layer in root.findall(".//*[@inkscape:label]", namespaces={'inkscape': 'http://www.inkscape.org/namespaces/inkscape'}):
-        label = building_layer.get('{http://www.inkscape.org/namespaces/inkscape}label')
+    for building_layer in site_layer.findall("*[@inkscape:label]", ns):
+        label = building_layer.get(f'{{{ns["inkscape"]}}}label')
         if not label.startswith('Building='):
             continue
             
         building_name = label.split('=')[1]
         ifc_file = f"{output_dir}/{project_name}_{building_name}.ifc"
         
+        transform = building_layer.get('transform')
+        transform_matrix = None
+        if transform and 'matrix' in transform:
+            matrix_values = [float(x) for x in transform.split('(')[1].split(')')[0].split(',')]
+            transform_matrix = matrix_values
+        
         creator = IfcModelCreator()
         creator.create_owner_history()
         creator.create_project_context(project_name=project_name)
         creator.create_spatial_hierarchy(site_name=site_name, building_name=building_name)
         
-        for storey_layer in building_layer.findall(".//*[@inkscape:label]", namespaces={'inkscape': 'http://www.inkscape.org/namespaces/inkscape'}):
-            storey_label = storey_layer.get('{http://www.inkscape.org/namespaces/inkscape}label')
-            
+        # Process storeys
+        for storey_layer in building_layer.findall(".//*[@inkscape:label]", ns):
+            storey_label = storey_layer.get(f'{{{ns["inkscape"]}}}label')
             if not storey_label.startswith('Storey='):
                 continue
                 
+            # Parse storey information
             parts = storey_label.split(',')
             storey_name = parts[0].split('=')[1].strip()
-            storey_height = float(parts[1].split('h=')[1].strip())
+            z_position = float(parts[1].split('h=')[1].strip())
             
-            for space_layer in storey_layer.findall(".//*[@inkscape:label]", namespaces={'inkscape': 'http://www.inkscape.org/namespaces/inkscape'}):
-                space_label = space_layer.get('{http://www.inkscape.org/namespaces/inkscape}label')
-                
+            # Create storey at specified height
+            creator.create_storey(storey_name, z_position)
+            
+            # Process spaces in this storey
+            for space_layer in storey_layer.findall(".//*[@inkscape:label]", ns):
+                space_label = space_layer.get(f'{{{ns["inkscape"]}}}label')
                 if not space_label.startswith('Space'):
                     continue
-                    
+                
                 space_height = float(space_label.split('h=')[1].strip())
                 
+                # Process geometry elements
                 for elem in space_layer:
                     tag = elem.tag.split('}')[-1]
+                    coords = None
+                    
                     if tag == 'rect':
                         coords = creator.geometry_parser.parse_rect(elem.attrib)
-                        creator.create_space(coords, space_height)
                     elif tag == 'path':
                         d = elem.get('d')
                         if d:
                             paths = svgpathtools.svg2paths(svg_file)[0]
                             coords = creator.geometry_parser.parse_path(paths[0])
-                            creator.create_space(coords, space_height)
+                    
+                    if coords:
+                        # Apply building transformation if exists
+                        if transform_matrix:
+                            transformed_coords = []
+                            for point in coords:
+                                x = point.x * transform_matrix[0] + point.y * transform_matrix[2] + transform_matrix[4]
+                                y = point.x * transform_matrix[1] + point.y * transform_matrix[3] + transform_matrix[5]
+                                transformed_coords.append(Point3D(x, y))
+                            coords = transformed_coords
+                        
+                        creator.create_space(coords, space_height, storey_name)
         
         os.makedirs(output_dir, exist_ok=True)
         creator.ifc.write(ifc_file)
