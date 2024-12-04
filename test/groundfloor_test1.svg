@@ -25,14 +25,14 @@
      inkscape:document-units="cm"
      showguides="true"
      inkscape:zoom="0.01"
-     inkscape:cx="55850"
-     inkscape:cy="99150"
+     inkscape:cx="49250"
+     inkscape:cy="64150"
      inkscape:window-width="1832"
      inkscape:window-height="1076"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer8-2"
+     inkscape:current-layer="layer8"
      showgrid="true">
     <sodipodi:guide
        position="2719.9999,9199.9929"
@@ -92,6 +92,41 @@
      id="defs1" />
   <g
      inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="GFA">
+    <rect
+       style="display:inline;fill:#333333;stroke:#000000;stroke-width:0.292334"
+       id="rect2-9"
+       width="11749.985"
+       height="5249.9707"
+       x="7250.0073"
+       y="21875"
+       inkscape:label="GFA" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:423.333px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:#333333;stroke:#000000;stroke-width:0.264584"
+       x="7225.4541"
+       y="27823.822"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="stroke-width:0.264584"
+         x="7225.4541"
+         y="27823.822">Only GFA wont transfrom to a space</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:423.333px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:#333333;stroke:#000000;stroke-width:0.264584"
+       x="7225.4551"
+       y="35948.82"
+       id="text3-2"><tspan
+         sodipodi:role="line"
+         id="tspan3-6"
+         style="stroke-width:0.264584"
+         x="7225.4551"
+         y="35948.82">Test Building</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="Project=Testprojekt">
     <g
@@ -101,7 +136,16 @@
       <g
          inkscape:groupmode="layer"
          id="layer2-5"
-         inkscape:label="Building=HausB">
+         inkscape:label="Building=Example Building"
+         style="display:inline">
+        <rect
+           style="fill:#333333;stroke:#000000;stroke-width:0.292334"
+           id="rect2"
+           width="11749.985"
+           height="5249.9707"
+           x="7250.0146"
+           y="12875.016"
+           inkscape:label="GFA" />
         <g
            inkscape:label="Storey=EG, h=0.0"
            inkscape:groupmode="layer"
@@ -146,10 +190,13 @@
                style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
                d="m 16125,13125 v 4750 h 2625 v -4750 z"
                id="path3" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
-               d="m 18875,13125 v 4875 l 3625,-2000 -875,-2750 z"
-               id="path1" />
+            <rect
+               style="fill:#00ffff;stroke:#000000;stroke-width:0.264583"
+               id="rect5"
+               width="4375.0005"
+               height="2187.917"
+               x="19000"
+               y="14406.042" />
           </g>
         </g>
         <g
@@ -196,63 +243,46 @@
                style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
                d="m 16125,13125 v 4750 h 2625 v -4750 z"
                id="path3-7" />
+            <rect
+               style="display:inline;fill:#00ffff;stroke:#000000;stroke-width:0.264583"
+               id="rect5-9"
+               width="4375.0005"
+               height="2187.917"
+               x="24120.15"
+               y="-3792.2678"
+               transform="rotate(40.891634)"
+               inkscape:transform-center-x="343.95833"
+               inkscape:transform-center-y="-238.125" />
           </g>
         </g>
+        <text
+           xml:space="preserve"
+           style="font-weight:bold;font-size:416.772px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:#333333;stroke:#000000;stroke-width:0.260483"
+           x="-16342.83"
+           y="14264.312"
+           id="text2"
+           transform="matrix(1.0157423,-1.6169855e-8,0,1.0157423,24019.86,4256.7697)"><tspan
+             sodipodi:role="line"
+             id="tspan2"
+             style="stroke-width:0.260483"
+             x="-16342.83"
+             y="14264.312">Example Building</tspan></text>
       </g>
       <g
          inkscape:groupmode="layer"
          id="layer2-5-6"
-         inkscape:label="Building=HausA"
-         transform="matrix(0.53021319,0.39849141,-0.93456802,1.2434905,24019.86,4256.7696)">
+         inkscape:label="Building=Testbuilding"
+         transform="matrix(0.27861946,0.60190749,-1.4116327,0.6534365,38691.888,15085.335)"
+         style="display:inline">
         <g
            inkscape:label="Storey=EG, h=0.0"
            inkscape:groupmode="layer"
-           id="layer1-0">
+           id="layer1-0"
+           style="display:inline">
           <g
              inkscape:groupmode="layer"
              id="layer6-6"
-             inkscape:label="IfcSpace, h=2.5">
-            <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-               id="rect1-26"
-               width="2750.0024"
-               height="3749.9673"
-               x="7500.0059"
-               y="13124.992"
-               inkscape:label="Office" />
-            <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-               id="rect1-5-1"
-               width="2750.0024"
-               height="3749.9673"
-               x="10374.998"
-               y="13125.017"
-               inkscape:label="Office" />
-            <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-               id="rect1-5-2-8"
-               width="2750.0024"
-               height="3749.9673"
-               x="13249.998"
-               y="13125.017"
-               inkscape:label="Office" />
-            <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.0806285"
-               id="rect7-7"
-               width="8499.8428"
-               height="874.8974"
-               x="7500.1167"
-               y="17000.117"
-               inkscape:label="Cooridor" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
-               d="m 16125,13125 v 4750 h 2625 v -4750 z"
-               id="path3-9" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
-               d="m 18875,13125 v 4875 l 3625,-2000 -875,-2750 z"
-               id="path1-2" />
-          </g>
+             inkscape:label="IfcSpace, h=2.5" />
         </g>
         <g
            inkscape:groupmode="layer"
@@ -261,59 +291,24 @@
           <g
              inkscape:groupmode="layer"
              id="layer8-2"
-             inkscape:label="IfcSpace, h=2.5">
+             inkscape:label="IfcSpace, h=2.5"
+             style="fill:#00ffff">
             <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.115208"
-               id="rect1-2-3"
-               width="3731.5159"
-               height="5550.2617"
-               x="2504.3203"
-               y="11352.619"
-               inkscape:label="Office"
-               transform="matrix(0.99894813,0.04585442,0.23122316,0.97290074,0,0)" />
+               style="fill:#00ffff;stroke:#000000;stroke-width:0.303762"
+               id="rect3"
+               width="5176.1211"
+               height="3254.5286"
+               x="-22128.922"
+               y="27461.17"
+               transform="matrix(0.95229636,-0.30517477,0.86977272,0.49345254,0,0)" />
             <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-               id="rect1-5-9-7"
-               width="2750.0024"
-               height="3749.9673"
-               x="10374.998"
-               y="13125.017"
-               inkscape:label="Office" />
-            <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-               id="rect1-5-2-1-5"
-               width="2750.0024"
-               height="3749.9673"
-               x="13249.998"
-               y="13125.017"
-               inkscape:label="Office" />
-            <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.0806285"
-               id="rect7-2-9"
-               width="8499.8428"
-               height="874.8974"
-               x="7500.1167"
-               y="17000.117"
-               inkscape:label="Cooridor" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
-               d="m 16125,13125 v 4750 h 2625 v -4750 z"
-               id="path3-7-2"
-               inkscape:label="neuer Path" />
-            <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.303762"
-               id="rect2"
-               width="7119.1113"
-               height="1952.7172"
-               x="-7065.1455"
-               y="20301.209"
-               transform="matrix(0.95229636,-0.30517477,0.86977272,0.49345254,0,0)"
-               inkscape:label="XXX" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.260483"
-               d="m 19409.61,11969.264 8674.514,2246.323 124.226,-3273.315 -6666.351,-438.262 z"
-               id="path2"
-               inkscape:label="YYYY" />
+               style="fill:#00ffff;stroke:#000000;stroke-width:0.303762"
+               id="rect4"
+               width="6690.647"
+               height="3905.4343"
+               x="-16636.396"
+               y="27461.172"
+               transform="matrix(0.95229636,-0.30517477,0.86977272,0.49345254,0,0)" />
           </g>
         </g>
       </g>
@@ -322,5 +317,32 @@
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="Help" />
+     inkscape:label="Help">
+    <text
+       xml:space="preserve"
+       style="display:inline;font-weight:bold;font-size:1021.48px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#333333;stroke:#000000;stroke-width:0.638425"
+       x="-18152.354"
+       y="7046.1777"
+       id="text2-5"
+       transform="matrix(1.0157423,-1.6169855e-8,0,1.0157423,24019.86,4256.7697)"
+       inkscape:label="Header: abstractBIM Sketcher"><tspan
+         sodipodi:role="line"
+         id="tspan2-3"
+         style="stroke-width:0.638425"
+         x="-18152.354"
+         y="7046.1777">abstractBIM Sketch</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:789.912px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:#333333;stroke:#000000;stroke-width:0.493695"
+       x="5875.2607"
+       y="20346.992"
+       id="text2-5-0"
+       inkscape:label="Header: abstractBIM Sketcher"
+       transform="scale(0.95740431,1.0444908)"><tspan
+         sodipodi:role="line"
+         id="tspan2-3-9"
+         style="stroke-width:0.493695"
+         x="5875.2607"
+         y="20346.992">Help</tspan></text>
+  </g>
 </svg>

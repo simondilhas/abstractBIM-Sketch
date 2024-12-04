@@ -1,6 +1,28 @@
 # abstractBIM Sketch
 
-abstractBIM Sketch is an Inkscape plugin that bridges the gap between intuitive architectural sketching and Building Information Modeling (BIM). It enables architects and engineers to create and modify building information models using familiar SVG drawing tools.
+abstractBIM Sketch is an Inkscape plugin that bridges the gap between intuitive architectural sketching and Building Information Modeling (BIM). It enables architects and engineers to create and modify building information models using Inkscape - a userfriendly and free SVG drawing tool.
+
+## Table of Contents
+
+- [Background & Motivation](#background--motivation)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Basic Usage](#basic-usage)
+- [Inkscape Template Structure](#inkscape-template-structure)
+  - [Layer Organization](#layer-organization)
+  - [Grid Settings](#grid-settings)
+- [Workflow](#workflow)
+- [Current Limitations & Roadmap](#current-limitations--roadmap)
+  - [In Progress / Planned](#in-progress)
+  - [Future Development / Ideas](#future-development)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Contact](#contact)
+
+
 
 ## Background & Motivation
 
@@ -8,8 +30,8 @@ The project addresses a fundamental challenge in the BIM workflow:
 
 - Traditional BIM doctrine emphasizes a single model approach where all stakeholders work with one model
 - In practice, architects (primary modelers) may not fully understand or accommodate the needs of other stakeholders
-- This leads to engineers and quantity surveyors reverting to traditional workflows, losing BIM benefits
-- abstractBIM Sketch empowers stakeholders to leverage BIM data while working with familiar tools
+- This leads to engineers, building physics, fire safety engineers and quantity surveyors reverting to traditional workflows, losing BIM benefits
+- abstractBIM Sketch empowers stakeholders to leverage BIM data while working with familiar  userfriendly tools
 
 ## Features
 
@@ -18,7 +40,7 @@ The project addresses a fundamental challenge in the BIM workflow:
 - Support for multiple buildings within a project
 - Precise measurement grid system (12.5cm raster)
 - Height and metadata management for spaces
-- Automated space recognition and conversion
+- On the roadmap: Importing IFC to create the basic structure
 
 ## Getting Started
 
@@ -83,28 +105,33 @@ python execute_create_ifc_from_svg.py
 
 ## Current Limitations & Roadmap
 
-### In Progress
-- Extensive testing phase
+### In Progress / Planned
+- Extensive testing phase & Bugfixes
+    - rotaed rectangles
+    - issue with transformations in second building
 - IFC importer development (IfcSpaces → SVG conversion)
 - Update capability for existing IFC files
 - Inkscape plugin packaging
 - Direct "Send to abstractBIM" functionality
 - Window and door support
 
-### Future Development
+### Future Development Ideas
+- Handeling more shapes besides rectangles and polylines
+- Import room program from Excel
+- Display Roomname, Target sqm and Actual sqm in the room shape
 - Enhanced metadata handling
 - Improved measurement tools
 - Database integration
 - Metadata visualization
 - Custom menu bar
+- Create a legend
 - Support for additional SVG/DXF editors
 - Web-based interface
+- gbXML Import
 
 ## Contributing
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-## License
 
 ## License
 
@@ -126,4 +153,4 @@ For more details, see the [LICENSE](LICENSE) file in this repository or visit ht
 
 ## Contact
 
-[Contact information to be added]
+simon.dilhas@abstractBIM.com
