@@ -2,6 +2,9 @@
 
 abstractBIM Sketch is an Inkscape plugin that bridges the gap between intuitive architectural sketching and Building Information Modeling (BIM). It enables architects and engineers to create and modify building information models using Inkscape - a userfriendly and free SVG drawing tool.
 
+![Inkscape](help/help_inkscape.png)
+
+
 ## Table of Contents
 
 - [Background & Motivation](#background--motivation)
