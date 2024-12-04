@@ -1,145 +1,201 @@
+from dataclasses import dataclass
+from typing import List, Tuple, Dict, Any
 import ifcopenshell
 import svgpathtools
 from svgpathtools import svg2paths2
 import uuid
 import time
+from ifcopenshell.file import file as IfcFile
 
 
-def create_ifc_space_model(svg_file, ifc_file, space_height):
-    # Parse the SVG file
-    paths, attributes, svg_attributes = svg2paths2(svg_file)
+@dataclass
+class Point3D:
+    x: float
+    y: float
+    z: float = 0.0
 
-    # Create a new IFC file
-    ifc = ifcopenshell.file(schema="IFC4")
+    def to_list(self) -> List[float]:
+        return [self.x, self.y, self.z]
 
-    # Function to generate GUIDs
-    def new_guid():
-        return str(uuid.uuid4().hex[:22])
 
-    # Add IfcOwnerHistory with mandatory fields
-    application_developer = ifc.create_entity("IfcOrganization", Name="CustomApp Developer")
-    application = ifc.create_entity(
-        "IfcApplication",
-        ApplicationDeveloper=application_developer,
-        ApplicationFullName="Custom IFC Generator",
-        Version="1.0",
-        ApplicationIdentifier="CustomApp"
-    )
-    person = ifc.create_entity("IfcPerson", FamilyName="Doe", GivenName="John")
-    organization = ifc.create_entity("IfcOrganization", Name="Example Organization")
-    person_and_organization = ifc.create_entity("IfcPersonAndOrganization", ThePerson=person, TheOrganization=organization)
-    owner_history = ifc.create_entity(
-        "IfcOwnerHistory",
-        OwningUser=person_and_organization,
-        OwningApplication=application,
-        CreationDate=int(time.time())  # Use UNIX timestamp for the creation date
-    )
+class IfcModelCreator:
+    def __init__(self, schema: str = "IFC4"):
+        self.ifc: IfcFile = ifcopenshell.file(schema=schema)
+        self.owner_history = None
+        self.context = None
+        self.project = None
+        self.building_storey = None
 
-    # Add header information
-    project = ifc.create_entity("IfcProject", GlobalId=new_guid(), Name="Example Project", OwnerHistory=owner_history)
-    context = ifc.create_entity(
-        "IfcGeometricRepresentationContext",
-        ContextType="Model",
-        ContextIdentifier="Model",
-        CoordinateSpaceDimension=3,  # Ensure the dimension is 3 for 3D context
-        Precision=0.0001,
-        WorldCoordinateSystem=ifc.create_entity(
+    def create_owner_history(self) -> None:
+        """Create IfcOwnerHistory with required entities."""
+        app_dev = self.ifc.create_entity("IfcOrganization", Name="CustomApp Developer")
+        application = self.ifc.create_entity(
+            "IfcApplication",
+            ApplicationDeveloper=app_dev,
+            ApplicationFullName="Custom IFC Generator",
+            Version="1.0",
+            ApplicationIdentifier="CustomApp"
+        )
+        person = self.ifc.create_entity("IfcPerson", FamilyName="Doe", GivenName="John")
+        org = self.ifc.create_entity("IfcOrganization", Name="Example Organization")
+        person_and_org = self.ifc.create_entity(
+            "IfcPersonAndOrganization", 
+            ThePerson=person, 
+            TheOrganization=org
+        )
+        self.owner_history = self.ifc.create_entity(
+            "IfcOwnerHistory",
+            OwningUser=person_and_org,
+            OwningApplication=application,
+            CreationDate=int(time.time())
+        )
+
+    def create_project_context(self) -> None:
+        """Create project and geometric context."""
+        self.project = self.ifc.create_entity(
+            "IfcProject",
+            GlobalId=self._create_guid(),
+            Name="Example Project",
+            OwnerHistory=self.owner_history
+        )
+        
+        origin = self.ifc.create_entity(
+            "IfcCartesianPoint", 
+            Coordinates=[0.0, 0.0, 0.0]
+        )
+        axis_placement = self.ifc.create_entity(
             "IfcAxis2Placement3D",
-            Location=ifc.create_entity("IfcCartesianPoint", Coordinates=[0.0, 0.0, 0.0])
+            Location=origin
         )
-    )
-    project.RepresentationContexts = [context]
+        
+        self.context = self.ifc.create_entity(
+            "IfcGeometricRepresentationContext",
+            ContextType="Model",
+            ContextIdentifier="Model",
+            CoordinateSpaceDimension=3,
+            Precision=0.0001,
+            WorldCoordinateSystem=axis_placement
+        )
+        self.project.RepresentationContexts = [self.context]
+        self._create_units()
 
-    # Define units in meters
-    units = ifc.create_entity(
-        "IfcUnitAssignment",
-        Units=[
-            ifc.create_entity("IfcSIUnit", UnitType="LENGTHUNIT", Name="METRE"),
-            ifc.create_entity("IfcSIUnit", UnitType="AREAUNIT", Name="SQUARE_METRE"),
-            ifc.create_entity("IfcSIUnit", UnitType="VOLUMEUNIT", Name="CUBIC_METRE"),
+    def _create_units(self) -> None:
+        """Create SI units for the project."""
+        units = self.ifc.create_entity(
+            "IfcUnitAssignment",
+            Units=[
+                self.ifc.create_entity("IfcSIUnit", UnitType="LENGTHUNIT", Name="METRE"),
+                self.ifc.create_entity("IfcSIUnit", UnitType="AREAUNIT", Name="SQUARE_METRE"),
+                self.ifc.create_entity("IfcSIUnit", UnitType="VOLUMEUNIT", Name="CUBIC_METRE"),
+            ]
+        )
+        self.project.UnitsInContext = units
+
+    def create_spatial_hierarchy(self) -> None:
+        """Create site, building, and storey hierarchy."""
+        global_placement = self._create_axis_placement()
+        
+        # Create site
+        site_placement = self._create_local_placement(None, global_placement)
+        site = self._create_spatial_element(
+            "IfcSite", "Default Site", site_placement
+        )
+        
+        # Create building
+        building_placement = self._create_local_placement(site_placement, global_placement)
+        building = self._create_spatial_element(
+            "IfcBuilding", "Default Building", building_placement
+        )
+        
+        # Create storey
+        storey_placement = self._create_local_placement(building_placement, global_placement)
+        self.building_storey = self._create_spatial_element(
+            "IfcBuildingStorey", "Ground Floor", storey_placement
+        )
+        
+        # Create relationships
+        self._create_aggregation(self.project, [site])
+        self._create_aggregation(site, [building])
+        self._create_aggregation(building, [self.building_storey])
+
+    def create_space(self, coordinates: List[Point3D], space_height: float) -> None:
+        """Create an IFC space with given coordinates and height."""
+        space_placement = self._create_local_placement(
+            self.building_storey.ObjectPlacement
+        )
+        
+        ifc_space = self._create_spatial_element(
+            "IfcSpace", "Space", space_placement
+        )
+
+        geometry = self._create_space_geometry(coordinates, space_height)
+        ifc_space.Representation = geometry
+
+        # Relate space to storey
+        self._create_containment(self.building_storey, [ifc_space])
+
+    def _create_space_geometry(
+        self, coordinates: List[Point3D], space_height: float
+    ) -> Any:
+        """Create the geometric representation of a space."""
+        bottom_points = [
+            self.ifc.create_entity("IfcCartesianPoint", Coordinates=p.to_list())
+            for p in coordinates
         ]
-    )
-    project.UnitsInContext = units
+        
+        top_points = [
+            self.ifc.create_entity(
+                "IfcCartesianPoint",
+                Coordinates=[p.x, p.y, space_height]
+            )
+            for p in coordinates
+        ]
 
-    # Define the global placement
-    global_placement = ifc.create_entity(
-        "IfcAxis2Placement3D",
-        Location=ifc.create_entity("IfcCartesianPoint", Coordinates=[0.0, 0.0, 0.0])
-    )
+        faces = self._create_faces(bottom_points, top_points)
+        closed_shell = self.ifc.create_entity("IfcClosedShell", CfsFaces=faces)
+        brep = self.ifc.create_entity("IfcFacetedBrep", Outer=closed_shell)
 
-    # Create site, building, and storey with local placements
-    site_placement = ifc.create_entity("IfcLocalPlacement", PlacementRelTo=None, RelativePlacement=global_placement)
-    site = ifc.create_entity(
-        "IfcSite",
-        GlobalId=new_guid(),
-        Name="Default Site",
-        ObjectPlacement=site_placement,
-        OwnerHistory=owner_history
-    )
-
-    building_placement = ifc.create_entity("IfcLocalPlacement", PlacementRelTo=site_placement, RelativePlacement=global_placement)
-    building = ifc.create_entity(
-        "IfcBuilding",
-        GlobalId=new_guid(),
-        Name="Default Building",
-        ObjectPlacement=building_placement,
-        OwnerHistory=owner_history
-    )
-
-    storey_placement = ifc.create_entity("IfcLocalPlacement", PlacementRelTo=building_placement, RelativePlacement=global_placement)
-    building_storey = ifc.create_entity(
-        "IfcBuildingStorey",
-        GlobalId=new_guid(),
-        Name="Ground Floor",
-        ObjectPlacement=storey_placement,
-        OwnerHistory=owner_history
-    )
-
-    # Relate site to project using IfcRelAggregates
-    ifc.create_entity(
-        "IfcRelAggregates",
-        GlobalId=new_guid(),
-        RelatingObject=project,
-        RelatedObjects=[site]
-    )
-
-    # Relate building to site
-    ifc.create_entity(
-        "IfcRelAggregates",
-        GlobalId=new_guid(),
-        RelatingObject=site,
-        RelatedObjects=[building]
-    )
-
-    # Relate storey to building
-    ifc.create_entity(
-        "IfcRelAggregates",
-        GlobalId=new_guid(),
-        RelatingObject=building,
-        RelatedObjects=[building_storey]
-    )
-
-
-    def create_space(coordinates, space_height):
-
-        space_placement = ifc.create_entity("IfcLocalPlacement", PlacementRelTo=storey_placement)
-        ifc_space = ifc.create_entity(
-            "IfcSpace",
-            GlobalId=new_guid(),
-            Name="Space",
-            ObjectPlacement=space_placement,
-            OwnerHistory=owner_history
+        return self.ifc.create_entity(
+            "IfcProductDefinitionShape",
+            Representations=[
+                self.ifc.create_entity(
+                    "IfcShapeRepresentation",
+                    ContextOfItems=self.context,
+                    RepresentationIdentifier="Body",
+                    RepresentationType="Brep",
+                    Items=[brep]
+                )
+            ]
         )
 
-        bottom_points = [ifc.create_entity("IfcCartesianPoint", Coordinates=coord) for coord in coordinates]
-        top_points = [ifc.create_entity("IfcCartesianPoint", Coordinates=[x, y, space_height]) for x, y, _ in coordinates]
+    def _create_faces(
+        self, bottom_points: List[Any], top_points: List[Any]
+    ) -> List[Any]:
+        """Create all faces for a space geometry."""
+        bottom_face = self._create_horizontal_face(bottom_points)
+        top_face = self._create_horizontal_face(top_points)
+        vertical_faces = self._create_vertical_faces(bottom_points, top_points)
+        return [bottom_face, top_face] + vertical_faces
 
-        bottom_loop = ifc.create_entity("IfcPolyLoop", Polygon=bottom_points)
-        top_loop = ifc.create_entity("IfcPolyLoop", Polygon=top_points)
+    def _create_horizontal_face(self, points: List[Any]) -> Any:
+        """Create a horizontal face from points."""
+        loop = self.ifc.create_entity("IfcPolyLoop", Polygon=points)
+        return self.ifc.create_entity(
+            "IfcFace",
+            Bounds=[
+                self.ifc.create_entity(
+                    "IfcFaceOuterBound",
+                    Bound=loop,
+                    Orientation=True
+                )
+            ]
+        )
 
-        bottom_face = ifc.create_entity("IfcFace", Bounds=[ifc.create_entity("IfcFaceOuterBound", Bound=bottom_loop, Orientation=True)])
-        top_face = ifc.create_entity("IfcFace", Bounds=[ifc.create_entity("IfcFaceOuterBound", Bound=top_loop, Orientation=True)])
-        vertical_faces = []
+    def _create_vertical_faces(
+        self, bottom_points: List[Any], top_points: List[Any]
+    ) -> List[Any]:
+        """Create vertical faces between bottom and top points."""
+        faces = []
         for i in range(len(bottom_points) - 1):
             wall_points = [
                 bottom_points[i],
@@ -147,57 +203,110 @@ def create_ifc_space_model(svg_file, ifc_file, space_height):
                 top_points[i + 1],
                 top_points[i]
             ]
-            wall_loop = ifc.create_entity("IfcPolyLoop", Polygon=wall_points)
-            vertical_faces.append(ifc.create_entity("IfcFace", Bounds=[ifc.create_entity("IfcFaceOuterBound", Bound=wall_loop, Orientation=True)]))
+            loop = self.ifc.create_entity("IfcPolyLoop", Polygon=wall_points)
+            faces.append(
+                self.ifc.create_entity(
+                    "IfcFace",
+                    Bounds=[
+                        self.ifc.create_entity(
+                            "IfcFaceOuterBound",
+                            Bound=loop,
+                            Orientation=True
+                        )
+                    ]
+                )
+            )
+        return faces
 
-        all_faces = [bottom_face, top_face] + vertical_faces
-        closed_shell = ifc.create_entity("IfcClosedShell", CfsFaces=all_faces)
-        brep = ifc.create_entity("IfcFacetedBrep", Outer=closed_shell)
-
-        geometry_representation = ifc.create_entity(
-            "IfcShapeRepresentation",
-            ContextOfItems=context,
-            RepresentationIdentifier="Body",
-            RepresentationType="Brep",
-            Items=[brep]
+    def _create_spatial_element(
+        self, element_type: str, name: str, placement: Any
+    ) -> Any:
+        """Create a spatial element with given type and name."""
+        return self.ifc.create_entity(
+            element_type,
+            GlobalId=self._create_guid(),
+            Name=name,
+            ObjectPlacement=placement,
+            OwnerHistory=self.owner_history
         )
-        ifc_space.Representation = ifc.create_entity(
-            "IfcProductDefinitionShape",
-            Representations=[geometry_representation]
+
+    def _create_axis_placement(self) -> Any:
+        """Create an axis placement at origin."""
+        return self.ifc.create_entity(
+            "IfcAxis2Placement3D",
+            Location=self.ifc.create_entity(
+                "IfcCartesianPoint",
+                Coordinates=[0.0, 0.0, 0.0]
+            )
         )
 
-        # Relate space to building storey
-        ifc.create_entity(
+    def _create_local_placement(
+        self, placement_ref: Any = None, relative_placement: Any = None
+    ) -> Any:
+        """Create a local placement."""
+        return self.ifc.create_entity(
+            "IfcLocalPlacement",
+            PlacementRelTo=placement_ref,
+            RelativePlacement=relative_placement or self._create_axis_placement()
+        )
+
+    def _create_aggregation(self, relating_object: Any, related_objects: List[Any]) -> None:
+        """Create an aggregation relationship."""
+        self.ifc.create_entity(
+            "IfcRelAggregates",
+            GlobalId=self._create_guid(),
+            RelatingObject=relating_object,
+            RelatedObjects=related_objects
+        )
+
+    def _create_containment(self, structure: Any, elements: List[Any]) -> None:
+        """Create a containment relationship."""
+        self.ifc.create_entity(
             "IfcRelContainedInSpatialStructure",
-            GlobalId=new_guid(),
-            RelatingStructure=building_storey,
-            RelatedElements=[ifc_space]
+            GlobalId=self._create_guid(),
+            RelatingStructure=structure,
+            RelatedElements=elements
         )
 
-    # Convert SVG dimensions (in cm) to meters Carfull!!!! with svg scale
+    @staticmethod
+    def _create_guid() -> str:
+        """Create a new GUID."""
+        return str(uuid.uuid4().hex[:22])
+
+
+def create_ifc_space_model(
+    svg_file: str,
+    ifc_file: str,
+    space_height: float
+) -> None:
+    """Create an IFC model from SVG file."""
+    paths, attributes, svg_attributes = svg2paths2(svg_file)
+    
+    model_creator = IfcModelCreator()
+    model_creator.create_owner_history()
+    model_creator.create_project_context()
+    model_creator.create_spatial_hierarchy()
+
     for attr in attributes:
-        if 'x' in attr and 'y' in attr and 'width' in attr and 'height' in attr:
+        if all(key in attr for key in ['x', 'y', 'width', 'height']):
+            # Convert SVG dimensions (mm) to meters
             x = float(attr.get('x', 0)) / 1000
             y = float(attr.get('y', 0)) / 1000
             width = float(attr.get('width', 0)) / 1000
             height = float(attr.get('height', 0)) / 1000
 
             coordinates = [
-                [x, y, 0.0],
-                [x + width, y, 0.0],
-                [x + width, y + height, 0.0],
-                [x, y + height, 0.0],
-                [x, y, 0.0]
+                Point3D(x, y),
+                Point3D(x + width, y),
+                Point3D(x + width, y + height),
+                Point3D(x, y + height),
+                Point3D(x, y)
             ]
-            create_space(coordinates, space_height)
+            model_creator.create_space(coordinates, space_height)
 
-    # Write the IFC file
-    ifc.write(ifc_file)
-    print(f"IFC file created: {ifc_file}")
+    model_creator.ifc.write(ifc_file)
 
-
-# Example Usage
-svg_input = "test/groundfloor_test1.svg"  # Replace with your SVG file path
-ifc_output = "output.ifc"  # Replace with your desired IFC file path
+svg_input = "test/groundfloor_test1.svg"
+ifc_output = "output.ifc"
 space_height = 2.5
 create_ifc_space_model(svg_input, ifc_output, space_height)
