@@ -5,7 +5,7 @@ import uuid
 import time
 
 
-def create_ifc_space_model(svg_file, ifc_file):
+def create_ifc_space_model(svg_file, ifc_file, space_height):
     # Parse the SVG file
     paths, attributes, svg_attributes = svg2paths2(svg_file)
 
@@ -119,9 +119,9 @@ def create_ifc_space_model(svg_file, ifc_file):
         RelatedObjects=[building_storey]
     )
 
-    # Helper function to create IfcSpaces with robust geometry
-    def create_space(coordinates):
-        # Create IfcSpace entity
+
+    def create_space(coordinates, space_height):
+
         space_placement = ifc.create_entity("IfcLocalPlacement", PlacementRelTo=storey_placement)
         ifc_space = ifc.create_entity(
             "IfcSpace",
@@ -131,15 +131,12 @@ def create_ifc_space_model(svg_file, ifc_file):
             OwnerHistory=owner_history
         )
 
-        # Create bottom and top polygons
         bottom_points = [ifc.create_entity("IfcCartesianPoint", Coordinates=coord) for coord in coordinates]
-        top_points = [ifc.create_entity("IfcCartesianPoint", Coordinates=[x, y, 3.0]) for x, y, _ in coordinates]
+        top_points = [ifc.create_entity("IfcCartesianPoint", Coordinates=[x, y, space_height]) for x, y, _ in coordinates]
 
-        # Create IfcPolyLoops
         bottom_loop = ifc.create_entity("IfcPolyLoop", Polygon=bottom_points)
         top_loop = ifc.create_entity("IfcPolyLoop", Polygon=top_points)
 
-        # Create faces for the BRep
         bottom_face = ifc.create_entity("IfcFace", Bounds=[ifc.create_entity("IfcFaceOuterBound", Bound=bottom_loop, Orientation=True)])
         top_face = ifc.create_entity("IfcFace", Bounds=[ifc.create_entity("IfcFaceOuterBound", Bound=top_loop, Orientation=True)])
         vertical_faces = []
@@ -153,12 +150,10 @@ def create_ifc_space_model(svg_file, ifc_file):
             wall_loop = ifc.create_entity("IfcPolyLoop", Polygon=wall_points)
             vertical_faces.append(ifc.create_entity("IfcFace", Bounds=[ifc.create_entity("IfcFaceOuterBound", Bound=wall_loop, Orientation=True)]))
 
-        # Create the closed shell
         all_faces = [bottom_face, top_face] + vertical_faces
         closed_shell = ifc.create_entity("IfcClosedShell", CfsFaces=all_faces)
         brep = ifc.create_entity("IfcFacetedBrep", Outer=closed_shell)
 
-        # Create IfcShapeRepresentation
         geometry_representation = ifc.create_entity(
             "IfcShapeRepresentation",
             ContextOfItems=context,
@@ -179,13 +174,13 @@ def create_ifc_space_model(svg_file, ifc_file):
             RelatedElements=[ifc_space]
         )
 
-    # Convert SVG dimensions (in cm) to meters
+    # Convert SVG dimensions (in cm) to meters Carfull!!!! with svg scale
     for attr in attributes:
         if 'x' in attr and 'y' in attr and 'width' in attr and 'height' in attr:
-            x = float(attr.get('x', 0)) / 100
-            y = float(attr.get('y', 0)) / 100
-            width = float(attr.get('width', 0)) / 100
-            height = float(attr.get('height', 0)) / 100
+            x = float(attr.get('x', 0)) / 1000
+            y = float(attr.get('y', 0)) / 1000
+            width = float(attr.get('width', 0)) / 1000
+            height = float(attr.get('height', 0)) / 1000
 
             coordinates = [
                 [x, y, 0.0],
@@ -194,7 +189,7 @@ def create_ifc_space_model(svg_file, ifc_file):
                 [x, y + height, 0.0],
                 [x, y, 0.0]
             ]
-            create_space(coordinates)
+            create_space(coordinates, space_height)
 
     # Write the IFC file
     ifc.write(ifc_file)
@@ -204,4 +199,5 @@ def create_ifc_space_model(svg_file, ifc_file):
 # Example Usage
 svg_input = "test/groundfloor_test1.svg"  # Replace with your SVG file path
 ifc_output = "output.ifc"  # Replace with your desired IFC file path
-create_ifc_space_model(svg_input, ifc_output)
+space_height = 2.5
+create_ifc_space_model(svg_input, ifc_output, space_height)

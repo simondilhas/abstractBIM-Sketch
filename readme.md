@@ -18,4 +18,7 @@ Workflow:
 
 - create a svg of a story
 - import the svg
-- create a ifc with spaces from the svg
+- create a ifc with spaces from the svg 
+- start abstractBIM
+
+

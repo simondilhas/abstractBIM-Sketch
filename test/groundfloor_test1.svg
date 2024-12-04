@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="20000cm"
-   height="20000cm"
-   viewBox="0 0 200000 200000"
+   width="10000cm"
+   height="10000cm"
+   viewBox="0 0 100000 100000"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
@@ -24,18 +24,18 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="cm"
      showguides="true"
-     inkscape:zoom="0.030412408"
-     inkscape:cx="15355.574"
-     inkscape:cy="10538.462"
+     inkscape:zoom="0.01787629"
+     inkscape:cx="62485"
+     inkscape:cy="66372.832"
      inkscape:window-width="1832"
      inkscape:window-height="1076"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="true">
     <sodipodi:guide
-       position="2720,199200"
+       position="2719.9999,9199.9929"
        orientation="0,-1"
        id="guide1"
        inkscape:locked="false" />
@@ -52,6 +52,40 @@
        opacity="0.14901961"
        empspacing="5"
        enabled="true"
+       visible="true"
+       dotted="false" />
+    <inkscape:grid
+       type="modular"
+       id="grid2"
+       units="cm"
+       originx="0"
+       originy="0"
+       spacingx="40.000001"
+       spacingy="40.000001"
+       empcolor="#0047cb"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="0"
+       marginx="0"
+       marginy="0"
+       gapx="10"
+       gapy="10"
+       enabled="false"
+       visible="true" />
+    <inkscape:grid
+       id="grid3"
+       units="cm"
+       originx="0"
+       originy="0"
+       spacingx="10"
+       spacingy="10"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#97dcff"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="false"
        visible="true" />
   </sodipodi:namedview>
   <defs
@@ -59,71 +93,38 @@
   <g
      inkscape:label="EG, h=0.0"
      inkscape:groupmode="layer"
-     id="layer1"
-     sodipodi:insensitive="true">
+     id="layer1">
     <rect
-       style="fill:#dfdfd8;stroke-width:0.264583"
-       id="rect2"
-       width="1875.0001"
-       height="2949.9971"
-       x="1250"
-       y="800.00311"
+       style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+       id="rect1"
+       width="2750.0024"
+       height="3749.9673"
+       x="7500.0059"
+       y="13124.992"
        inkscape:label="Office" />
     <rect
-       style="fill:#dfdfd8;stroke-width:0.264583"
-       id="rect3"
-       width="1750.0001"
-       height="2949.9971"
-       x="3250.0002"
-       y="800.00311"
+       style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+       id="rect1-5"
+       width="2750.0024"
+       height="3749.9673"
+       x="10374.998"
+       y="13125.017"
        inkscape:label="Office" />
     <rect
-       style="fill:#dfdfd8;stroke-width:0.264583"
-       id="rect4"
-       width="3750.0002"
-       height="875.00006"
-       x="1250"
-       y="3875"
-       inkscape:label="Office" />
-    <path
-       style="fill:#dfdfd8;stroke-width:0.264583"
-       d="m 5125.0005,808.70298 h 750.0001 L 6750.0008,4758.6999 H 5125.0005 Z"
-       id="path4"
-       inkscape:label="Entrance" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="O1, h=3"
-     style="display:inline">
-    <rect
-       style="display:inline;fill:#dfdfd8;stroke-width:0.264583"
-       id="rect2-7"
-       width="1875.0001"
-       height="2949.9971"
-       x="1249.9995"
-       y="775.00146"
+       style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+       id="rect1-5-2"
+       width="2750.0024"
+       height="3749.9673"
+       x="13249.998"
+       y="13125.017"
        inkscape:label="Office" />
     <rect
-       style="display:inline;fill:#dfdfd8;stroke-width:0.264583"
-       id="rect3-0"
-       width="1750.0001"
-       height="2949.9971"
-       x="3249.9998"
-       y="775.00146"
-       inkscape:label="Office" />
-    <rect
-       style="display:inline;fill:#dfdfd8;stroke-width:0.264583"
-       id="rect4-9"
-       width="3750.0002"
-       height="875.00006"
-       x="1249.9995"
-       y="3849.9985"
-       inkscape:label="Office" />
-    <path
-       style="display:inline;fill:#dfdfd8;stroke-width:0.264583"
-       d="m 5125,783.70135 h 750.0001 L 6750.0003,4733.6983 H 5125 Z"
-       id="path4-3"
-       inkscape:label="Entrance" />
+       style="fill:#ffff00;stroke:#000000;stroke-width:0.0806285"
+       id="rect7"
+       width="8499.8428"
+       height="874.8974"
+       x="7500.1167"
+       y="17000.117"
+       inkscape:label="Cooridor" />
   </g>
 </svg>
