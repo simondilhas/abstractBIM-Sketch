@@ -672,6 +672,4 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
 
         os.makedirs(output_dir, exist_ok=True)
         creator.ifc.write(ifc_file)
-        
-if __name__ == "__main__":
-    process_svg_layers("test/groundfloor_test1.svg", "output")
+ 

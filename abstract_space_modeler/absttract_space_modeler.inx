@@ -1,6 +1,0 @@
-<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-    <name>Create IFC Model</name>
-    <id>create_ifc</id>
-    <param name="ifc_path" type="string" _gui-text="Output IFC Path" _gui-description="Specify the path to save the generated IFC file" />
-    <script file="__init__.py" />
-</inkscape-extension>
