@@ -570,6 +570,14 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
     site_layer = root.find(".//*[@inkscape:label='Site=Perimeter1']", ns)
     site_name = site_layer.get(f'{{{ns["inkscape"]}}}label').split('=')[1]
 
+    # Cache paths data
+    paths, attributes, svg_attributes = svg2paths2(svg_file)
+    path_dict = {}
+    
+    # Build a dictionary of paths based on their positions in the SVG
+    for i, (path, attr) in enumerate(zip(paths, attributes)):
+        path_dict[attr.get('d', '')] = path
+
     def parse_transform_matrix(transform_str):
         if not transform_str or 'matrix' not in transform_str:
             return None
@@ -641,10 +649,8 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
 
                 for elem in space_layer:
                     tag = elem.tag.split('}')[-1]
-                    space_name = elem.get(f'{{{ns["inkscape"]}}}label')
-                    if not space_name:
-                        continue
-
+                    space_name = elem.get(f'{{{ns["inkscape"]}}}label') or "Default Space"
+                    
                     # Get accumulated transform from all parent layers
                     transform_matrix = get_accumulated_transform(elem)
                     
@@ -653,15 +659,12 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                         coords = creator.geometry_parser.parse_rect(elem.attrib)
                     elif tag == 'path':
                         d = elem.get('d')
-                        if d:
-                            paths = svgpathtools.svg2paths(svg_file)[0]
-                            # Find the matching path in the SVG
-                            for p in paths:
-                                if str(p.d()) == d:
-                                    coords = creator.geometry_parser.parse_path(p)
-                                    break
+                        if d and d in path_dict:
+                            coords = creator.geometry_parser.parse_path(path_dict[d])
+                        else:
+                            print(f"Warning: Path data not found for space {space_name}")
                     
-                    if coords and space_name:
+                    if coords:  # Removed space_name check since we always have a name now
                         # Apply transformation if exists
                         if transform_matrix:
                             coords = [apply_transform(point, transform_matrix) for point in coords]
@@ -669,6 +672,6 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
 
         os.makedirs(output_dir, exist_ok=True)
         creator.ifc.write(ifc_file)
-
+        
 if __name__ == "__main__":
     process_svg_layers("test/groundfloor_test1.svg", "output")
