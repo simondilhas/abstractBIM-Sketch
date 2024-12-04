@@ -24,15 +24,15 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="cm"
      showguides="true"
-     inkscape:zoom="0.01787629"
-     inkscape:cx="62485.001"
-     inkscape:cy="66372.832"
+     inkscape:zoom="0.01"
+     inkscape:cx="60750"
+     inkscape:cy="90650"
      inkscape:window-width="1832"
      inkscape:window-height="1076"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer6"
      showgrid="true">
     <sodipodi:guide
        position="2719.9999,9199.9929"
@@ -91,48 +91,220 @@
   <defs
      id="defs1" />
   <g
-     inkscape:label="EG, h=0.0"
      inkscape:groupmode="layer"
-     id="layer1">
-    <rect
-       style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-       id="rect1"
-       width="2750.0024"
-       height="3749.9673"
-       x="7500.0059"
-       y="13124.992"
-       inkscape:label="Office" />
-    <rect
-       style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-       id="rect1-5"
-       width="2750.0024"
-       height="3749.9673"
-       x="10374.998"
-       y="13125.017"
-       inkscape:label="Office" />
-    <rect
-       style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-       id="rect1-5-2"
-       width="2750.0024"
-       height="3749.9673"
-       x="13249.998"
-       y="13125.017"
-       inkscape:label="Office" />
-    <rect
-       style="fill:#ffff00;stroke:#000000;stroke-width:0.0806285"
-       id="rect7"
-       width="8499.8428"
-       height="874.8974"
-       x="7500.1167"
-       y="17000.117"
-       inkscape:label="Cooridor" />
-    <path
-       style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
-       d="m 16125,13125 v 4750 h 2625 v -4750 z"
-       id="path3" />
-    <path
-       style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
-       d="m 18875,13125 v 4875 l 3625,-2000 -875,-2750 z"
-       id="path1" />
+     id="layer3"
+     inkscape:label="Project=Testprojekt">
+    <g
+       inkscape:groupmode="layer"
+       id="layer2"
+       inkscape:label="Site=Perimeter1">
+      <g
+         inkscape:groupmode="layer"
+         id="layer2-5"
+         inkscape:label="Building=HausB">
+        <g
+           inkscape:label="Storey=EG, h=0.0"
+           inkscape:groupmode="layer"
+           id="layer1">
+          <g
+             inkscape:groupmode="layer"
+             id="layer6"
+             inkscape:label="Space, h=2.5">
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1"
+               width="2750.0024"
+               height="3749.9673"
+               x="7500.0059"
+               y="13124.992"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1-5"
+               width="2750.0024"
+               height="3749.9673"
+               x="10374.998"
+               y="13125.017"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1-5-2"
+               width="2750.0024"
+               height="3749.9673"
+               x="13249.998"
+               y="13125.017"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#ffff00;stroke:#000000;stroke-width:0.0806285"
+               id="rect7"
+               width="8499.8428"
+               height="874.8974"
+               x="7500.1167"
+               y="17000.117"
+               inkscape:label="Cooridor" />
+            <path
+               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
+               d="m 16125,13125 v 4750 h 2625 v -4750 z"
+               id="path3" />
+            <path
+               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
+               d="m 18875,13125 v 4875 l 3625,-2000 -875,-2750 z"
+               id="path1" />
+          </g>
+        </g>
+        <g
+           inkscape:groupmode="layer"
+           id="layer7"
+           inkscape:label="Storey=O1, h=3.0">
+          <g
+             inkscape:groupmode="layer"
+             id="layer8"
+             inkscape:label="Space, h=2.5">
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1-2"
+               width="2750.0024"
+               height="3749.9673"
+               x="7500.0059"
+               y="13124.992"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1-5-9"
+               width="2750.0024"
+               height="3749.9673"
+               x="10374.998"
+               y="13125.017"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1-5-2-1"
+               width="2750.0024"
+               height="3749.9673"
+               x="13249.998"
+               y="13125.017"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#ffff00;stroke:#000000;stroke-width:0.0806285"
+               id="rect7-2"
+               width="8499.8428"
+               height="874.8974"
+               x="7500.1167"
+               y="17000.117"
+               inkscape:label="Cooridor" />
+            <path
+               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
+               d="m 16125,13125 v 4750 h 2625 v -4750 z"
+               id="path3-7" />
+          </g>
+        </g>
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="layer2-5-6"
+         inkscape:label="Building=HausA"
+         transform="matrix(0.53021319,0.39849141,-0.93456802,1.2434905,24019.86,4256.7696)">
+        <g
+           inkscape:label="Storey=EG, h=0.0"
+           inkscape:groupmode="layer"
+           id="layer1-0">
+          <g
+             inkscape:groupmode="layer"
+             id="layer6-6"
+             inkscape:label="IfcSpace, h=2.5">
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1-26"
+               width="2750.0024"
+               height="3749.9673"
+               x="7500.0059"
+               y="13124.992"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1-5-1"
+               width="2750.0024"
+               height="3749.9673"
+               x="10374.998"
+               y="13125.017"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1-5-2-8"
+               width="2750.0024"
+               height="3749.9673"
+               x="13249.998"
+               y="13125.017"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#ffff00;stroke:#000000;stroke-width:0.0806285"
+               id="rect7-7"
+               width="8499.8428"
+               height="874.8974"
+               x="7500.1167"
+               y="17000.117"
+               inkscape:label="Cooridor" />
+            <path
+               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
+               d="m 16125,13125 v 4750 h 2625 v -4750 z"
+               id="path3-9" />
+            <path
+               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
+               d="m 18875,13125 v 4875 l 3625,-2000 -875,-2750 z"
+               id="path1-2" />
+          </g>
+        </g>
+        <g
+           inkscape:groupmode="layer"
+           id="layer7-0"
+           inkscape:label="Storey=O1, h=3.0">
+          <g
+             inkscape:groupmode="layer"
+             id="layer8-2"
+             inkscape:label="IfcSpace, h=2.5">
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1-2-3"
+               width="2750.0024"
+               height="3749.9673"
+               x="7500.0059"
+               y="13124.992"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1-5-9-7"
+               width="2750.0024"
+               height="3749.9673"
+               x="10374.998"
+               y="13125.017"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               id="rect1-5-2-1-5"
+               width="2750.0024"
+               height="3749.9673"
+               x="13249.998"
+               y="13125.017"
+               inkscape:label="Office" />
+            <rect
+               style="fill:#ffff00;stroke:#000000;stroke-width:0.0806285"
+               id="rect7-2-9"
+               width="8499.8428"
+               height="874.8974"
+               x="7500.1167"
+               y="17000.117"
+               inkscape:label="Cooridor" />
+            <path
+               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
+               d="m 16125,13125 v 4750 h 2625 v -4750 z"
+               id="path3-7-2" />
+          </g>
+        </g>
+      </g>
+    </g>
   </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="Help"></g>
 </svg>
