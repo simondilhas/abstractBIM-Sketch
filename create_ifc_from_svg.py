@@ -558,7 +558,6 @@ class IfcModelCreator:
                     return False
         return True
 
-
 def process_svg_layers(svg_file: str, output_dir: str) -> None:
     tree = ET.parse(svg_file)
     root = tree.getroot()
@@ -574,7 +573,6 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
     paths, attributes, svg_attributes = svg2paths2(svg_file)
     path_dict = {}
     
-    # Build a dictionary of paths based on their positions in the SVG
     for i, (path, attr) in enumerate(zip(paths, attributes)):
         path_dict[attr.get('d', '')] = path
 
@@ -602,7 +600,6 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                     if transform_matrix is None:
                         transform_matrix = matrix
                     else:
-                        # Combine matrices
                         a1, b1, c1, d1, e1, f1 = transform_matrix
                         a2, b2, c2, d2, e2, f2 = matrix
                         transform_matrix = [
@@ -615,6 +612,51 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                         ]
             current = current.getparent() if hasattr(current, 'getparent') else None
         return transform_matrix
+
+    def process_space_elements(space_layer, space_height, unique_storey_name, creator, path_dict):
+        """Helper function to process all elements in a space layer recursively"""
+        for elem in space_layer:
+            tag = elem.tag.split('}')[-1]
+            space_name = elem.get(f'{{{ns["inkscape"]}}}label') or "Default Space"
+            
+            transform_matrix = get_accumulated_transform(elem)
+            
+            coords = None
+            if tag == 'rect':
+                coords = creator.geometry_parser.parse_rect(elem.attrib)
+            elif tag == 'path':
+                d = elem.get('d')
+                if d and d in path_dict:
+                    coords = creator.geometry_parser.parse_path(path_dict[d])
+                else:
+                    print(f"Warning: Path data not found for space {space_name}")
+            
+            if coords:
+                if transform_matrix:
+                    coords = [apply_transform(point, transform_matrix) for point in coords]
+                creator.create_space(coords, space_height, unique_storey_name, space_name)
+
+            # Recursively process child elements
+            for child in elem:
+                child_tag = child.tag.split('}')[-1]
+                if child_tag in ['rect', 'path']:
+                    space_name = child.get(f'{{{ns["inkscape"]}}}label') or "Default Space"
+                    transform_matrix = get_accumulated_transform(child)
+                    
+                    coords = None
+                    if child_tag == 'rect':
+                        coords = creator.geometry_parser.parse_rect(child.attrib)
+                    elif child_tag == 'path':
+                        d = child.get('d')
+                        if d and d in path_dict:
+                            coords = creator.geometry_parser.parse_path(path_dict[d])
+                        else:
+                            print(f"Warning: Path data not found for space {space_name}")
+                    
+                    if coords:
+                        if transform_matrix:
+                            coords = [apply_transform(point, transform_matrix) for point in coords]
+                        creator.create_space(coords, space_height, unique_storey_name, space_name)
 
     for building_layer in site_layer.findall("*[@inkscape:label]", ns):
         label = building_layer.get(f'{{{ns["inkscape"]}}}label')
@@ -629,6 +671,10 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
         creator.create_project_context(project_name=project_name)
         creator.create_spatial_hierarchy(site_name=site_name, building_name=building_name)
         
+        # Dictionary to keep track of storey names and their count
+        storey_names = {}
+        
+        # First pass to collect all storey names
         for storey_layer in building_layer.findall(".//*[@inkscape:label]", ns):
             storey_label = storey_layer.get(f'{{{ns["inkscape"]}}}label')
             if not storey_label.startswith('Storey='):
@@ -636,40 +682,53 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                 
             parts = storey_label.split(',')
             storey_name = parts[0].split('=')[1].strip()
+            storey_names[storey_name] = storey_names.get(storey_name, 0) + 1
+        
+        # Print warning for duplicate storey names
+        duplicates = {name: count for name, count in storey_names.items() if count > 1}
+        if duplicates:
+            print(f"Warning: Found duplicate storey names in building {building_name}:")
+            for name, count in duplicates.items():
+                print(f"  - '{name}' appears {count} times")
+        
+        # Reset counters for the second pass
+        name_counters = {name: 1 for name in storey_names.keys()}
+        
+        # Process each storey
+        for storey_layer in building_layer.findall(".//*[@inkscape:label]", ns):
+            storey_label = storey_layer.get(f'{{{ns["inkscape"]}}}label')
+            if not storey_label.startswith('Storey='):
+                continue
+                
+            parts = storey_label.split(',')
+            original_storey_name = parts[0].split('=')[1].strip()
             z_position = float(parts[1].split('h=')[1].strip())
             
-            creator.create_storey(storey_name, z_position)
+            # Generate unique name if necessary
+            if storey_names[original_storey_name] > 1:
+                unique_storey_name = f"{original_storey_name}_{name_counters[original_storey_name]}"
+                name_counters[original_storey_name] += 1
+            else:
+                unique_storey_name = original_storey_name
             
+            creator.create_storey(unique_storey_name, z_position)
+
+            # Process spaces in this storey
             for space_layer in storey_layer.findall(".//*[@inkscape:label]", ns):
                 space_label = space_layer.get(f'{{{ns["inkscape"]}}}label')
-                if not (space_label and ('Space' in space_label)):
+                if not space_label or 'Space' not in space_label:
                     continue
-                
-                space_height = float(space_label.split('h=')[1].strip())              
 
-                for elem in space_layer:
-                    tag = elem.tag.split('}')[-1]
-                    space_name = elem.get(f'{{{ns["inkscape"]}}}label') or "Default Space"
-                    
-                    # Get accumulated transform from all parent layers
-                    transform_matrix = get_accumulated_transform(elem)
-                    
-                    coords = None
-                    if tag == 'rect':
-                        coords = creator.geometry_parser.parse_rect(elem.attrib)
-                    elif tag == 'path':
-                        d = elem.get('d')
-                        if d and d in path_dict:
-                            coords = creator.geometry_parser.parse_path(path_dict[d])
-                        else:
-                            print(f"Warning: Path data not found for space {space_name}")
-                    
-                    if coords:  # Removed space_name check since we always have a name now
-                        # Apply transformation if exists
-                        if transform_matrix:
-                            coords = [apply_transform(point, transform_matrix) for point in coords]
-                        creator.create_space(coords, space_height, storey_name, space_name)
+                try:
+                    if 'h=' in space_label:
+                        space_height = float(space_label.split('h=')[1].strip())
+                        print(f"Found space group height: {space_height}")
+                        process_space_elements(space_layer, space_height, unique_storey_name, creator, path_dict)
+
+                except (IndexError, ValueError) as e:
+                    print(f"Error processing space group with label '{space_label}': {str(e)}")
+                    print("Skipping this space group and continuing...")
+                    continue
 
         os.makedirs(output_dir, exist_ok=True)
         creator.ifc.write(ifc_file)
- 
