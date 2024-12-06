@@ -665,8 +665,8 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
     def parse_spaces_label(label: str, converter: UnitConverter) -> Tuple[float, float]:
         """Parse height and relative Z from Spaces layer label"""
         parts = label.split(',')
-        height = 0.0
-        rel_z = 0.0
+        height = None  # No default - must be specified
+        rel_z = 0.0    # Optional - defaults to 0.0
         
         for part in parts:
             part = part.strip()
@@ -674,6 +674,9 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                 height = converter.convert(float(part.split('=')[1]))
             elif part.startswith('relZ='):
                 rel_z = converter.convert(float(part.split('=')[1]))
+        
+        if height is None:
+            raise ValueError("Space height (h=) must be specified in label")
             
         return height, rel_z
 
@@ -730,6 +733,7 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                     coords = [apply_transform(point, transform_matrix) for point in coords]
                 
                 # Calculate absolute Z position
+                print(f"XXXXXXXXXXXXXXXXX {rel_z}")
                 absolute_z = storey_z + rel_z
                 coords = [Point3D(p.x, p.y, absolute_z) for p in coords]
                 creator.create_space(coords, space_height, storey_name, space_name)
@@ -796,6 +800,8 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                 try:
                     
                     space_height, rel_z = parse_spaces_label(group_label, converter)
+                    print(f"YYYYYYYYYY {space_height}, {rel_z}")
+
                     if space_height > 0:
                         process_space_elements(
                             group, 

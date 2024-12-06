@@ -49,10 +49,10 @@
                     inkscape:groupmode="layer"
                     id="3fRjRsBzT8Ye_nDbA6a9xN"
                     inkscape:label="Storey=UG, Z=-340.00">
-                    <g
-                        inkscape:groupmode="layer"
-                        id="spaces_3fRjRsBzT8Ye_nDbA6a9xN_h300.00_z0.00"
-                        inkscape:label="Spaces, h=300.00, relZ=0.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3fRjRsBzT8Ye_nDbA6a9xN_h300.00_z0.00"
+                inkscape:label="Spaces, h=300.00, relZ=0.00">
                         <path
                                 id="1R1f5ig8f2n9tJiDInF$9J"
                                 d="M -0.000,-0.000 V 775.000 H 712.500 V -0.000 Z"
@@ -64,10 +64,10 @@
                     inkscape:groupmode="layer"
                     id="3Grfa0xNX31RW_79ewGkrq"
                     inkscape:label="Storey=EG, Z=0.00">
-                    <g
-                        inkscape:groupmode="layer"
-                        id="spaces_3Grfa0xNX31RW_79ewGkrq_h100.00_z-0.00"
-                        inkscape:label="Spaces, h=100.00, relZ=0.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3Grfa0xNX31RW_79ewGkrq_h100.00_z-0.00"
+                inkscape:label="Spaces, h=100.00, relZ=0.00">
                         <path
                                 id="2t0LvWo7v1chh9ls1iserM"
                                 d="M -488.905,-40.000 H 752.500 L 765.750,1226.842 L 1300.195,1318.117 L 1134.369,-473.276 L -208.205,-724.958 H -374.382 Z"
@@ -79,10 +79,10 @@
                                 inkscape:label="UUF"
                                 style="fill:#4cdb33;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
-                    <g
-                        inkscape:groupmode="layer"
-                        id="spaces_3Grfa0xNX31RW_79ewGkrq_h300.00_z0.00"
-                        inkscape:label="Spaces, h=300.00, relZ=0.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3Grfa0xNX31RW_79ewGkrq_h300.00_z0.00"
+                inkscape:label="Spaces, h=300.00, relZ=0.00">
                         <path
                                 id="0tKQ4bcJ991Pc4SPg6P8M7"
                                 d="M -0.000,262.500 V 512.500 H 400.000 V 262.500 Z"
@@ -109,20 +109,20 @@
                     inkscape:groupmode="layer"
                     id="2itJGxRlD8ZgRnkf7QwMDP"
                     inkscape:label="Storey=O1, Z=340.00">
-                    <g
-                        inkscape:groupmode="layer"
-                        id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h100.00_z0.00"
-                        inkscape:label="Spaces, h=100.00, relZ=0.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h100.00_z0.00"
+                inkscape:label="Spaces, h=100.00, relZ=0.00">
                         <path
                                 id="1JbHP3cbHDKRL3nSR_KOpa"
                                 d="M -239.800,0.000 V 775.000 H -39.800 V 0.000 Z"
                                 inkscape:label="Balkon"
                                 style="fill:#44de93;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
-                    <g
-                        inkscape:groupmode="layer"
-                        id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h300.00_z-0.00"
-                        inkscape:label="Spaces, h=300.00, relZ=0.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h300.00_z-0.00"
+                inkscape:label="Spaces, h=300.00, relZ=0.00">
                         <path
                                 id="27wGAU67LDvf_xrIGTTPnn"
                                 d="M 412.500,-0.000 V 775.000 H 562.500 V -0.000 Z"
@@ -144,10 +144,10 @@
                                 inkscape:label="Büro"
                                 style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
-                    <g
-                        inkscape:groupmode="layer"
-                        id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h340.00_z-0.40"
-                        inkscape:label="Spaces, h=340.00, relZ=-0.40">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h340.00_z-40.00"
+                inkscape:label="Spaces, h=340.00, relZ=-40.00">
                         <path
                                 id="1a3xgiKMv1g9hVbx3L0AlJ"
                                 d="M 562.500,0.000 V 775.000 H 712.500 V 0.000 Z"
@@ -159,10 +159,10 @@
                     inkscape:groupmode="layer"
                     id="14zN82$QrDyPC_LT7Lv8kM"
                     inkscape:label="Storey=O2, Z=690.00">
-                    <g
-                        inkscape:groupmode="layer"
-                        id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00"
-                        inkscape:label="Spaces, h=100.00, relZ=0.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00"
+                inkscape:label="Spaces, h=100.00, relZ=0.00">
                         <path
                                 id="0YbXTLaPf18AltEWq3WAEH"
                                 d="M -239.800,0.000 V 775.000 H 712.500 V 0.000 Z"

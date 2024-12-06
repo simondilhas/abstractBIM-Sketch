@@ -311,15 +311,16 @@ class SVGGenerator:
             
             # Create single layer for each unique height and Z combination
             for (height, rel_z), group_spaces in sorted(space_groups.items()):
-                z_offset_str = "0.00" if abs(rel_z) < 0.001 else f"{rel_z:.2f}"
+                # Convert rel_z before using it in formatting
+                converted_rel_z = self.unit_converter.convert(rel_z)
+                z_offset_str = "0.00" if abs(rel_z) < 0.001 else f"{converted_rel_z:.2f}"
                 
                 # Generate unique ID for this group
-                group_id = f"spaces_{storey_guid}_h{height:.2f}_z{rel_z:.2f}"
-                
-                elements.append(f'''                    <g
-                        inkscape:groupmode="layer"
-                        id="{group_id}"
-                        inkscape:label="Spaces, h={height:.2f}, relZ={z_offset_str}">''')
+                group_id = f"spaces_{storey_guid}_h{height:.2f}_z{converted_rel_z:.2f}"
+                elements.append(f''' <g
+                inkscape:groupmode="layer"
+                id="{group_id}"
+                inkscape:label="Spaces, h={height:.2f}, relZ={z_offset_str}">''')
                 
                 # Add all spaces with this height and Z to the same layer
                 for space in group_spaces:
