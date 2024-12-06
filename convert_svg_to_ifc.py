@@ -12,6 +12,8 @@ import ifcopenshell.guid
 import os
 from lxml import etree
 
+from utils.unit_class import UnitConverter, ModelUnit
+
 @dataclass
 class Point3D:
     x: float
@@ -21,66 +23,100 @@ class Point3D:
     def to_list(self) -> List[float]:
         return [self.x, self.y, self.z]
 
+
 class SVGGeometryParser:
+    def __init__(self):
+        self.converter = UnitConverter(
+            source_unit=ModelUnit.CENTIMETERS,
+            target_unit=ModelUnit.METERS
+        )
+
     @staticmethod
-    def parse_rect(attr: Dict[str, str], scale: float = 1000.0) -> List[Point3D]:
-        """Parse rectangle from SVG attributes."""
-        x = float(attr.get('x', 0)) / scale
-        y = float(attr.get('y', 0)) / scale
-        width = float(attr.get('width', 0)) / scale
-        height = float(attr.get('height', 0)) / scale
+    def _validate_geometry(points: List[Point3D]) -> bool:
+        """Check if the geometry forms a valid polygon"""
+        # Print for debugging
+        print(f"\nValidating {len(points)} points:")
+        for p in points:
+            print(f"({p.x}, {p.y})")
+
+        # Need at least 3 non-collinear points
+        if len(points) < 3:
+            print("Too few points")
+            return False
+            
+        # Calculate area to check for non-zero area polygon
+        area = 0.0
+        for i in range(len(points)-1):
+            area += points[i].x * points[i+1].y - points[i+1].x * points[i].y
+        area = abs(area) / 2.0
+        
+        print(f"Polygon area: {area}")
+        return area > 1e-6
+
+
+    def parse_rect(self, attr: Dict[str, str]) -> List[Point3D]:
+        """Parse rectangle from SVG attributes (cm) to meters."""
+        x = self.converter.convert(float(attr.get('x', 0)))
+        y = self.converter.convert(float(attr.get('y', 0)))
+        width = self.converter.convert(float(attr.get('width', 0)))
+        height = self.converter.convert(float(attr.get('height', 0)))
 
         return [
             Point3D(x, y),
             Point3D(x + width, y),
             Point3D(x + width, y + height),
             Point3D(x, y + height),
-            Point3D(x, y)  # Close the polygon
+            Point3D(x, y)
         ]
 
-    @staticmethod
-    def parse_path(path: Path, scale: float = 1000.0) -> List[Point3D]:
-        """Parse path from SVG path element."""
+    def parse_path(self, path_obj) -> List[Point3D]:
+        """Parse path from SVG (cm) to meters."""
         points = []
-        for segment in path:
-            # Get start point of each segment
-            start = segment.start
-            points.append(Point3D(
-                float(start.real) / scale,
-                float(start.imag) / scale
-            ))
-        
-        # Add the end point of the last segment if it's different
-        if path:
-            end = path[-1].end
-            if points and (end.real != points[0].x or end.imag != points[0].y):
-                points.append(Point3D(
-                    float(end.real) / scale,
-                    float(end.imag) / scale
-                ))
-            
-            # Close the polygon if needed
-            if points and (points[0].x != points[-1].x or points[0].y != points[-1].y):
-                points.append(Point3D(points[0].x, points[0].y))
+        for segment in path_obj:
+            x = self.converter.convert(float(segment.start.real))
+            y = self.converter.convert(float(segment.start.imag))
+            points.append(Point3D(x, y))
 
-        points = SVGGeometryParser.ensure_clockwise(points)
+        if path_obj:
+            end = path_obj[-1].end
+            end_x = self.converter.convert(float(end.real))
+            end_y = self.converter.convert(float(end.imag))
+            end_point = Point3D(end_x, end_y)
+            if abs(end_point.x - points[0].x) > 1e-6 or abs(end_point.y - points[0].y) > 1e-6:
+                points.append(end_point)
+
+        if points and (abs(points[0].x - points[-1].x) > 1e-6 or abs(points[0].y - points[-1].y) > 1e-6):
+            points.append(Point3D(points[0].x, points[0].y))
+        
+        return points
+        
+        # Close polygon if needed
+        if points and (abs(points[0].x - points[-1].x) > 1e-6 or abs(points[0].y - points[-1].y) > 1e-6):
+            points.append(Point3D(points[0].x, points[0].y))
+        
         return points
 
     @staticmethod
     def simplify_polygon(points: List[Point3D], tolerance: float = 0.001) -> List[Point3D]:
-        """Simplify polygon by removing collinear points."""
+        """Simplify polygon by removing collinear points while preserving shape."""
         if len(points) < 3:
             return points
-
+            
         def is_collinear(p1: Point3D, p2: Point3D, p3: Point3D) -> bool:
-            area = abs((p2.x - p1.x) * (p3.y - p1.y) - (p3.x - p1.x) * (p2.y - p1.y)) / 2.0
+            # Calculate triangle area
+            area = abs((p2.x - p1.x) * (p3.y - p1.y) - (p3.x - p1.x) * (p2.y - p1.y))
             return area < tolerance
-
+            
         result = [points[0]]
-        for i in range(1, len(points) - 1):
-            if not is_collinear(result[-1], points[i], points[i + 1]):
+        for i in range(1, len(points)-1):
+            if not is_collinear(result[-1], points[i], points[i+1]):
                 result.append(points[i])
         result.append(points[-1])
+
+        # Ensure we didn't collapse the polygon
+        if len(result) < 3:
+            return points
+            
         return result
     
     @staticmethod
@@ -299,24 +335,34 @@ class IfcModelCreator:
 
 
     def create_space(self, coordinates: List[Point3D], space_height: float, storey_name: str, long_name: Optional[str] = None) -> None:
+        print(f"\nCreating space: {long_name}")
         storey = self.storeys.get(storey_name)
         if not storey:
             print(f"Warning: Storey {storey_name} not found - skipping space")
             return
+
         simplified_coords = SVGGeometryParser.simplify_polygon(coordinates)
         if len(simplified_coords) < 4:
             print(f"Warning: Invalid polygon with {len(simplified_coords)} points - skipping")
             return
+
         space_placement = self._create_local_placement(storey.ObjectPlacement)
         ifc_space = self._create_spatial_element(
             "IfcSpace",
             long_name or "Space",
             space_placement
         )
+        print(f"Created IfcSpace with GlobalId: {ifc_space.GlobalId}")
+        
         ifc_space.LongName = long_name
         geometry = self._create_space_geometry(simplified_coords, space_height)
+        print(f"Created geometry: {geometry is not None}")
+        
         ifc_space.Representation = geometry
+        print(f"Assigned representation to space: {ifc_space.Representation is not None}")
+        
         self._create_aggregation(storey, [ifc_space])
+        print("Space aggregation created")
 
     def _create_aggregation(self, relating_object: Any, related_objects: List[Any]) -> None:
         """Create an aggregation relationship."""
@@ -574,19 +620,15 @@ def find_layer_by_prefix(root: etree._Element, prefix: str, ns: Dict[str, str]) 
     raise ValueError(f"No layer found with label starting with '{prefix}' in the SVG file.")
 
 def process_svg_layers(svg_file: str, output_dir: str) -> None:
-    # Parse SVG with lxml
     tree = etree.parse(svg_file)
     root = tree.getroot()
-
-    # Extract namespaces and remap default namespace
     ns = {k if k else "default": v for k, v in root.nsmap.items()}
-
-    # Cache paths data first
+    
     paths, attributes, svg_attributes = svg2paths2(svg_file)
     path_dict = {attr.get('d', ''): path for path, attr in zip(paths, attributes)}
 
-    # Helper functions for transforms
     def parse_transform_matrix(transform_str):
+
         if not transform_str or 'matrix' not in transform_str:
             return None
         values = [float(x) for x in transform_str.split('(')[1].split(')')[0].split(',')]
@@ -613,55 +655,60 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                         a1, b1, c1, d1, e1, f1 = transform_matrix
                         a2, b2, c2, d2, e2, f2 = matrix
                         transform_matrix = [
-                            a1*a2 + c1*b2,
-                            b1*a2 + d1*b2,
-                            a1*c2 + c1*d2,
-                            b1*c2 + d1*d2,
-                            a1*e2 + c1*f2 + e1,
-                            b1*e2 + d1*f2 + f1
+                            a1*a2 + c1*b2, b1*a2 + d1*b2,
+                            a1*c2 + c1*d2, b1*c2 + d1*d2,
+                            a1*e2 + c1*f2 + e1, b1*e2 + d1*f2 + f1
                         ]
             current = current.getparent() if hasattr(current, 'getparent') else None
         return transform_matrix
 
-    def parse_z_info(label: str) -> Tuple[float, float]:
-        """Parse Z and height information from a label"""
-        parts = label.split(',')
-        absolute_z = 0.0
-        height = 0.0
-        
-        for part in parts:
-            part = part.strip()
-            if part.startswith('Z='):
-                absolute_z = float(part.split('=')[1])
-            elif part.startswith('h='):
-                height = float(part.split('=')[1])
-        
-        return absolute_z, height
-
-    def parse_space_z_info(label: str) -> Tuple[float, float]:
-        """Parse space height and relative Z information"""
+    def parse_spaces_label(label: str, converter: UnitConverter) -> Tuple[float, float]:
+        """Parse height and relative Z from Spaces layer label"""
         parts = label.split(',')
         height = 0.0
-        relative_z = 0.0
+        rel_z = 0.0
         
         for part in parts:
             part = part.strip()
             if part.startswith('h='):
-                height = float(part.split('=')[1])
-            elif part.startswith('Z='):
-                z_value = part.split('=')[1].strip()
-                relative_z = float(z_value)
-        
-        return height, relative_z
+                height = converter.convert(float(part.split('=')[1]))
+            elif part.startswith('relZ='):
+                rel_z = converter.convert(float(part.split('=')[1]))
+            
+        return height, rel_z
 
-    def process_space_elements(space_layer, space_height, storey_name, creator, relative_z=0.0):
-        """Process space elements with Z offset support"""
-        def process_single_element(elem):
+    def parse_storey_label(label: str, converter: UnitConverter) -> Tuple[str, float]:
+        """Parse storey name and Z position from Storey layer label"""
+        parts = label.split(',')
+        name = parts[0].split('=')[1].strip()
+        z_pos = 0.0
+        
+        for part in parts[1:]:
+            if 'Z=' in part:
+                z_pos = converter.convert(float(part.split('=')[1]))
+                
+        return name, z_pos
+    
+    def process_space_elements(space_layer, space_height, storey_name, creator, storey_z: float, rel_z: float = 0.0):
+        """Process space elements with debug logging"""
+        def process_element(elem):
             tag = elem.tag.split('}')[-1]
             if tag not in ['rect', 'path']:
                 return
-            
+                
             space_name = elem.get(f'{{{ns["inkscape"]}}}label') or "Default Space"
+            print(f"\nProcessing space: {space_name}")
+            
+            if tag == 'path':
+                d = elem.get('d')
+                print(f"Path data: {d}")
+                print(f"In path_dict: {d in path_dict}")
+                if d and d in path_dict:
+                    path = path_dict[d]
+                    points = [complex(seg.start.real, seg.start.imag) for seg in path]
+                    print(f"Points found: {len(points)}")
+                    print(f"First few points: {points[:3]}")
+
             transform_matrix = get_accumulated_transform(elem)
             
             coords = None
@@ -673,52 +720,55 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                     coords = creator.geometry_parser.parse_path(path_dict[d])
             
             if coords:
+                print(f"Coordinates generated: {len(coords)}")
+            else:
+                print("No coordinates generated")
+
+               
+            if coords:
                 if transform_matrix:
                     coords = [apply_transform(point, transform_matrix) for point in coords]
-                # Add Z offset to the coordinates
-                if relative_z != 0:
-                    coords = [Point3D(p.x, p.y, relative_z) for p in coords]
+                
+                # Calculate absolute Z position
+                absolute_z = storey_z + rel_z
+                coords = [Point3D(p.x, p.y, absolute_z) for p in coords]
                 creator.create_space(coords, space_height, storey_name, space_name)
 
-        # Process all elements in the layer
         for elem in space_layer:
-            process_single_element(elem)
-            # Process child elements recursively
+            process_element(elem)
             for child in elem:
-                process_single_element(child)
+                process_element(child)
 
-    # Find the project and site layers
-    project_layer, project_name = find_layer_by_prefix(root, "Project=", ns)
-    print(f"Found project: {project_name}")
+    # Find and process project and site
+    project_layer = next(elem for elem in root.iter() if elem.get(f'{{{ns["inkscape"]}}}label', '').startswith('Project='))
+    project_name = project_layer.get(f'{{{ns["inkscape"]}}}label').split('=')[1]
     
-    site_layer, site_name = find_layer_by_prefix(root, "Site=", ns)
-    print(f"Found site: {site_name}")
+    site_layer = next(elem for elem in project_layer.iter() if elem.get(f'{{{ns["inkscape"]}}}label', '').startswith('Site='))
+    site_name = site_layer.get(f'{{{ns["inkscape"]}}}label').split('=')[1]
 
     # Process buildings
-    for building_layer in site_layer.findall(f"*[@{{{ns['inkscape']}}}label]"):
-        label = building_layer.get(f'{{{ns["inkscape"]}}}label')
-        if not label.startswith('Building='):
+    for building_layer in site_layer:
+        building_label = building_layer.get(f'{{{ns["inkscape"]}}}label', '')
+        if not building_label.startswith('Building='):
             continue
             
-        building_name = label.split('=')[1]
+        building_name = building_label.split('=')[1]
         ifc_file = f"{output_dir}/{project_name}_{building_name}.ifc"
         
         creator = IfcModelCreator()
         creator.create_owner_history()
-        creator.create_project_context(project_name=project_name)
-        creator.create_spatial_hierarchy(site_name=site_name, building_name=building_name)
+        creator.create_project_context(project_name)
+        creator.create_spatial_hierarchy(site_name, building_name)
         
-        # First collect all storeys and their absolute Z positions
+        # Process storeys
         storeys_info = {}
         for storey_layer in building_layer.findall(f".//*[@{{{ns['inkscape']}}}label]"):
-            storey_label = storey_layer.get(f'{{{ns["inkscape"]}}}label')
-            if not storey_label or not storey_label.startswith('Storey='):
+            storey_label = storey_layer.get(f'{{{ns["inkscape"]}}}label', '')
+            if not storey_label.startswith('Storey='):
                 continue
-                
-            storey_name = storey_label.split('=')[1].split(',')[0].strip()
-            absolute_z, height = parse_z_info(storey_label)
             
-            # Handle duplicate storey names
+            converter = creator.geometry_parser.converter
+            storey_name, storey_z = parse_storey_label(storey_label, converter)
             unique_name = storey_name
             counter = 1
             while unique_name in storeys_info:
@@ -726,37 +776,37 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                 counter += 1
             
             storeys_info[unique_name] = {
-                'absolute_z': absolute_z,
-                'height': height,
+                'z_position': storey_z,
                 'layer': storey_layer
             }
-        
-        # Process storeys in order of their absolute Z position
-        for storey_name, info in sorted(storeys_info.items(), key=lambda x: x[1]['absolute_z']):
+
+        # Create and process storeys in order
+        for storey_name, info in sorted(storeys_info.items(), key=lambda x: x[1]['z_position']):
             storey_layer = info['layer']
-            absolute_z = info['absolute_z']
+            storey_z = info['z_position']
             
-            creator.create_storey(storey_name, absolute_z)
+            creator.create_storey(storey_name, storey_z)
             
-            # Process spaces in this storey
-            for space_layer in storey_layer.findall(f".//*[@{{{ns['inkscape']}}}label]"):
-                space_label = space_layer.get(f'{{{ns["inkscape"]}}}label')
-                if not space_label or 'Spaces' not in space_label:
+            # Find and process spaces groups
+            for group in storey_layer.findall(f".//*[@{{{ns['inkscape']}}}label]"):
+                group_label = group.get(f'{{{ns["inkscape"]}}}label', '')
+                if not group_label.startswith('Spaces'):
                     continue
 
                 try:
-                    space_height, relative_z = parse_space_z_info(space_label)
-                    if space_height > 0:  # Only process if height is specified
+                    
+                    space_height, rel_z = parse_spaces_label(group_label, converter)
+                    if space_height > 0:
                         process_space_elements(
-                            space_layer,
+                            group, 
                             space_height,
                             storey_name,
                             creator,
-                            relative_z
+                            storey_z,
+                            rel_z
                         )
-
-                except (IndexError, ValueError) as e:
-                    print(f"Error processing space group with label '{space_label}': {str(e)}")
+                except (ValueError, IndexError) as e:
+                    print(f"Error processing space group '{group_label}': {str(e)}")
                     continue
 
         os.makedirs(output_dir, exist_ok=True)

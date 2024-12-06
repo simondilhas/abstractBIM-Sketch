@@ -6,13 +6,11 @@ from shapely.ops import unary_union
 import hashlib
 from typing import Dict, List, Tuple, Optional
 from dataclasses import dataclass
-from enum import Enum
 import math
 
-class SVGUnit(Enum):
-    CM = "cm"
-    MM = "mm"
-    M = "m"
+from utils.unit_class import UnitConverter, ModelUnit
+
+
 
 @dataclass
 class ViewBox:
@@ -36,11 +34,21 @@ class SpaceData:
     space_height: float
     absolute_z: float  # Absolute Z position
 
+
+
 class SVGGenerator:
-    def __init__(self, unit: SVGUnit = SVGUnit.CM, padding_percent: float = 0.1):
-        self.unit = unit
+    def __init__(self, model_unit: ModelUnit = ModelUnit.METERS, 
+                 output_unit: ModelUnit = ModelUnit.CENTIMETERS,
+                 padding_percent: float = 0.1):
+        self.unit_converter = UnitConverter(model_unit, output_unit)
+        self.unit = ModelUnit(output_unit.value)  # Convert ModelUnit to SVGUnit
         self.padding_percent = padding_percent
         self.settings = self._init_geometry_settings()
+
+    def _process_space_geometry(self, space: 'IfcSpace') -> Tuple[Optional[Polygon], Optional[float]]:
+        shape = ifcopenshell.geom.create_shape(self.settings, space)
+        vertices = np.array(shape.geometry.verts).reshape((-1, 3))
+        vertices = self.unit_converter.convert_points(vertices)
         
     def _init_geometry_settings(self) -> ifcopenshell.geom.settings:
         """Initialize geometry settings with proper configuration"""
@@ -112,7 +120,8 @@ class SVGGenerator:
         """Process space geometry with error handling"""
         try:
             shape = ifcopenshell.geom.create_shape(self.settings, space)
-            vertices = np.array(shape.geometry.verts).reshape((-1, 3))
+            vertices = np.array(shape.geometry.verts).reshape((-1, 3)) * 100 #careful
+
             faces = np.array(shape.geometry.faces).reshape((-1, 3))
             
             # Calculate space height
@@ -199,7 +208,7 @@ class SVGGenerator:
             absolute_z = np.min(vertices[:, 2])
             
             storey_id = storey.GlobalId
-            storey_elevation = float(storey.Elevation or 0)/100 #Carefull with Units
+            storey_elevation = float(storey.Elevation or 0)
             
             if storey_id not in spaces_by_storey_temp:
                 spaces_by_storey_temp[storey_id] = {
@@ -297,7 +306,8 @@ class SVGGenerator:
             elements.append(f'''                <g
                     inkscape:groupmode="layer"
                     id="{storey_guid}"
-                    inkscape:label="Storey={storey_name}, Z={storey_elevation:.2f}">''')
+                    inkscape:label="Storey={storey_name}, Z={self.unit_converter.convert(storey_elevation):.2f}">''')
+            
             
             # Create single layer for each unique height and Z combination
             for (height, rel_z), group_spaces in sorted(space_groups.items()):
@@ -366,8 +376,8 @@ class SVGGenerator:
             units="cm"
             originx="0"
             originy="0"
-            spacingx="0.125"
-            spacingy="0.125"
+            spacingx="12.5"
+            spacingy="12.5"
             empcolor="#0099e5"
             empopacity="0.30196078"
             color="#0099e5"
@@ -422,12 +432,9 @@ def get_project_data(ifc_file) -> dict:
         "building_guid": building.GlobalId if building else "N/A"
     }
 
-def process_ifc(file_path: str, unit: SVGUnit = SVGUnit.CM) -> str:
-    """Process IFC file and generate SVG"""
+def process_ifc(file_path: str, unit: ModelUnit = ModelUnit.CENTIMETERS) -> str:
     ifc_file = ifcopenshell.open(file_path)
-    generator = SVGGenerator(unit=unit)
-    
+    generator = SVGGenerator(model_unit=ModelUnit.METERS, output_unit=unit)
     spaces_by_level = generator.get_spaces_by_storey(ifc_file)
     project_data = get_project_data(ifc_file)
-    
     return generator.generate_svg(spaces_by_level, project_data)

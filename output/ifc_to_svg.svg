@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-    width="23.688151165371654cm"
-    height="24.516906992229966cm"
-    viewBox="-8.643128343669193 -9.292656900006708 23.688151165371654 24.516906992229966"
+    width="2368.8151165371655cm"
+    height="2451.6906992229965cm"
+    viewBox="-864.3128343669194 -929.2656900006708 2368.8151165371655 2451.6906992229965"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -23,8 +23,8 @@
             units="cm"
             originx="0"
             originy="0"
-            spacingx="0.125"
-            spacingy="0.125"
+            spacingx="12.5"
+            spacingy="12.5"
             empcolor="#0099e5"
             empopacity="0.30196078"
             color="#0099e5"
@@ -48,14 +48,14 @@
                 <g
                     inkscape:groupmode="layer"
                     id="3fRjRsBzT8Ye_nDbA6a9xN"
-                    inkscape:label="Storey=UG, Z=-3.40">
+                    inkscape:label="Storey=UG, Z=-340.00">
                     <g
                         inkscape:groupmode="layer"
-                        id="spaces_3fRjRsBzT8Ye_nDbA6a9xN_h3.00_z0.00"
-                        inkscape:label="Spaces, h=3.00, relZ=0.00">
+                        id="spaces_3fRjRsBzT8Ye_nDbA6a9xN_h300.00_z0.00"
+                        inkscape:label="Spaces, h=300.00, relZ=0.00">
                         <path
                                 id="1R1f5ig8f2n9tJiDInF$9J"
-                                d="M -0.000,-0.000 V 7.750 H 7.125 V -0.000 Z"
+                                d="M -0.000,-0.000 V 775.000 H 712.500 V -0.000 Z"
                                 inkscape:label="Keller"
                                 style="fill:#e4676f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
@@ -66,41 +66,41 @@
                     inkscape:label="Storey=EG, Z=0.00">
                     <g
                         inkscape:groupmode="layer"
-                        id="spaces_3Grfa0xNX31RW_79ewGkrq_h1.00_z-0.00"
-                        inkscape:label="Spaces, h=1.00, relZ=0.00">
+                        id="spaces_3Grfa0xNX31RW_79ewGkrq_h100.00_z-0.00"
+                        inkscape:label="Spaces, h=100.00, relZ=0.00">
                         <path
                                 id="2t0LvWo7v1chh9ls1iserM"
-                                d="M -4.889,-0.400 H 7.525 L 7.657,12.268 L 13.002,13.181 L 11.344,-4.733 L -2.082,-7.250 H -3.744 Z"
+                                d="M -488.905,-40.000 H 752.500 L 765.750,1226.842 L 1300.195,1318.117 L 1134.369,-473.276 L -208.205,-724.958 H -374.382 Z"
                                 inkscape:label="BUF"
                                 style="fill:#e4e067;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                         <path
                                 id="37VWRD3Rj79RILAO6JmsmC"
-                                d="M -6.600,9.833 L 7.657,12.268 L 7.624,8.150 H -2.667 V 4.838 L -0.269,4.840 V -0.400 H -4.889 Z"
+                                d="M -660.005,983.343 L 765.750,1226.842 L 762.363,815.000 H -266.688 V 483.799 L -26.888,483.999 V -40.000 H -488.905 Z"
                                 inkscape:label="UUF"
                                 style="fill:#4cdb33;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
                     <g
                         inkscape:groupmode="layer"
-                        id="spaces_3Grfa0xNX31RW_79ewGkrq_h3.00_z0.00"
-                        inkscape:label="Spaces, h=3.00, relZ=0.00">
+                        id="spaces_3Grfa0xNX31RW_79ewGkrq_h300.00_z0.00"
+                        inkscape:label="Spaces, h=300.00, relZ=0.00">
                         <path
                                 id="0tKQ4bcJ991Pc4SPg6P8M7"
-                                d="M -0.000,2.625 V 5.125 H 4.000 V 2.625 Z"
+                                d="M -0.000,262.500 V 512.500 H 400.000 V 262.500 Z"
                                 inkscape:label="Büro"
                                 style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                         <path
                                 id="264dv7pp1As8rJ9tI8DkGm"
-                                d="M -2.398,5.250 V 7.750 H 4.000 V 5.250 Z"
+                                d="M -239.800,525.000 V 775.000 H 400.000 V 525.000 Z"
                                 inkscape:label="Büro"
                                 style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                         <path
                                 id="0RGPEQT7D7_gnmpntPO01R"
-                                d="M 4.125,0.000 V 7.750 H 7.125 V 0.000 Z"
+                                d="M 412.500,0.000 V 775.000 H 712.500 V 0.000 Z"
                                 inkscape:label="Eingangsbereich"
                                 style="fill:#6f8de5;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                         <path
                                 id="0MvsuEqR9EWP0Fhf$6c8n5"
-                                d="M -0.000,0.000 V 2.500 H 4.000 V 0.000 Z"
+                                d="M -0.000,0.000 V 250.000 H 400.000 V 0.000 Z"
                                 inkscape:label="Büro"
                                 style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
@@ -108,49 +108,49 @@
                 <g
                     inkscape:groupmode="layer"
                     id="2itJGxRlD8ZgRnkf7QwMDP"
-                    inkscape:label="Storey=O1, Z=3.40">
+                    inkscape:label="Storey=O1, Z=340.00">
                     <g
                         inkscape:groupmode="layer"
-                        id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h1.00_z0.00"
-                        inkscape:label="Spaces, h=1.00, relZ=0.00">
+                        id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h100.00_z0.00"
+                        inkscape:label="Spaces, h=100.00, relZ=0.00">
                         <path
                                 id="1JbHP3cbHDKRL3nSR_KOpa"
-                                d="M -2.398,0.000 V 7.750 H -0.398 V 0.000 Z"
+                                d="M -239.800,0.000 V 775.000 H -39.800 V 0.000 Z"
                                 inkscape:label="Balkon"
                                 style="fill:#44de93;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
                     <g
                         inkscape:groupmode="layer"
-                        id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h3.00_z-0.00"
-                        inkscape:label="Spaces, h=3.00, relZ=0.00">
+                        id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h300.00_z-0.00"
+                        inkscape:label="Spaces, h=300.00, relZ=0.00">
                         <path
                                 id="27wGAU67LDvf_xrIGTTPnn"
-                                d="M 4.125,-0.000 V 7.750 H 5.625 V -0.000 Z"
+                                d="M 412.500,-0.000 V 775.000 H 562.500 V -0.000 Z"
                                 inkscape:label="Flur"
                                 style="fill:#db33b9;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                         <path
                                 id="2P3NoYPgb5hBqc4ezJkJYV"
-                                d="M -0.000,2.625 V 5.125 H 4.000 V 2.625 Z"
+                                d="M -0.000,262.500 V 512.500 H 400.000 V 262.500 Z"
                                 inkscape:label="Büro"
                                 style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                         <path
                                 id="2I5QpeFq98MBuYZ1ESoFI9"
-                                d="M -0.000,0.000 V 2.500 H 4.000 V 0.000 Z"
+                                d="M -0.000,0.000 V 250.000 H 400.000 V 0.000 Z"
                                 inkscape:label="Büro"
                                 style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                         <path
                                 id="2WllkenNPEROqWYrH1ZuQD"
-                                d="M -0.000,5.250 V 7.750 H 4.000 V 5.250 Z"
+                                d="M -0.000,525.000 V 775.000 H 400.000 V 525.000 Z"
                                 inkscape:label="Büro"
                                 style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
                     <g
                         inkscape:groupmode="layer"
-                        id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h3.40_z-0.40"
-                        inkscape:label="Spaces, h=3.40, relZ=-0.40">
+                        id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h340.00_z-0.40"
+                        inkscape:label="Spaces, h=340.00, relZ=-0.40">
                         <path
                                 id="1a3xgiKMv1g9hVbx3L0AlJ"
-                                d="M 5.625,0.000 V 7.750 H 7.125 V 0.000 Z"
+                                d="M 562.500,0.000 V 775.000 H 712.500 V 0.000 Z"
                                 inkscape:label="Luftraum"
                                 style="fill:#44dedb;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
@@ -158,14 +158,14 @@
                 <g
                     inkscape:groupmode="layer"
                     id="14zN82$QrDyPC_LT7Lv8kM"
-                    inkscape:label="Storey=O2, Z=6.90">
+                    inkscape:label="Storey=O2, Z=690.00">
                     <g
                         inkscape:groupmode="layer"
-                        id="spaces_14zN82$QrDyPC_LT7Lv8kM_h1.00_z0.00"
-                        inkscape:label="Spaces, h=1.00, relZ=0.00">
+                        id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00"
+                        inkscape:label="Spaces, h=100.00, relZ=0.00">
                         <path
                                 id="0YbXTLaPf18AltEWq3WAEH"
-                                d="M -2.398,0.000 V 7.750 H 7.125 V 0.000 Z"
+                                d="M -239.800,0.000 V 775.000 H 712.500 V 0.000 Z"
                                 inkscape:label="Flachdach"
                                 style="fill:#c733db;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
