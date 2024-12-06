@@ -236,7 +236,5 @@ def create_svg(spaces_by_level: Dict[float, List[dict]], project_data: dict, all
                 </g>'''
     return svg_header + namedview + svg_content
 
-if __name__ == "__main__":
-    svg_content = process_ifc("test/Mustermodell V2.ifc")
-    with open("output/ifc_to_svg.svg", "w") as f:
-        f.write(svg_content)
+
+    
