@@ -4,181 +4,364 @@ import numpy as np
 from shapely.geometry import Polygon, MultiPolygon
 from shapely.ops import unary_union
 import hashlib
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Optional
+from dataclasses import dataclass
+from enum import Enum
+import math
 
-def get_color_from_name(name):
-    """Generate a consistent color based on the name"""
-    hash_object = hashlib.md5(str(name).encode())
-    hash_hex = hash_object.hexdigest()
-    return f"#{hash_hex[:6]}"
+class SVGUnit(Enum):
+    CM = "cm"
+    MM = "mm"
+    M = "m"
 
-def get_ifc_unit_scale(ifc_file):
-    """Get the unit scale from IFC file (e.g., meters to cm or mm)"""
-    unit_assignments = ifc_file.by_type("IfcUnitAssignment")
-    for assignment in unit_assignments:
-        for unit in assignment.Units:
-            if unit.is_a("IfcSIUnit") and unit.UnitType == "LENGTHUNIT":
-                prefix = unit.Prefix
-                if prefix == "MILLI":
-                    return 0.001
-                elif prefix == "CENTI":
-                    return 0.01
-                else:
-                    return 1.0  # Default to meters
-    return 1.0  # Default if not specified
-
-
-def get_spaces_by_storey(ifc_file) -> Dict[str, List]:
-    """Get all spaces organized by storey"""
-    spaces_by_storey = {}
+@dataclass
+class ViewBox:
+    min_x: float
+    min_y: float
+    width: float
+    height: float
     
-    for space in ifc_file.by_type('IfcSpace'):
-        for rel in space.Decomposes:
-            if rel.RelatingObject.is_a('IfcBuildingStorey'):
-                storey = rel.RelatingObject
-                if storey.GlobalId not in spaces_by_storey:
-                    spaces_by_storey[storey.GlobalId] = {
-                        'storey': storey,
-                        'spaces': []
-                    }
-                spaces_by_storey[storey.GlobalId]['spaces'].append(space)
-                break
-    
-    return spaces_by_storey
+    def __str__(self) -> str:
+        return f"{self.min_x} {self.min_y} {self.width} {self.height}"
 
-def process_space_geometry(space, settings):
-    """Process individual space geometry and return polygon and actual space height"""
-    try:
-        shape = ifcopenshell.geom.create_shape(settings, space)
-        vertices = np.array(shape.geometry.verts).reshape((-1, 3))
-        faces = np.array(shape.geometry.faces).reshape((-1, 3))
+@dataclass
+class SpaceData:
+    guid: str
+    long_name: str
+    storey: str
+    storey_guid: str
+    points: List[Tuple[float, float]]
+    color: str
+    relative_z: float  # Z position relative to storey elevation
+    space_height: float
+    absolute_z: float  # Absolute Z position
+
+class SVGGenerator:
+    def __init__(self, unit: SVGUnit = SVGUnit.CM, padding_percent: float = 0.1):
+        self.unit = unit
+        self.padding_percent = padding_percent
+        self.settings = self._init_geometry_settings()
         
-        min_z = np.min(vertices[:, 2])
-        max_z = np.max(vertices[:, 2])
-        space_height = max_z - min_z  # Calculate the actual height of the space
-        space_faces = []
-        
-        for face in faces:
-            face_verts = vertices[face]
-            face_z = face_verts[:, 2]
+    def _init_geometry_settings(self) -> ifcopenshell.geom.settings:
+        settings = ifcopenshell.geom.settings()
+        settings.set(settings.USE_WORLD_COORDS, True)
+        return settings
+    
+    def _calculate_viewbox(self, points: List[Tuple[float, float]]) -> ViewBox:
+        """Calculate ViewBox with proper padding"""
+        if not points:
+            return ViewBox(0, 0, 1000, 1000)
             
-            if np.allclose(face_z, min_z, rtol=1e-5) and np.allclose(face_z, face_z[0], rtol=1e-5):
-                face_2d = [(x, y) for x, y, z in face_verts]
-                space_faces.append(Polygon(face_2d))
+        points_array = np.array(points)
+        min_x, min_y = points_array.min(axis=0)
+        max_x, max_y = points_array.max(axis=0)
         
-        if space_faces:
-            return unary_union(space_faces), space_height
-        return None, None
+        width = max_x - min_x
+        height = max_y - min_y
+        
+        padding = max(width, height) * self.padding_percent
+        
+        return ViewBox(
+            min_x=min_x - padding,
+            min_y=min_y - padding,
+            width=width + 2 * padding,
+            height=height + 2 * padding
+        )
     
-    except Exception as e:
-        print(f"Error processing space {space.GlobalId}: {e}")
-        return None, None
+    def _generate_color(self, name: str) -> str:
+        """Generate a consistent color based on the name"""
+        hash_object = hashlib.md5(str(name).encode())
+        hash_hex = hash_object.hexdigest()
+        
+        # Generate HSL color for better visual distinction
+        hue = int(hash_hex[:3], 16) % 360
+        saturation = 70  # Fixed saturation for consistency
+        lightness = 50 + (int(hash_hex[3:6], 16) % 20)  # Vary lightness slightly
+        
+        # Convert HSL to hex color
+        h = hue / 360
+        s = saturation / 100
+        l = lightness / 100
+        
+        def hue_to_rgb(p: float, q: float, t: float) -> float:
+            if t < 0:
+                t += 1
+            if t > 1:
+                t -= 1
+            if t < 1/6:
+                return p + (q - p) * 6 * t
+            if t < 1/2:
+                return q
+            if t < 2/3:
+                return p + (q - p) * (2/3 - t) * 6
+            return p
+        
+        if s == 0:
+            r = g = b = l
+        else:
+            q = l * (1 + s) if l < 0.5 else l + s - l * s
+            p = 2 * l - q
+            r = hue_to_rgb(p, q, h + 1/3)
+            g = hue_to_rgb(p, q, h)
+            b = hue_to_rgb(p, q, h - 1/3)
+        
+        return f"#{int(r*255):02x}{int(g*255):02x}{int(b*255):02x}"
 
-def process_ifc(file_path: str) -> str:
-    """Process IFC file and create SVG"""
-    settings = ifcopenshell.geom.settings()
-    settings.set(settings.USE_WORLD_COORDS, True)
-    
-    ifc_file = ifcopenshell.open(file_path)
-    
-    # Get project hierarchy with safe checks for missing attributes
-    project = ifc_file.by_type("IfcProject")[0] if ifc_file.by_type("IfcProject") else None
-    site = ifc_file.by_type("IfcSite")[0] if ifc_file.by_type("IfcSite") else None
-    building = ifc_file.by_type("IfcBuilding")[0] if ifc_file.by_type("IfcBuilding") else None
-    
-    project_data = {
-        "name": project.Name if project and project.Name else "Unnamed Project",
-        "guid": project.GlobalId if project else "N/A",
-        "site": site.Name if site and site.Name else "Unnamed Site",
-        "site_guid": site.GlobalId if site else "N/A",
-        "building": building.Name if building and building.Name else "Unnamed Building",
-        "building_guid": building.GlobalId if building else "N/A"
-    }
-    
-    spaces_by_storey = get_spaces_by_storey(ifc_file)
-    spaces_by_level = {}
-    
-    # Process geometry for each space
-    all_points = []
-    for storey_guid, data in spaces_by_storey.items():
-        storey = data['storey']
-        storey_elevation = float(storey.Elevation or 0) / 100  # Convert cm to m for display
+    def _process_space_geometry(self, space: 'IfcSpace') -> Tuple[Optional[Polygon], Optional[float]]:
+        """Process space geometry with error handling"""
+        try:
+            shape = ifcopenshell.geom.create_shape(self.settings, space)
+            vertices = np.array(shape.geometry.verts).reshape((-1, 3))
+            faces = np.array(shape.geometry.faces).reshape((-1, 3))
+            
+            # Calculate space height
+            min_z = np.min(vertices[:, 2])
+            max_z = np.max(vertices[:, 2])
+            space_height = max_z - min_z
+            
+            # Process bottom faces
+            space_faces = []
+            z_tolerance = 1e-5
+            
+            for face in faces:
+                face_verts = vertices[face]
+                face_z = face_verts[:, 2]
+                
+                if np.allclose(face_z, min_z, rtol=z_tolerance):
+                    face_2d = [(x, y) for x, y, z in face_verts]
+                    try:
+                        poly = Polygon(face_2d)
+                        if poly.is_valid:
+                            space_faces.append(poly)
+                    except ValueError:
+                        continue
+            
+            if space_faces:
+                return unary_union(space_faces), space_height
+            return None, None
+            
+        except Exception as e:
+            print(f"Error processing space {space.GlobalId}: {e}")
+            return None, None
+
+    def _generate_path_data(self, points: List[Tuple[float, float]]) -> str:
+        """Generate optimized SVG path data"""
+        if not points:
+            return ""
+            
+        path_data = [f"M {points[0][0]:.3f},{points[0][1]:.3f}"]
         
-        for space in data['spaces']:
-            polygon, space_height = process_space_geometry(space, settings)
+        prev_x, prev_y = points[0]
+        for x, y in points[1:]:
+            if math.isclose(y, prev_y, rel_tol=1e-9):
+                path_data.append(f"H {x:.3f}")
+            elif math.isclose(x, prev_x, rel_tol=1e-9):
+                path_data.append(f"V {y:.3f}")
+            else:
+                path_data.append(f"L {x:.3f},{y:.3f}")
+            prev_x, prev_y = x, y
+        
+        path_data.append("Z")
+        return " ".join(path_data)
+
+    def generate_svg(self, spaces_by_level: Dict[float, List[SpaceData]], 
+                    project_data: dict) -> str:
+        """Generate SVG content"""
+        all_points = [point for spaces in spaces_by_level.values() 
+                     for space in spaces for point in space.points]
+        viewbox = self._calculate_viewbox(all_points)
+        
+        svg_elements = [
+            '<?xml version="1.0" encoding="UTF-8" standalone="no"?>',
+            f'''<svg
+    width="{viewbox.width}{self.unit.value}"
+    height="{viewbox.height}{self.unit.value}"
+    viewBox="{viewbox}"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">'''
+        ]
+        
+        svg_elements.append(self._generate_project_hierarchy(
+            project_data, spaces_by_level, viewbox))
+        
+        svg_elements.append('</svg>')
+        return '\n'.join(svg_elements)
+
+
+    def get_spaces_by_storey(self, ifc_file) -> Dict[float, List[SpaceData]]:
+        """Get spaces organized by storey with relative Z positions"""
+        spaces_by_level = {}
+        spaces_by_storey_temp = {}
+        
+        # First pass: collect all spaces and their absolute Z positions
+        for space in ifc_file.by_type('IfcSpace'):
+            polygon, space_height = self._process_space_geometry(space)
             if polygon is None:
                 continue
             
-            if isinstance(polygon, MultiPolygon):
-                polygons = list(polygon.geoms)
-            else:
-                polygons = [polygon]
-            
             points = []
-            for poly in polygons:
-                coords = list(poly.exterior.coords)[:-1]  # Exclude last point (same as first)
-                points.extend(coords)
-                all_points.extend(coords)
+            if isinstance(polygon, MultiPolygon):
+                for poly in polygon.geoms:
+                    points.extend(list(poly.exterior.coords)[:-1])
+            else:
+                points.extend(list(polygon.exterior.coords)[:-1])
             
-            space_data = {
-                "guid": space.GlobalId,
-                "long_name": space.LongName or space.Name or "Unnamed Space",
-                "storey": storey.Name or f"Level {storey_elevation:.2f}m",
-                "storey_guid": storey.GlobalId,
-                "points": points,
-                "color": get_color_from_name(space.LongName or space.Name or "Unnamed Space"),
-                "elevation": storey_elevation,  # Store storey elevation
-                "space_height": space_height  # Convert space Z coordinate from cm to m
+            # Get the storey information
+            storey = None
+            for rel in space.Decomposes:
+                if rel.RelatingObject.is_a('IfcBuildingStorey'):
+                    storey = rel.RelatingObject
+                    break
+            
+            if not storey:
+                continue
+
+            # Calculate absolute bottom Z position from geometry
+            shape = ifcopenshell.geom.create_shape(self.settings, space)
+            vertices = np.array(shape.geometry.verts).reshape((-1, 3))
+            absolute_z = np.min(vertices[:, 2])
+            
+            storey_id = storey.GlobalId
+            storey_elevation = float(storey.Elevation or 0)
+            
+            if storey_id not in spaces_by_storey_temp:
+                spaces_by_storey_temp[storey_id] = {
+                    'spaces': [],
+                    'z_positions': [],
+                    'storey': storey,
+                    'elevation': storey_elevation
+                }
+            
+            # Add space information to temporary storage
+            space_info = {
+                'guid': space.GlobalId,
+                'long_name': space.LongName or space.Name or "Unnamed Space",
+                'points': points,
+                'color': self._generate_color(space.LongName or space.Name or "Unnamed Space"),
+                'absolute_z': absolute_z,
+                'space_height': space_height or 0.0,
+                'relative_z': storey_elevation/100 - absolute_z #carefull with units!
             }
+            spaces_by_storey_temp[storey_id]['spaces'].append(space_info)
+            spaces_by_storey_temp[storey_id]['z_positions'].append(absolute_z)
+
+        # Second pass: create final space data objects
+        for storey_data in spaces_by_storey_temp.values():
+            storey = storey_data['storey']
+            storey_elevation = storey_data['elevation']
             
-            if storey_elevation not in spaces_by_level:
-                spaces_by_level[storey_elevation] = []
-            spaces_by_level[storey_elevation].append(space_data)
+            for space_info in storey_data['spaces']:
+                space_data = SpaceData(
+                    guid=space_info['guid'],
+                    long_name=space_info['long_name'],
+                    storey=storey.Name or f"Level {storey_elevation:.2f}m",
+                    storey_guid=storey.GlobalId,
+                    points=space_info['points'],
+                    color=space_info['color'],
+                    relative_z=space_info['relative_z'],
+                    space_height=space_info['space_height'],
+                    absolute_z=space_info['absolute_z']
+                )
+                
+                if storey_elevation not in spaces_by_level:
+                    spaces_by_level[storey_elevation] = []
+                spaces_by_level[storey_elevation].append(space_data)
+        
+        return spaces_by_level
 
-    return create_svg(spaces_by_level, project_data, all_points)
+    def _generate_project_hierarchy(self, project_data: dict,
+                                  spaces_by_level: Dict[float, List[SpaceData]],
+                                  viewbox: ViewBox) -> str:
+        """Generate project hierarchy groups with relative Z positions"""
+        elements = []
+        
+        # Add project, site, building hierarchy
+        elements.extend([
+            f'''    <g
+        id="{project_data['guid']}"
+        inkscape:label="Project={project_data['name']}">''',
+            f'''        <g
+            id="{project_data['site_guid']}"
+            inkscape:label="Site={project_data['site']}">''',
+            f'''            <g
+                id="{project_data['building_guid']}"
+                inkscape:label="Building={project_data['building']}"
+                style="display:inline">'''
+        ])
+        
+        # Add storeys and spaces
+        for storey_elevation, spaces in sorted(spaces_by_level.items()):
+            if not spaces:
+                continue
+            
+            # Group spaces by height and relative Z position
+            space_groups = {}
+            for space in spaces:
+                key = (space.space_height, space.relative_z)
+                if key not in space_groups:
+                    space_groups[key] = []
+                space_groups[key].append(space)
+            
+            storey_guid = spaces[0].storey_guid
+            storey_name = spaces[0].storey
+            
+            # Storey level
+            elements.append(f'''                <g
+                    inkscape:groupmode="layer"
+                    id="{storey_guid}"
+                    inkscape:label="Storey={storey_name}, Z={storey_elevation:.2f}">''')
+            
+            # Create separate layers for different heights and relative Z positions
+            for (height, rel_z), group_spaces in sorted(space_groups.items()):
+                z_offset_str = f"+{rel_z:.2f}" if rel_z >= 0 else f"{rel_z:.2f}"
+                
+                elements.append(f'''                    <g
+                        inkscape:groupmode="layer"
+                        id="spaces_{storey_guid}_h{height:.2f}_z{rel_z:.2f}"
+                        inkscape:label="Spaces, h={height:.2f}, Z={z_offset_str}">''')
+                
+                # Add individual spaces
+                for space in group_spaces:
+                    path_data = self._generate_path_data(space.points)
+                    if path_data:
+                        elements.append(f'''                        <path
+                                id="{space.guid}"
+                                d="{path_data}"
+                                inkscape:label="{space.long_name}"
+                                style="fill:{space.color};stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>''')
+                
+                elements.append('                    </g>')
+            
+            elements.append('                </g>')
+        
+        # Close hierarchy groups
+        elements.extend([
+            '            </g>',  # Close Building
+            '        </g>',      # Close Site
+            '    </g>'           # Close Project
+        ])
+        
+        return '\n'.join(elements)
 
-
-def create_svg(spaces_by_level: Dict[float, List[dict]], project_data: dict, all_points: List[Tuple[float, float]]) -> str:
-    """Generate SVG with corrected scaling"""
-    scale_factor = 1.0  # Correct scale factor to match SVG size to real dimensions
-
-    # Calculate bounds for viewBox and add padding
-    if all_points:
-        all_points = np.array(all_points)
-        min_x, min_y = all_points.min(axis=0)
-        max_x, max_y = all_points.max(axis=0)
-        width = max_x - min_x
-        height = max_y - min_y
-        padding = max(width, height) * 0.1  # 10% padding
-    else:
-        min_x, min_y = 0, 0
-        width, height = 1000, 1000  # Default dimensions for empty SVG
-        padding = 100
-
-    # Apply scale factor to dimensions
-    svg_width = (width + 2 * padding) * scale_factor
-    svg_height = (height + 2 * padding) * scale_factor
-    viewBox_min_x = min_x - padding
-    viewBox_min_y = min_y - padding
-    viewBox_width = width + 2 * padding
-    viewBox_height = height + 2 * padding
-
-    # SVG header with dynamic dimensions
-    svg_header = f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-    width="{svg_width}cm"
-    height="{svg_height}cm"
-    viewBox="{viewBox_min_x} {viewBox_min_y} {viewBox_width} {viewBox_height}"
+    def generate_svg(self, spaces_by_level: Dict[float, List[SpaceData]], 
+                    project_data: dict) -> str:
+        """Generate SVG content with full IFC hierarchy"""
+        all_points = [point for spaces in spaces_by_level.values() 
+                     for space in spaces for point in space.points]
+        viewbox = self._calculate_viewbox(all_points)
+        
+        svg_elements = [
+            '<?xml version="1.0" encoding="UTF-8" standalone="no"?>',
+            f'''<svg
+    width="{viewbox.width}{self.unit.value}"
+    height="{viewbox.height}{self.unit.value}"
+    viewBox="{viewbox}"
     version="1.1"
-    id="svg1"
-    inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
-    sodipodi:docname="ifc_spaces.svg"
-    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:svg="http://www.w3.org/2000/svg">'''
-
-    namedview = '''    <sodipodi:namedview
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd">''',
+            '''    <sodipodi:namedview
         id="namedview1"
         pagecolor="#ffffff"
         bordercolor="#000000"
@@ -188,16 +371,6 @@ def create_svg(spaces_by_level: Dict[float, List[dict]], project_data: dict, all
         inkscape:pagecheckerboard="0"
         inkscape:deskcolor="#d1d1d1"
         inkscape:document-units="cm"
-        showguides="true"
-        inkscape:zoom="0.01"
-        inkscape:cx="188950"
-        inkscape:cy="127550"
-        inkscape:window-width="1832"
-        inkscape:window-height="1076"
-        inkscape:window-x="0"
-        inkscape:window-y="0"
-        inkscape:window-maximized="1"
-        inkscape:current-layer="layer3"
         showgrid="true">
         <inkscape:grid
             id="grid1"
@@ -216,65 +389,56 @@ def create_svg(spaces_by_level: Dict[float, List[dict]], project_data: dict, all
             dotted="false" />
     </sodipodi:namedview>
     <defs id="defs1" />'''
+        ]
+        
+        svg_elements.append(self._generate_project_hierarchy(
+            project_data, spaces_by_level, viewbox))
+        
+        svg_elements.append('</svg>')
+        return '\n'.join(svg_elements)
 
-    # Project hierarchy
-    svg_content = f'''    <g
-        inkscape:groupmode="layer"
-        id="{project_data['guid']}"
-        inkscape:label="Project={project_data['name']}">
-        <g
-            inkscape:groupmode="layer"
-            id="{project_data['site_guid']}"
-            inkscape:label="Site={project_data['site']}">
-            <g
-                inkscape:groupmode="layer"
-                id="{project_data['building_guid']}"
-                inkscape:label="Building={project_data['building']}"
-                style="display:inline">'''
-
-    # Add storeys and spaces
-    for height, spaces in spaces_by_level.items():
-        storey_guid = spaces[0]['storey_guid']
-        svg_content += f'''                <g
-                    inkscape:groupmode="layer"
-                    id="{storey_guid}"
-                    inkscape:label="Storey={spaces[0]['storey']}, h={height:.2f}">
-                    <g
-                        inkscape:groupmode="layer"
-                        id="space_{storey_guid}"
-                        inkscape:label="Space, h={spaces[0]['space_height']:.2f}">'''
-
+    def _generate_level_group(self, height: float, 
+                            spaces: List[SpaceData]) -> List[str]:
+        """Generate level group with spaces"""
+        elements = []
+        
+        elements.append(f'''        <g
+            id="level_{height:.2f}"
+            inkscape:label="Level {height:.2f}{self.unit.value}">''')
+        
         for space in spaces:
-            points = space['points']
-            if points:
-                path_data = f"M {points[0][0]},{points[0][1]}"
-                for point in points[1:]:
-                    path_data += f" L {point[0]},{point[1]}"
-                path_data += " Z"
+            path_data = self._generate_path_data(space.points)
+            if path_data:
+                elements.append(f'''            <path
+                id="{space.guid}"
+                d="{path_data}"
+                inkscape:label="{space.long_name}"
+                style="fill:{space.color};stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>''')
+        
+        elements.append('        </g>')
+        return elements
 
-                svg_content += f'''                        <path
-                            id="{space['guid']}"
-                            d="{path_data}"
-                            inkscape:label="{space['long_name']}"
-                            style="fill:{space['color']};stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>'''
-
-        # Close storey space and storey groups
-        svg_content += '''                    </g>
-                </g>'''
-
-    # Close project, site, and building groups
-    svg_content += '''            </g>
-        </g>
-    </g>'''
-
-    # Add the closing SVG tag
-    svg_footer = '</svg>'
-
-    # Return the complete SVG content
-    return svg_header + namedview + svg_content + svg_footer
-
-
-
-
-
+def get_project_data(ifc_file) -> dict:
+    """Extract project hierarchy data"""
+    project = ifc_file.by_type("IfcProject")[0] if ifc_file.by_type("IfcProject") else None
+    site = ifc_file.by_type("IfcSite")[0] if ifc_file.by_type("IfcSite") else None
+    building = ifc_file.by_type("IfcBuilding")[0] if ifc_file.by_type("IfcBuilding") else None
     
+    return {
+        "name": project.Name if project and project.Name else "Unnamed Project",
+        "guid": project.GlobalId if project else "N/A",
+        "site": site.Name if site and site.Name else "Unnamed Site",
+        "site_guid": site.GlobalId if site else "N/A",
+        "building": building.Name if building and building.Name else "Unnamed Building",
+        "building_guid": building.GlobalId if building else "N/A"
+    }
+
+def process_ifc(file_path: str, unit: SVGUnit = SVGUnit.CM) -> str:
+    """Process IFC file and generate SVG"""
+    ifc_file = ifcopenshell.open(file_path)
+    generator = SVGGenerator(unit=unit)
+    
+    spaces_by_level = generator.get_spaces_by_storey(ifc_file)
+    project_data = get_project_data(ifc_file)
+    
+    return generator.generate_svg(spaces_by_level, project_data)

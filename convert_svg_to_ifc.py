@@ -10,7 +10,7 @@ from ifcopenshell.file import file as IfcFile
 from svg.path import Path
 import ifcopenshell.guid
 import os
-
+from lxml import etree
 
 @dataclass
 class Point3D:
@@ -558,34 +558,68 @@ class IfcModelCreator:
                     return False
         return True
     
+def find_layer_by_prefix(root: etree._Element, prefix: str, ns: Dict[str, str]) -> Tuple[etree._Element, str]:
+    """Find the first layer with an inkscape:label starting with the given prefix."""
+    # Map default namespace to a prefix
+    ns = {k if k else "default": v for k, v in ns.items()}
+    
+    inkscape_ns = ns.get('inkscape')
+    if not inkscape_ns:
+        raise ValueError("The 'inkscape' namespace is missing in the SVG file.")
+    
+    # Use {namespace} notation for inkscape
+    layer = root.xpath(f".//*[@{{{inkscape_ns}}}label[starts-with(., '{prefix}')]]", namespaces=ns)
+    if not layer:
+        raise ValueError(f"No layer found with label starting with '{prefix}' in the SVG file.")
+    label = layer[0].get(f"{{{inkscape_ns}}}label")
+    if not label.startswith(prefix):
+        raise ValueError(f"Invalid layer label format: {label}")
+    return layer[0], label.split('=', 1)[1].strip()
+
 def process_svg_layers(svg_file: str, output_dir: str) -> None:
-    tree = ET.parse(svg_file)
+    # Parse SVG with lxml
+    tree = etree.parse(svg_file)
     root = tree.getroot()
-    ns = {'inkscape': 'http://www.inkscape.org/namespaces/inkscape'}
 
-    # Find the project layer
-    project_layer = root.find(".//*[@inkscape:label='Project=default project']", ns)
-    if project_layer is None:
-        raise ValueError("Project layer with label 'Project=default project' not found in the SVG file.")
-    
-    # Get the project name
-    project_label = project_layer.get(f'{{{ns["inkscape"]}}}label')
-    if project_label is None:
-        raise ValueError("The project layer is missing the 'inkscape:label' attribute.")
-    project_name = project_label.split('=')[1]
+    # Extract namespaces and remap default namespace
+    ns = {k if k else "default": v for k, v in root.nsmap.items()}
 
-    # Find the site layer
-    site_layer = root.find(".//*[@inkscape:label='Site=Grundstück']", ns)
-    if site_layer is None:
-        raise ValueError("Site layer with label 'Site=Grundstück' not found in the SVG file.")
-    
-    # Get the site name
-    site_label = site_layer.get(f'{{{ns["inkscape"]}}}label')
-    if site_label is None:
-        raise ValueError("The site layer is missing the 'inkscape:label' attribute.")
-    site_name = site_label.split('=')[1]
+    # Find the project layer dynamically
+    project_layer, project_name = find_layer_by_prefix(root, "Project=", ns)
+    print(f"Found project: {project_name}")
 
-    print(f"Processing project: {project_name}, site: {site_name}")
+    # Find the site layer dynamically
+    site_layer, site_name = find_layer_by_prefix(root, "Site=", ns)
+    print(f"Found site: {site_name}")
+
+    # Process buildings within the site
+    for building_layer in site_layer.xpath("*[@inkscape:label]", namespaces=ns):
+        label = building_layer.get(f"{{{ns['inkscape']}}}label")
+        if label and label.startswith('Building='):
+            building_name = label.split('=', 1)[1].strip()
+            print(f"Found building: {building_name}")
+
+            # Create IFC output file for each building
+            ifc_file = os.path.join(output_dir, f"{project_name}_{building_name}.ifc")
+            print(f"Processing building '{building_name}' into IFC file: {ifc_file}")
+
+            # Process storeys within the building
+            for storey_layer in building_layer.xpath(".//*[@inkscape:label]", namespaces=ns):
+                storey_label = storey_layer.get(f"{{{ns['inkscape']}}}label")
+                if storey_label and storey_label.startswith('Storey='):
+                    parts = storey_label.split(',')
+                    storey_name = parts[0].split('=', 1)[1].strip()
+                    z_position = float(parts[1].split('h=')[1].strip()) if 'h=' in parts[1] else 0.0
+                    print(f"  Found storey: {storey_name} at height {z_position}")
+
+                    # Process spaces within the storey
+                    for space_layer in storey_layer.xpath(".//*[@inkscape:label]", namespaces=ns):
+                        space_label = space_layer.get(f"{{{ns['inkscape']}}}label")
+                        if space_label and 'Space' in space_label:
+                            space_name = space_label.split('=')[1] if '=' in space_label else "Unnamed Space"
+                            print(f"    Found space: {space_name}")
+
+    print("Processing complete.")
 
     # Cache paths data
     paths, attributes, svg_attributes = svg2paths2(svg_file)

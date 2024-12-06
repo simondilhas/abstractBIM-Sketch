@@ -1,4 +1,4 @@
-from create_ifc_from_svg import process_svg_layers
+from convert_svg_to_ifc import process_svg_layers
 
 if __name__ == "__main__":
     svg_filename = "test/groundfloor_test1.svg"
