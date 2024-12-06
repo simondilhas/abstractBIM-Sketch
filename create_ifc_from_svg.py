@@ -557,17 +557,35 @@ class IfcModelCreator:
                 if segments_intersect(points[i], points[i+1], points[j], points[j+1]):
                     return False
         return True
-
+    
 def process_svg_layers(svg_file: str, output_dir: str) -> None:
     tree = ET.parse(svg_file)
     root = tree.getroot()
     ns = {'inkscape': 'http://www.inkscape.org/namespaces/inkscape'}
+
+    # Find the project layer
+    project_layer = root.find(".//*[@inkscape:label='Project=default project']", ns)
+    if project_layer is None:
+        raise ValueError("Project layer with label 'Project=default project' not found in the SVG file.")
     
-    project_layer = root.find(".//*[@inkscape:label='Project=Testprojekt']", ns)
-    project_name = project_layer.get(f'{{{ns["inkscape"]}}}label').split('=')[1]
+    # Get the project name
+    project_label = project_layer.get(f'{{{ns["inkscape"]}}}label')
+    if project_label is None:
+        raise ValueError("The project layer is missing the 'inkscape:label' attribute.")
+    project_name = project_label.split('=')[1]
+
+    # Find the site layer
+    site_layer = root.find(".//*[@inkscape:label='Site=Grundstück']", ns)
+    if site_layer is None:
+        raise ValueError("Site layer with label 'Site=Grundstück' not found in the SVG file.")
     
-    site_layer = root.find(".//*[@inkscape:label='Site=Perimeter1']", ns)
-    site_name = site_layer.get(f'{{{ns["inkscape"]}}}label').split('=')[1]
+    # Get the site name
+    site_label = site_layer.get(f'{{{ns["inkscape"]}}}label')
+    if site_label is None:
+        raise ValueError("The site layer is missing the 'inkscape:label' attribute.")
+    site_name = site_label.split('=')[1]
+
+    print(f"Processing project: {project_name}, site: {site_name}")
 
     # Cache paths data
     paths, attributes, svg_attributes = svg2paths2(svg_file)

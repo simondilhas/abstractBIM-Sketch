@@ -12,6 +12,22 @@ def get_color_from_name(name):
     hash_hex = hash_object.hexdigest()
     return f"#{hash_hex[:6]}"
 
+def get_ifc_unit_scale(ifc_file):
+    """Get the unit scale from IFC file (e.g., meters to cm or mm)"""
+    unit_assignments = ifc_file.by_type("IfcUnitAssignment")
+    for assignment in unit_assignments:
+        for unit in assignment.Units:
+            if unit.is_a("IfcSIUnit") and unit.UnitType == "LENGTHUNIT":
+                prefix = unit.Prefix
+                if prefix == "MILLI":
+                    return 0.001
+                elif prefix == "CENTI":
+                    return 0.01
+                else:
+                    return 1.0  # Default to meters
+    return 1.0  # Default if not specified
+
+
 def get_spaces_by_storey(ifc_file) -> Dict[str, List]:
     """Get all spaces organized by storey"""
     spaces_by_storey = {}
@@ -65,18 +81,18 @@ def process_ifc(file_path: str) -> str:
     
     ifc_file = ifcopenshell.open(file_path)
     
-    # Get project hierarchy
-    project = ifc_file.by_type("IfcProject")[0]
-    site = ifc_file.by_type("IfcSite")[0]
-    building = ifc_file.by_type("IfcBuilding")[0]
+    # Get project hierarchy with safe checks for missing attributes
+    project = ifc_file.by_type("IfcProject")[0] if ifc_file.by_type("IfcProject") else None
+    site = ifc_file.by_type("IfcSite")[0] if ifc_file.by_type("IfcSite") else None
+    building = ifc_file.by_type("IfcBuilding")[0] if ifc_file.by_type("IfcBuilding") else None
     
     project_data = {
-        "name": project.Name or "Unnamed Project",
-        "guid": project.GlobalId,
-        "site": site.Name or "Unnamed Site",
-        "site_guid": site.GlobalId,
-        "building": building.Name or "Unnamed Building",
-        "building_guid": building.GlobalId
+        "name": project.Name if project and project.Name else "Unnamed Project",
+        "guid": project.GlobalId if project else "N/A",
+        "site": site.Name if site and site.Name else "Unnamed Site",
+        "site_guid": site.GlobalId if site else "N/A",
+        "building": building.Name if building and building.Name else "Unnamed Building",
+        "building_guid": building.GlobalId if building else "N/A"
     }
     
     spaces_by_storey = get_spaces_by_storey(ifc_file)
@@ -119,12 +135,14 @@ def process_ifc(file_path: str) -> str:
                 spaces_by_level[storey_elevation] = []
             spaces_by_level[storey_elevation].append(space_data)
 
-    
     return create_svg(spaces_by_level, project_data, all_points)
 
+
 def create_svg(spaces_by_level: Dict[float, List[dict]], project_data: dict, all_points: List[Tuple[float, float]]) -> str:
-    """Generate SVG with Inkscape template structure"""
-    # Calculate bounds for viewBox
+    """Generate SVG with corrected scaling"""
+    scale_factor = 1.0  # Correct scale factor to match SVG size to real dimensions
+
+    # Calculate bounds for viewBox and add padding
     if all_points:
         all_points = np.array(all_points)
         min_x, min_y = all_points.min(axis=0)
@@ -134,15 +152,23 @@ def create_svg(spaces_by_level: Dict[float, List[dict]], project_data: dict, all
         padding = max(width, height) * 0.1  # 10% padding
     else:
         min_x, min_y = 0, 0
-        width, height = 100000, 100000
-        padding = 1000
+        width, height = 1000, 1000  # Default dimensions for empty SVG
+        padding = 100
 
-    # SVG header with viewBox
+    # Apply scale factor to dimensions
+    svg_width = (width + 2 * padding) * scale_factor
+    svg_height = (height + 2 * padding) * scale_factor
+    viewBox_min_x = min_x - padding
+    viewBox_min_y = min_y - padding
+    viewBox_width = width + 2 * padding
+    viewBox_height = height + 2 * padding
+
+    # SVG header with dynamic dimensions
     svg_header = f'''<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-    width="{width/10}cm"
-    height="{height/10}cm"
-    viewBox="{min_x-padding} {min_y-padding} {width+2*padding} {height+2*padding}"
+    width="{svg_width}cm"
+    height="{svg_height}cm"
+    viewBox="{viewBox_min_x} {viewBox_min_y} {viewBox_width} {viewBox_height}"
     version="1.1"
     id="svg1"
     inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
@@ -178,8 +204,8 @@ def create_svg(spaces_by_level: Dict[float, List[dict]], project_data: dict, all
             units="cm"
             originx="0"
             originy="0"
-            spacingx="125"
-            spacingy="125"
+            spacingx="0.125"
+            spacingy="0.125"
             empcolor="#0099e5"
             empopacity="0.30196078"
             color="#0099e5"
@@ -212,12 +238,12 @@ def create_svg(spaces_by_level: Dict[float, List[dict]], project_data: dict, all
         svg_content += f'''                <g
                     inkscape:groupmode="layer"
                     id="{storey_guid}"
-                    inkscape:label="Storey={spaces[0]['storey']}, h={height:.2f}m">
+                    inkscape:label="Storey={spaces[0]['storey']}, h={height:.2f}">
                     <g
                         inkscape:groupmode="layer"
                         id="space_{storey_guid}"
-                        inkscape:label="Space, h={spaces[0]['space_height']:.2f}m">'''
-        
+                        inkscape:label="Space, h={spaces[0]['space_height']:.2f}">'''
+
         for space in spaces:
             points = space['points']
             if points:
@@ -225,16 +251,30 @@ def create_svg(spaces_by_level: Dict[float, List[dict]], project_data: dict, all
                 for point in points[1:]:
                     path_data += f" L {point[0]},{point[1]}"
                 path_data += " Z"
-                
+
                 svg_content += f'''                        <path
                             id="{space['guid']}"
                             d="{path_data}"
                             inkscape:label="{space['long_name']}"
                             style="fill:{space['color']};stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>'''
-        
+
+        # Close storey space and storey groups
         svg_content += '''                    </g>
                 </g>'''
-    return svg_header + namedview + svg_content
+
+    # Close project, site, and building groups
+    svg_content += '''            </g>
+        </g>
+    </g>'''
+
+    # Add the closing SVG tag
+    svg_footer = '</svg>'
+
+    # Return the complete SVG content
+    return svg_header + namedview + svg_content + svg_footer
+
+
+
 
 
     

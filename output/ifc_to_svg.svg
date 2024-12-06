@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-    width="1.9601999999999993cm"
-    height="2.0430755826858307cm"
+    width="23.688151165371654cm"
+    height="24.516906992229966cm"
     viewBox="-8.643128343669193 -9.292656900006708 23.688151165371654 24.516906992229966"
     version="1.1"
     id="svg1"
@@ -36,8 +36,8 @@
             units="cm"
             originx="0"
             originy="0"
-            spacingx="125"
-            spacingy="125"
+            spacingx="0.125"
+            spacingy="0.125"
             empcolor="#0099e5"
             empopacity="0.30196078"
             color="#0099e5"
@@ -62,11 +62,11 @@
                 style="display:inline">                <g
                     inkscape:groupmode="layer"
                     id="3Grfa0xNX31RW_79ewGkrq"
-                    inkscape:label="Storey=EG, h=0.00m">
+                    inkscape:label="Storey=EG, h=0.00">
                     <g
                         inkscape:groupmode="layer"
                         id="space_3Grfa0xNX31RW_79ewGkrq"
-                        inkscape:label="Space, h=3.00m">                        <path
+                        inkscape:label="Space, h=3.00">                        <path
                             id="0tKQ4bcJ991Pc4SPg6P8M7"
                             d="M -4.440892098500626e-15,2.625 L -4.440892098500626e-15,5.125 L 3.9999999999999956,5.125 L 3.9999999999999956,2.625 Z"
                             inkscape:label="Büro"
@@ -94,11 +94,11 @@
                 </g>                <g
                     inkscape:groupmode="layer"
                     id="2itJGxRlD8ZgRnkf7QwMDP"
-                    inkscape:label="Storey=O1, h=3.00m">
+                    inkscape:label="Storey=O1, h=3.00">
                     <g
                         inkscape:groupmode="layer"
                         id="space_2itJGxRlD8ZgRnkf7QwMDP"
-                        inkscape:label="Space, h=3.40m">                        <path
+                        inkscape:label="Space, h=3.40">                        <path
                             id="1a3xgiKMv1g9hVbx3L0AlJ"
                             d="M 5.625000000000007,0.0 L 5.625000000000007,7.750000000000009 L 7.125000000000003,7.750000000000009 L 7.125000000000003,0.0 Z"
                             inkscape:label="Luftraum"
@@ -126,11 +126,11 @@
                 </g>                <g
                     inkscape:groupmode="layer"
                     id="14zN82$QrDyPC_LT7Lv8kM"
-                    inkscape:label="Storey=O2, h=6.90m">
+                    inkscape:label="Storey=O2, h=6.90">
                     <g
                         inkscape:groupmode="layer"
                         id="space_14zN82$QrDyPC_LT7Lv8kM"
-                        inkscape:label="Space, h=1.00m">                        <path
+                        inkscape:label="Space, h=1.00">                        <path
                             id="0YbXTLaPf18AltEWq3WAEH"
                             d="M -2.3980000000000037,0.0 L -2.3980000000000037,7.7500000000000036 L 7.125,7.7500000000000036 L 7.125,0.0 Z"
                             inkscape:label="Flachdach"
@@ -138,13 +138,15 @@
                 </g>                <g
                     inkscape:groupmode="layer"
                     id="3fRjRsBzT8Ye_nDbA6a9xN"
-                    inkscape:label="Storey=UG, h=-3.40m">
+                    inkscape:label="Storey=UG, h=-3.40">
                     <g
                         inkscape:groupmode="layer"
                         id="space_3fRjRsBzT8Ye_nDbA6a9xN"
-                        inkscape:label="Space, h=3.00m">                        <path
+                        inkscape:label="Space, h=3.00">                        <path
                             id="1R1f5ig8f2n9tJiDInF$9J"
                             d="M -4.440892098500626e-15,-3.3861802251067274e-15 L -4.440892098500626e-15,7.749999999999998 L 7.124999999999992,7.749999999999998 L 7.124999999999992,-3.3861802251067274e-15 Z"
                             inkscape:label="Keller"
                             style="fill:#434127;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                    </g>
-                </g>
+                </g>            </g>
+        </g>
+    </g></svg>
