@@ -73,9 +73,7 @@ class SVGGeometryParser:
             return points
 
         def is_collinear(p1: Point3D, p2: Point3D, p3: Point3D) -> bool:
-            # Calculate the area of the triangle formed by three points
-            area = abs((p2.x - p1.x) * (p3.y - p1.y) - 
-                      (p3.x - p1.x) * (p2.y - p1.y)) / 2.0
+            area = abs((p2.x - p1.x) * (p3.y - p1.y) - (p3.x - p1.x) * (p2.y - p1.y)) / 2.0
             return area < tolerance
 
         result = [points[0]]
@@ -95,6 +93,7 @@ class SVGGeometryParser:
             j = (i + 1)
             area += points[i].x * points[j].y - points[j].x * points[i].y
         return area < 0
+
     @staticmethod
     def ensure_clockwise(points: List[Point3D]) -> List[Point3D]:
         """Ensure points are in clockwise order."""
@@ -560,21 +559,19 @@ class IfcModelCreator:
     
 def find_layer_by_prefix(root: etree._Element, prefix: str, ns: Dict[str, str]) -> Tuple[etree._Element, str]:
     """Find the first layer with an inkscape:label starting with the given prefix."""
-    # Map default namespace to a prefix
-    ns = {k if k else "default": v for k, v in ns.items()}
-    
     inkscape_ns = ns.get('inkscape')
     if not inkscape_ns:
         raise ValueError("The 'inkscape' namespace is missing in the SVG file.")
     
-    # Use {namespace} notation for inkscape
-    layer = root.xpath(f".//*[@{{{inkscape_ns}}}label[starts-with(., '{prefix}')]]", namespaces=ns)
-    if not layer:
-        raise ValueError(f"No layer found with label starting with '{prefix}' in the SVG file.")
-    label = layer[0].get(f"{{{inkscape_ns}}}label")
-    if not label.startswith(prefix):
-        raise ValueError(f"Invalid layer label format: {label}")
-    return layer[0], label.split('=', 1)[1].strip()
+    label_attr = f"{{{inkscape_ns}}}label"
+    
+    # Recursively search for elements with matching label
+    for element in root.iter():
+        label = element.get(label_attr)
+        if label and label.startswith(prefix):
+            return element, label.split('=', 1)[1].strip()
+    
+    raise ValueError(f"No layer found with label starting with '{prefix}' in the SVG file.")
 
 def process_svg_layers(svg_file: str, output_dir: str) -> None:
     # Parse SVG with lxml
@@ -584,50 +581,11 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
     # Extract namespaces and remap default namespace
     ns = {k if k else "default": v for k, v in root.nsmap.items()}
 
-    # Find the project layer dynamically
-    project_layer, project_name = find_layer_by_prefix(root, "Project=", ns)
-    print(f"Found project: {project_name}")
-
-    # Find the site layer dynamically
-    site_layer, site_name = find_layer_by_prefix(root, "Site=", ns)
-    print(f"Found site: {site_name}")
-
-    # Process buildings within the site
-    for building_layer in site_layer.xpath("*[@inkscape:label]", namespaces=ns):
-        label = building_layer.get(f"{{{ns['inkscape']}}}label")
-        if label and label.startswith('Building='):
-            building_name = label.split('=', 1)[1].strip()
-            print(f"Found building: {building_name}")
-
-            # Create IFC output file for each building
-            ifc_file = os.path.join(output_dir, f"{project_name}_{building_name}.ifc")
-            print(f"Processing building '{building_name}' into IFC file: {ifc_file}")
-
-            # Process storeys within the building
-            for storey_layer in building_layer.xpath(".//*[@inkscape:label]", namespaces=ns):
-                storey_label = storey_layer.get(f"{{{ns['inkscape']}}}label")
-                if storey_label and storey_label.startswith('Storey='):
-                    parts = storey_label.split(',')
-                    storey_name = parts[0].split('=', 1)[1].strip()
-                    z_position = float(parts[1].split('h=')[1].strip()) if 'h=' in parts[1] else 0.0
-                    print(f"  Found storey: {storey_name} at height {z_position}")
-
-                    # Process spaces within the storey
-                    for space_layer in storey_layer.xpath(".//*[@inkscape:label]", namespaces=ns):
-                        space_label = space_layer.get(f"{{{ns['inkscape']}}}label")
-                        if space_label and 'Space' in space_label:
-                            space_name = space_label.split('=')[1] if '=' in space_label else "Unnamed Space"
-                            print(f"    Found space: {space_name}")
-
-    print("Processing complete.")
-
-    # Cache paths data
+    # Cache paths data first
     paths, attributes, svg_attributes = svg2paths2(svg_file)
-    path_dict = {}
-    
-    for i, (path, attr) in enumerate(zip(paths, attributes)):
-        path_dict[attr.get('d', '')] = path
+    path_dict = {attr.get('d', ''): path for path, attr in zip(paths, attributes)}
 
+    # Helper functions for transforms
     def parse_transform_matrix(transform_str):
         if not transform_str or 'matrix' not in transform_str:
             return None
@@ -665,12 +623,45 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
             current = current.getparent() if hasattr(current, 'getparent') else None
         return transform_matrix
 
-    def process_space_elements(space_layer, space_height, unique_storey_name, creator, path_dict):
-        """Helper function to process all elements in a space layer recursively"""
-        for elem in space_layer:
+    def parse_z_info(label: str) -> Tuple[float, float]:
+        """Parse Z and height information from a label"""
+        parts = label.split(',')
+        absolute_z = 0.0
+        height = 0.0
+        
+        for part in parts:
+            part = part.strip()
+            if part.startswith('Z='):
+                absolute_z = float(part.split('=')[1])
+            elif part.startswith('h='):
+                height = float(part.split('=')[1])
+        
+        return absolute_z, height
+
+    def parse_space_z_info(label: str) -> Tuple[float, float]:
+        """Parse space height and relative Z information"""
+        parts = label.split(',')
+        height = 0.0
+        relative_z = 0.0
+        
+        for part in parts:
+            part = part.strip()
+            if part.startswith('h='):
+                height = float(part.split('=')[1])
+            elif part.startswith('Z='):
+                z_value = part.split('=')[1].strip()
+                relative_z = float(z_value)
+        
+        return height, relative_z
+
+    def process_space_elements(space_layer, space_height, storey_name, creator, relative_z=0.0):
+        """Process space elements with Z offset support"""
+        def process_single_element(elem):
             tag = elem.tag.split('}')[-1]
-            space_name = elem.get(f'{{{ns["inkscape"]}}}label') or "Default Space"
+            if tag not in ['rect', 'path']:
+                return
             
+            space_name = elem.get(f'{{{ns["inkscape"]}}}label') or "Default Space"
             transform_matrix = get_accumulated_transform(elem)
             
             coords = None
@@ -680,37 +671,31 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
                 d = elem.get('d')
                 if d and d in path_dict:
                     coords = creator.geometry_parser.parse_path(path_dict[d])
-                else:
-                    print(f"Warning: Path data not found for space {space_name}")
             
             if coords:
                 if transform_matrix:
                     coords = [apply_transform(point, transform_matrix) for point in coords]
-                creator.create_space(coords, space_height, unique_storey_name, space_name)
+                # Add Z offset to the coordinates
+                if relative_z != 0:
+                    coords = [Point3D(p.x, p.y, relative_z) for p in coords]
+                creator.create_space(coords, space_height, storey_name, space_name)
 
-            # Recursively process child elements
+        # Process all elements in the layer
+        for elem in space_layer:
+            process_single_element(elem)
+            # Process child elements recursively
             for child in elem:
-                child_tag = child.tag.split('}')[-1]
-                if child_tag in ['rect', 'path']:
-                    space_name = child.get(f'{{{ns["inkscape"]}}}label') or "Default Space"
-                    transform_matrix = get_accumulated_transform(child)
-                    
-                    coords = None
-                    if child_tag == 'rect':
-                        coords = creator.geometry_parser.parse_rect(child.attrib)
-                    elif child_tag == 'path':
-                        d = child.get('d')
-                        if d and d in path_dict:
-                            coords = creator.geometry_parser.parse_path(path_dict[d])
-                        else:
-                            print(f"Warning: Path data not found for space {space_name}")
-                    
-                    if coords:
-                        if transform_matrix:
-                            coords = [apply_transform(point, transform_matrix) for point in coords]
-                        creator.create_space(coords, space_height, unique_storey_name, space_name)
+                process_single_element(child)
 
-    for building_layer in site_layer.findall("*[@inkscape:label]", ns):
+    # Find the project and site layers
+    project_layer, project_name = find_layer_by_prefix(root, "Project=", ns)
+    print(f"Found project: {project_name}")
+    
+    site_layer, site_name = find_layer_by_prefix(root, "Site=", ns)
+    print(f"Found site: {site_name}")
+
+    # Process buildings
+    for building_layer in site_layer.findall(f"*[@{{{ns['inkscape']}}}label]"):
         label = building_layer.get(f'{{{ns["inkscape"]}}}label')
         if not label.startswith('Building='):
             continue
@@ -723,63 +708,55 @@ def process_svg_layers(svg_file: str, output_dir: str) -> None:
         creator.create_project_context(project_name=project_name)
         creator.create_spatial_hierarchy(site_name=site_name, building_name=building_name)
         
-        # Dictionary to keep track of storey names and their count
-        storey_names = {}
-        
-        # First pass to collect all storey names
-        for storey_layer in building_layer.findall(".//*[@inkscape:label]", ns):
+        # First collect all storeys and their absolute Z positions
+        storeys_info = {}
+        for storey_layer in building_layer.findall(f".//*[@{{{ns['inkscape']}}}label]"):
             storey_label = storey_layer.get(f'{{{ns["inkscape"]}}}label')
-            if not storey_label.startswith('Storey='):
+            if not storey_label or not storey_label.startswith('Storey='):
                 continue
                 
-            parts = storey_label.split(',')
-            storey_name = parts[0].split('=')[1].strip()
-            storey_names[storey_name] = storey_names.get(storey_name, 0) + 1
-        
-        # Print warning for duplicate storey names
-        duplicates = {name: count for name, count in storey_names.items() if count > 1}
-        if duplicates:
-            print(f"Warning: Found duplicate storey names in building {building_name}:")
-            for name, count in duplicates.items():
-                print(f"  - '{name}' appears {count} times")
-        
-        # Reset counters for the second pass
-        name_counters = {name: 1 for name in storey_names.keys()}
-        
-        # Process each storey
-        for storey_layer in building_layer.findall(".//*[@inkscape:label]", ns):
-            storey_label = storey_layer.get(f'{{{ns["inkscape"]}}}label')
-            if not storey_label.startswith('Storey='):
-                continue
-                
-            parts = storey_label.split(',')
-            original_storey_name = parts[0].split('=')[1].strip()
-            z_position = float(parts[1].split('h=')[1].strip())
+            storey_name = storey_label.split('=')[1].split(',')[0].strip()
+            absolute_z, height = parse_z_info(storey_label)
             
-            # Generate unique name if necessary
-            if storey_names[original_storey_name] > 1:
-                unique_storey_name = f"{original_storey_name}_{name_counters[original_storey_name]}"
-                name_counters[original_storey_name] += 1
-            else:
-                unique_storey_name = original_storey_name
+            # Handle duplicate storey names
+            unique_name = storey_name
+            counter = 1
+            while unique_name in storeys_info:
+                unique_name = f"{storey_name}_{counter}"
+                counter += 1
             
-            creator.create_storey(unique_storey_name, z_position)
-
+            storeys_info[unique_name] = {
+                'absolute_z': absolute_z,
+                'height': height,
+                'layer': storey_layer
+            }
+        
+        # Process storeys in order of their absolute Z position
+        for storey_name, info in sorted(storeys_info.items(), key=lambda x: x[1]['absolute_z']):
+            storey_layer = info['layer']
+            absolute_z = info['absolute_z']
+            
+            creator.create_storey(storey_name, absolute_z)
+            
             # Process spaces in this storey
-            for space_layer in storey_layer.findall(".//*[@inkscape:label]", ns):
+            for space_layer in storey_layer.findall(f".//*[@{{{ns['inkscape']}}}label]"):
                 space_label = space_layer.get(f'{{{ns["inkscape"]}}}label')
-                if not space_label or 'Space' not in space_label:
+                if not space_label or 'Spaces' not in space_label:
                     continue
 
                 try:
-                    if 'h=' in space_label:
-                        space_height = float(space_label.split('h=')[1].strip())
-                        print(f"Found space group height: {space_height}")
-                        process_space_elements(space_layer, space_height, unique_storey_name, creator, path_dict)
+                    space_height, relative_z = parse_space_z_info(space_label)
+                    if space_height > 0:  # Only process if height is specified
+                        process_space_elements(
+                            space_layer,
+                            space_height,
+                            storey_name,
+                            creator,
+                            relative_z
+                        )
 
                 except (IndexError, ValueError) as e:
                     print(f"Error processing space group with label '{space_label}': {str(e)}")
-                    print("Skipping this space group and continuing...")
                     continue
 
         os.makedirs(output_dir, exist_ok=True)

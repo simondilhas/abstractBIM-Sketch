@@ -52,7 +52,7 @@
                     <g
                         inkscape:groupmode="layer"
                         id="spaces_3fRjRsBzT8Ye_nDbA6a9xN_h3.00_z0.00"
-                        inkscape:label="Spaces, h=3.00, Z=+0.00">
+                        inkscape:label="Spaces, h=3.00, relZ=0.00">
                         <path
                                 id="1R1f5ig8f2n9tJiDInF$9J"
                                 d="M -0.000,-0.000 V 7.750 H 7.125 V -0.000 Z"
@@ -67,7 +67,7 @@
                     <g
                         inkscape:groupmode="layer"
                         id="spaces_3Grfa0xNX31RW_79ewGkrq_h1.00_z-0.00"
-                        inkscape:label="Spaces, h=1.00, Z=+-0.00">
+                        inkscape:label="Spaces, h=1.00, relZ=0.00">
                         <path
                                 id="2t0LvWo7v1chh9ls1iserM"
                                 d="M -4.889,-0.400 H 7.525 L 7.657,12.268 L 13.002,13.181 L 11.344,-4.733 L -2.082,-7.250 H -3.744 Z"
@@ -82,7 +82,7 @@
                     <g
                         inkscape:groupmode="layer"
                         id="spaces_3Grfa0xNX31RW_79ewGkrq_h3.00_z0.00"
-                        inkscape:label="Spaces, h=3.00, Z=+0.00">
+                        inkscape:label="Spaces, h=3.00, relZ=0.00">
                         <path
                                 id="0tKQ4bcJ991Pc4SPg6P8M7"
                                 d="M -0.000,2.625 V 5.125 H 4.000 V 2.625 Z"
@@ -112,7 +112,7 @@
                     <g
                         inkscape:groupmode="layer"
                         id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h1.00_z0.00"
-                        inkscape:label="Spaces, h=1.00, Z=+0.00">
+                        inkscape:label="Spaces, h=1.00, relZ=0.00">
                         <path
                                 id="1JbHP3cbHDKRL3nSR_KOpa"
                                 d="M -2.398,0.000 V 7.750 H -0.398 V 0.000 Z"
@@ -122,7 +122,7 @@
                     <g
                         inkscape:groupmode="layer"
                         id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h3.00_z-0.00"
-                        inkscape:label="Spaces, h=3.00, Z=+-0.00">
+                        inkscape:label="Spaces, h=3.00, relZ=0.00">
                         <path
                                 id="27wGAU67LDvf_xrIGTTPnn"
                                 d="M 4.125,-0.000 V 7.750 H 5.625 V -0.000 Z"
@@ -147,7 +147,7 @@
                     <g
                         inkscape:groupmode="layer"
                         id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h3.40_z-0.40"
-                        inkscape:label="Spaces, h=3.40, Z=-0.40">
+                        inkscape:label="Spaces, h=3.40, relZ=-0.40">
                         <path
                                 id="1a3xgiKMv1g9hVbx3L0AlJ"
                                 d="M 5.625,0.000 V 7.750 H 7.125 V 0.000 Z"
@@ -162,7 +162,7 @@
                     <g
                         inkscape:groupmode="layer"
                         id="spaces_14zN82$QrDyPC_LT7Lv8kM_h1.00_z0.00"
-                        inkscape:label="Spaces, h=1.00, Z=+0.00">
+                        inkscape:label="Spaces, h=1.00, relZ=0.00">
                         <path
                                 id="0YbXTLaPf18AltEWq3WAEH"
                                 d="M -2.398,0.000 V 7.750 H 7.125 V 0.000 Z"
