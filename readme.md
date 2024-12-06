@@ -110,8 +110,8 @@ python execute_create_ifc_from_svg.py
 
 ### In Progress / Planned
 - Extensive testing phase & Bugfixes
-    - rotaed rectangles
-    - issue with transformations in second building
+    - rotaed rectangles ... done
+    - issue with transformations in second building ... done
 - IFC importer development (IfcSpaces → SVG conversion)
 - Update capability for existing IFC files
 - Inkscape plugin packaging
@@ -131,6 +131,7 @@ python execute_create_ifc_from_svg.py
 - Support for additional SVG/DXF editors
 - Web-based interface
 - gbXML Import
+- Buttons to create the entities, with XML Metadata preloded
 
 ## Contributing
 
