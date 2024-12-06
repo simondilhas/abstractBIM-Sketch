@@ -43,6 +43,7 @@ class SVGGenerator:
         self.settings = self._init_geometry_settings()
         
     def _init_geometry_settings(self) -> ifcopenshell.geom.settings:
+        """Initialize geometry settings with proper configuration"""
         settings = ifcopenshell.geom.settings()
         settings.set(settings.USE_WORLD_COORDS, True)
         return settings
@@ -164,31 +165,6 @@ class SVGGenerator:
         path_data.append("Z")
         return " ".join(path_data)
 
-    def generate_svg(self, spaces_by_level: Dict[float, List[SpaceData]], 
-                    project_data: dict) -> str:
-        """Generate SVG content"""
-        all_points = [point for spaces in spaces_by_level.values() 
-                     for space in spaces for point in space.points]
-        viewbox = self._calculate_viewbox(all_points)
-        
-        svg_elements = [
-            '<?xml version="1.0" encoding="UTF-8" standalone="no"?>',
-            f'''<svg
-    width="{viewbox.width}{self.unit.value}"
-    height="{viewbox.height}{self.unit.value}"
-    viewBox="{viewbox}"
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">'''
-        ]
-        
-        svg_elements.append(self._generate_project_hierarchy(
-            project_data, spaces_by_level, viewbox))
-        
-        svg_elements.append('</svg>')
-        return '\n'.join(svg_elements)
-
-
     def get_spaces_by_storey(self, ifc_file) -> Dict[float, List[SpaceData]]:
         """Get spaces organized by storey with relative Z positions"""
         spaces_by_level = {}
@@ -223,7 +199,7 @@ class SVGGenerator:
             absolute_z = np.min(vertices[:, 2])
             
             storey_id = storey.GlobalId
-            storey_elevation = float(storey.Elevation or 0)
+            storey_elevation = float(storey.Elevation or 0)/100 #Carefull with Units
             
             if storey_id not in spaces_by_storey_temp:
                 spaces_by_storey_temp[storey_id] = {
@@ -241,32 +217,39 @@ class SVGGenerator:
                 'color': self._generate_color(space.LongName or space.Name or "Unnamed Space"),
                 'absolute_z': absolute_z,
                 'space_height': space_height or 0.0,
-                'relative_z': storey_elevation/100 - absolute_z #carefull with units!
+                'relative_z': absolute_z - storey_elevation
             }
             spaces_by_storey_temp[storey_id]['spaces'].append(space_info)
             spaces_by_storey_temp[storey_id]['z_positions'].append(absolute_z)
 
-        # Second pass: create final space data objects
+        spaces_by_level = {}
+    
         for storey_data in spaces_by_storey_temp.values():
             storey = storey_data['storey']
             storey_elevation = storey_data['elevation']
             
+            # Calculate the most common Z position as the base for this storey
+            z_positions = np.array(storey_data['z_positions'])
+            base_z = float(np.median(z_positions))  # Use median as base elevation
+            
             for space_info in storey_data['spaces']:
+                relative_z = space_info['absolute_z'] - base_z  # Calculate relative to base
+                
                 space_data = SpaceData(
                     guid=space_info['guid'],
                     long_name=space_info['long_name'],
-                    storey=storey.Name or f"Level {storey_elevation:.2f}m",
+                    storey=storey.Name or f"Level {base_z:.2f}m",
                     storey_guid=storey.GlobalId,
                     points=space_info['points'],
                     color=space_info['color'],
-                    relative_z=space_info['relative_z'],
+                    relative_z=relative_z,
                     space_height=space_info['space_height'],
                     absolute_z=space_info['absolute_z']
                 )
                 
-                if storey_elevation not in spaces_by_level:
-                    spaces_by_level[storey_elevation] = []
-                spaces_by_level[storey_elevation].append(space_data)
+                if base_z not in spaces_by_level:
+                    spaces_by_level[base_z] = []
+                spaces_by_level[base_z].append(space_data)
         
         return spaces_by_level
 
@@ -295,10 +278,14 @@ class SVGGenerator:
             if not spaces:
                 continue
             
-            # Group spaces by height and relative Z position
+            # Group spaces by unique combinations of height and relative Z
             space_groups = {}
             for space in spaces:
-                key = (space.space_height, space.relative_z)
+                # Round values to avoid floating point comparison issues
+                height = round(space.space_height, 3)
+                rel_z = round(space.relative_z, 3)
+                key = (height, rel_z)
+                
                 if key not in space_groups:
                     space_groups[key] = []
                 space_groups[key].append(space)
@@ -312,16 +299,19 @@ class SVGGenerator:
                     id="{storey_guid}"
                     inkscape:label="Storey={storey_name}, Z={storey_elevation:.2f}">''')
             
-            # Create separate layers for different heights and relative Z positions
+            # Create single layer for each unique height and Z combination
             for (height, rel_z), group_spaces in sorted(space_groups.items()):
                 z_offset_str = f"+{rel_z:.2f}" if rel_z >= 0 else f"{rel_z:.2f}"
                 
+                # Generate unique ID for this group
+                group_id = f"spaces_{storey_guid}_h{height:.2f}_z{rel_z:.2f}"
+                
                 elements.append(f'''                    <g
                         inkscape:groupmode="layer"
-                        id="spaces_{storey_guid}_h{height:.2f}_z{rel_z:.2f}"
+                        id="{group_id}"
                         inkscape:label="Spaces, h={height:.2f}, Z={z_offset_str}">''')
                 
-                # Add individual spaces
+                # Add all spaces with this height and Z to the same layer
                 for space in group_spaces:
                     path_data = self._generate_path_data(space.points)
                     if path_data:
@@ -334,7 +324,6 @@ class SVGGenerator:
                 elements.append('                    </g>')
             
             elements.append('                </g>')
-        
         # Close hierarchy groups
         elements.extend([
             '            </g>',  # Close Building
@@ -343,7 +332,7 @@ class SVGGenerator:
         ])
         
         return '\n'.join(elements)
-
+    
     def generate_svg(self, spaces_by_level: Dict[float, List[SpaceData]], 
                     project_data: dict) -> str:
         """Generate SVG content with full IFC hierarchy"""
@@ -387,8 +376,8 @@ class SVGGenerator:
             enabled="true"
             visible="true"
             dotted="false" />
-    </sodipodi:namedview>
-    <defs id="defs1" />'''
+            </sodipodi:namedview>
+            <defs id="defs1" />'''
         ]
         
         svg_elements.append(self._generate_project_hierarchy(
