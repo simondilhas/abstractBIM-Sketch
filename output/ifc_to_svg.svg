@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-    width="10000cm"
-    height="10000cm"
-    viewBox="0 0 100000 100000"
+    width="1.9601999999999993cm"
+    height="2.0430755826858307cm"
+    viewBox="-8.643128343669193 -9.292656900006708 23.688151165371654 24.516906992229966"
     version="1.1"
     id="svg1"
     inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
@@ -10,8 +10,7 @@
     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:svg="http://www.w3.org/2000/svg">
-    <sodipodi:namedview
+    xmlns:svg="http://www.w3.org/2000/svg">    <sodipodi:namedview
         id="namedview1"
         pagecolor="#ffffff"
         bordercolor="#000000"
@@ -48,8 +47,7 @@
             visible="true"
             dotted="false" />
     </sodipodi:namedview>
-    <defs id="defs1" />
-    <g
+    <defs id="defs1" />    <g
         inkscape:groupmode="layer"
         id="2SrQusz6LCbugW83s5znJT"
         inkscape:label="Project=default project">
@@ -61,122 +59,92 @@
                 inkscape:groupmode="layer"
                 id="1Nf2kYXcb8XPrY4rfkICA1"
                 inkscape:label="Building=Gebäude"
-                style="display:inline">
-                <g
+                style="display:inline">                <g
                     inkscape:groupmode="layer"
                     id="3Grfa0xNX31RW_79ewGkrq"
-                    inkscape:label="Storey=EG, h=0.0">
+                    inkscape:label="Storey=EG, h=0.00m">
                     <g
                         inkscape:groupmode="layer"
                         id="space_3Grfa0xNX31RW_79ewGkrq"
-                        inkscape:label="Space, h=0.0">
-                        <path
+                        inkscape:label="Space, h=3.00m">                        <path
                             id="0tKQ4bcJ991Pc4SPg6P8M7"
-                            d="M -4.440892098500626e-15,2.625 L 3.9999999999999956,2.625 L 3.9999999999999956,5.125 L -4.440892098500626e-15,5.125 L -4.440892098500626e-15,2.625 Z"
+                            d="M -4.440892098500626e-15,2.625 L -4.440892098500626e-15,5.125 L 3.9999999999999956,5.125 L 3.9999999999999956,2.625 Z"
                             inkscape:label="Büro"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                        <path
+                            style="fill:#63909e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                        <path
                             id="264dv7pp1As8rJ9tI8DkGm"
-                            d="M -2.3980000000000037,5.25 L 3.999999999999996,5.25 L -2.3980000000000037,7.75 L 3.999999999999996,7.75 L 3.999999999999996,5.25 L -2.3980000000000037,5.25 Z"
+                            d="M -2.3980000000000037,5.25 L -2.3980000000000037,7.75 L 3.999999999999996,7.75 L 3.999999999999996,5.25 Z"
                             inkscape:label="Büro"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                        <path
+                            style="fill:#63909e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                        <path
                             id="0RGPEQT7D7_gnmpntPO01R"
-                            d="M 4.1249999999999964,0.0 L 7.124999999999995,0.0 L 7.124999999999995,7.7500000000000036 L 4.1249999999999964,7.7500000000000036 L 4.1249999999999964,0.0 Z"
+                            d="M 4.1249999999999964,0.0 L 4.1249999999999964,7.7500000000000036 L 7.124999999999995,7.7500000000000036 L 7.124999999999995,0.0 Z"
                             inkscape:label="Eingangsbereich"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                        <path
+                            style="fill:#c216dd;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                        <path
                             id="0MvsuEqR9EWP0Fhf$6c8n5"
-                            d="M -4.440892098500626e-15,0.0 L 3.9999999999999956,0.0 L 3.9999999999999956,2.5 L -4.440892098500626e-15,2.5 L -4.440892098500626e-15,0.0 Z"
+                            d="M -4.440892098500626e-15,0.0 L -4.440892098500626e-15,2.5 L 3.9999999999999956,2.5 L 3.9999999999999956,0.0 Z"
                             inkscape:label="Büro"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                        <path
+                            style="fill:#63909e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                        <path
                             id="2t0LvWo7v1chh9ls1iserM"
-                            d="M -4.889052760983361,-0.40000000000000124 L -2.08205276098337,-7.249581317320875 L 7.524999999999994,-0.40000000000000124 L 7.657499999999991,12.268418682679126 L 13.00194723901663,13.181174509537428 L 7.524999999999994,-0.40000000000000124 L 11.343691547273252,-4.732761089175709 L -2.08205276098337,-7.249581317320875 L -3.743822594986541,-7.249581317320877 L -4.889052760983361,-0.40000000000000124 L 7.524999999999994,-0.40000000000000124 L -4.889052760983361,-0.40000000000000124 Z"
+                            d="M -4.889052760983361,-0.40000000000000124 L 7.524999999999994,-0.40000000000000124 L 7.657499999999991,12.268418682679126 L 13.00194723901663,13.181174509537428 L 11.343691547273252,-4.732761089175709 L -2.08205276098337,-7.249581317320875 L -3.743822594986541,-7.249581317320877 Z"
                             inkscape:label="BUF"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                        <path
+                            style="fill:#30a0d7;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                        <path
                             id="37VWRD3Rj79RILAO6JmsmC"
-                            d="M -6.600052760983363,9.83343078265419 L 7.65749999999999,12.268418682679126 L 7.62362798158348,8.15 L -2.666882543561859,8.15 L -6.600052760983363,9.83343078265419 L -2.666882543561859,4.837990752537822 L -0.26888254356186003,-0.4 L -4.889052760983363,-0.4 L -6.600052760983363,9.83343078265419 Z"
+                            d="M -6.600052760983363,9.83343078265419 L 7.65749999999999,12.268418682679126 L 7.62362798158348,8.15 L -2.666882543561859,8.15 L -2.666882543561859,4.837990752537822 L -0.26888254356186003,4.8399907525378225 L -0.26888254356186003,-0.4 L -4.889052760983363,-0.4 Z"
                             inkscape:label="UUF"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                    </g>
-                </g>
-                <g
+                            style="fill:#60f67f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                    </g>
+                </g>                <g
                     inkscape:groupmode="layer"
                     id="2itJGxRlD8ZgRnkf7QwMDP"
-                    inkscape:label="Storey=O1, h=300.0000000000002">
+                    inkscape:label="Storey=O1, h=3.00m">
                     <g
                         inkscape:groupmode="layer"
                         id="space_2itJGxRlD8ZgRnkf7QwMDP"
-                        inkscape:label="Space, h=300.0000000000002">
-                        <path
+                        inkscape:label="Space, h=3.40m">                        <path
                             id="1a3xgiKMv1g9hVbx3L0AlJ"
-                            d="M 5.625000000000007,7.750000000000009 L 7.125000000000003,0.0 L 5.625000000000007,0.0 L 5.625000000000007,7.750000000000009 L 7.125000000000003,7.750000000000009 L 7.125000000000003,0.0 L 5.625000000000007,7.750000000000009 Z"
+                            d="M 5.625000000000007,0.0 L 5.625000000000007,7.750000000000009 L 7.125000000000003,7.750000000000009 L 7.125000000000003,0.0 Z"
                             inkscape:label="Luftraum"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                        <path
+                            style="fill:#65375f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                        <path
                             id="27wGAU67LDvf_xrIGTTPnn"
-                            d="M 4.124999999999998,-9.023892744153273e-17 L 4.124999999999998,7.749999999999999 L 5.624999999999998,-9.023892744153273e-17 L 4.124999999999998,-9.023892744153273e-17 Z"
+                            d="M 4.124999999999998,-9.023892744153273e-17 L 4.124999999999998,7.749999999999999 L 5.624999999999998,7.749999999999999 L 5.624999999999998,-9.023892744153273e-17 Z"
                             inkscape:label="Flur"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                        <path
+                            style="fill:#6d862f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                        <path
                             id="1JbHP3cbHDKRL3nSR_KOpa"
-                            d="M -2.398,0.0 L -2.398,7.7500000000000036 L -0.39800000000000013,0.0 L -0.39800000000000013,7.7500000000000036 L -2.398,7.7500000000000036 L -2.398,0.0 Z"
+                            d="M -2.398,0.0 L -2.398,7.7500000000000036 L -0.39800000000000013,7.7500000000000036 L -0.39800000000000013,0.0 Z"
                             inkscape:label="Balkon"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                        <path
+                            style="fill:#09711f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                        <path
                             id="2P3NoYPgb5hBqc4ezJkJYV"
-                            d="M -4.440892098500626e-16,2.625 L -4.440892098500626e-16,5.125 L 3.9999999999999996,2.625 L -4.440892098500626e-16,2.625 Z"
+                            d="M -4.440892098500626e-16,2.625 L -4.440892098500626e-16,5.125 L 3.9999999999999996,5.125 L 3.9999999999999996,2.625 Z"
                             inkscape:label="Büro"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                        <path
+                            style="fill:#63909e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                        <path
                             id="2I5QpeFq98MBuYZ1ESoFI9"
-                            d="M -4.440892098500626e-16,0.0 L 3.9999999999999996,0.0 L 3.9999999999999996,2.5 L -4.440892098500626e-16,2.5 L -4.440892098500626e-16,0.0 Z"
+                            d="M -4.440892098500626e-16,0.0 L -4.440892098500626e-16,2.5 L 3.9999999999999996,2.5 L 3.9999999999999996,0.0 Z"
                             inkscape:label="Büro"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                        <path
+                            style="fill:#63909e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                        <path
                             id="2WllkenNPEROqWYrH1ZuQD"
-                            d="M -4.440892098500626e-16,5.250000000000003 L -4.440892098500626e-16,7.750000000000003 L 3.9999999999999996,7.750000000000003 L 3.9999999999999996,5.250000000000003 L -4.440892098500626e-16,7.750000000000003 L -4.440892098500626e-16,5.250000000000003 Z"
+                            d="M -4.440892098500626e-16,5.250000000000003 L -4.440892098500626e-16,7.750000000000003 L 3.9999999999999996,7.750000000000003 L 3.9999999999999996,5.250000000000003 Z"
                             inkscape:label="Büro"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                    </g>
-                </g>
-                <g
+                            style="fill:#63909e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                    </g>
+                </g>                <g
                     inkscape:groupmode="layer"
                     id="14zN82$QrDyPC_LT7Lv8kM"
-                    inkscape:label="Storey=O2, h=689.9999999999999">
+                    inkscape:label="Storey=O2, h=6.90m">
                     <g
                         inkscape:groupmode="layer"
                         id="space_14zN82$QrDyPC_LT7Lv8kM"
-                        inkscape:label="Space, h=689.9999999999999">
-                        <path
+                        inkscape:label="Space, h=1.00m">                        <path
                             id="0YbXTLaPf18AltEWq3WAEH"
-                            d="M -2.3980000000000037,7.7500000000000036 L 7.125,7.7500000000000036 L 7.125,0.0 L -2.3980000000000037,0.0 L -2.3980000000000037,7.7500000000000036 L 7.125,0.0 L -2.3980000000000037,7.7500000000000036 Z"
+                            d="M -2.3980000000000037,0.0 L -2.3980000000000037,7.7500000000000036 L 7.125,7.7500000000000036 L 7.125,0.0 Z"
                             inkscape:label="Flachdach"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                    </g>
-                </g>
-                <g
+                            style="fill:#dcda53;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                    </g>
+                </g>                <g
                     inkscape:groupmode="layer"
                     id="3fRjRsBzT8Ye_nDbA6a9xN"
-                    inkscape:label="Storey=UG, h=-340.00000000000017">
+                    inkscape:label="Storey=UG, h=-3.40m">
                     <g
                         inkscape:groupmode="layer"
                         id="space_3fRjRsBzT8Ye_nDbA6a9xN"
-                        inkscape:label="Space, h=-340.00000000000017">
-                        <path
+                        inkscape:label="Space, h=3.00m">                        <path
                             id="1R1f5ig8f2n9tJiDInF$9J"
-                            d="M -4.440892098500626e-15,7.749999999999998 L 7.124999999999992,7.749999999999998 L 7.124999999999992,-3.3861802251067274e-15 L -4.440892098500626e-15,-3.3861802251067274e-15 L -4.440892098500626e-15,7.749999999999998 L 7.124999999999992,-3.3861802251067274e-15 L -4.440892098500626e-15,7.749999999999998 Z"
+                            d="M -4.440892098500626e-15,-3.3861802251067274e-15 L -4.440892098500626e-15,7.749999999999998 L 7.124999999999992,7.749999999999998 L 7.124999999999992,-3.3861802251067274e-15 Z"
                             inkscape:label="Keller"
-                            style="fill:#c83737;stroke:#000000;stroke-width:0.1"/>
-                    </g>
+                            style="fill:#434127;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>                    </g>
                 </g>
-            </g>
-        </g>
-    </g>
-    <g
-        inkscape:groupmode="layer"
-        id="layer4"
-        inkscape:label="Help" />
-</svg>
