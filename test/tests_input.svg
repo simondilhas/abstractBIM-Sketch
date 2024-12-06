@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
-   width="10000cm"
-   height="10000cm"
-   viewBox="0 0 100000 100000"
+   width="2368.8151165371655cm"
+   height="2451.6906992229965cm"
+   viewBox="-864.3128343669194 -929.2656900006708 2368.8151165371655 2451.6906992229965"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    sodipodi:docname="tests_input.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,29 +21,23 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="cm"
-     showguides="true"
+     showgrid="true"
      inkscape:zoom="0.01"
-     inkscape:cx="46150"
-     inkscape:cy="381650"
+     inkscape:cx="43000"
+     inkscape:cy="36650"
      inkscape:window-width="1832"
      inkscape:window-height="1076"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer7-6"
-     showgrid="true">
-    <sodipodi:guide
-       position="2719.9999,9199.9929"
-       orientation="0,-1"
-       id="guide1"
-       inkscape:locked="false" />
+     inkscape:current-layer="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00-0-7">
     <inkscape:grid
        id="grid1"
        units="cm"
        originx="0"
        originy="0"
-       spacingx="125"
-       spacingy="125"
+       spacingx="12.5"
+       spacingy="12.5"
        empcolor="#0099e5"
        empopacity="0.30196078"
        color="#0099e5"
@@ -54,343 +46,100 @@
        enabled="true"
        visible="true"
        dotted="false" />
-    <inkscape:grid
-       type="modular"
-       id="grid2"
-       units="cm"
-       originx="0"
-       originy="0"
-       spacingx="40.000001"
-       spacingy="40.000001"
-       empcolor="#0047cb"
-       empopacity="0.30196078"
-       color="#0099e5"
-       opacity="0.14901961"
-       empspacing="0"
-       marginx="0"
-       marginy="0"
-       gapx="10"
-       gapy="10"
-       enabled="false"
-       visible="true" />
-    <inkscape:grid
-       id="grid3"
-       units="cm"
-       originx="0"
-       originy="0"
-       spacingx="10"
-       spacingy="10"
-       empcolor="#0099e5"
-       empopacity="0.30196078"
-       color="#97dcff"
-       opacity="0.14901961"
-       empspacing="5"
-       enabled="false"
-       visible="true" />
   </sodipodi:namedview>
   <defs
      id="defs1" />
   <g
-     inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="Project=Testprojekt">
+     id="2SrQusz6LCbugW83s5znJT"
+     inkscape:label="Project=Test Project">
     <g
-       inkscape:groupmode="layer"
-       id="layer2"
-       inkscape:label="Site=Perimeter1">
+       id="14xUw2jb9EUe1uv_qH4xUe"
+       inkscape:label="Site=Test Site">
       <g
-         inkscape:groupmode="layer"
-         id="layer2-5"
-         inkscape:label="Building=Test1"
-         style="display:inline">
+         id="1Nf2kYXcb8XPrY4rfkICA1"
+         inkscape:label="Building=Test Building 2"
+         style="display:inline"
+         transform="translate(273.80003,1124.95)">
         <g
            inkscape:groupmode="layer"
-           id="layer7"
-           inkscape:label="Storey=O1, h=0">
+           id="14zN82$QrDyPC_LT7Lv8kM"
+           inkscape:label="Storey=O2, Z=690.00">
           <g
              inkscape:groupmode="layer"
-             id="layer8"
-             inkscape:label="Space, h=10">
+             id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00"
+             inkscape:label="Spaces, h=260.00, relZ=0.00"
+             transform="translate(-475.66281,-516.76566)">
+            <path
+               id="0YbXTLaPf18AltEWq3WAEH"
+               d="M -239.8,0 V 775 H 712.5 V 0 Z"
+               inkscape:label="Test Space 1"
+               style="fill:#c733db;fill-opacity:0.7;stroke:#000000;stroke-width:0.1" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="1Nf2kYXcb8XPrY4rfkICA1-3"
+         inkscape:label="Building=Test Building 1"
+         style="display:inline"
+         transform="translate(273.80003,-37.45002)">
+        <g
+           inkscape:groupmode="layer"
+           id="14zN82$QrDyPC_LT7Lv8kM-6"
+           inkscape:label="Storey=O1, Z=0">
+          <g
+             inkscape:groupmode="layer"
+             id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00-0"
+             inkscape:label="Spaces, h=260.00, relZ=0.00"
+             transform="translate(-475.66281,-516.76566)">
+            <path
+               id="0YbXTLaPf18AltEWq3WAEH-6"
+               d="M -239.8,0 V 775 H 712.5 V 0 Z"
+               inkscape:label="Test Space 3"
+               style="fill:#c733db;fill-opacity:0.7;stroke:#000000;stroke-width:0.1" />
             <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.395064"
+               style="fill:#000000;stroke-width:0.0264583"
                id="rect1"
-               width="9999.6045"
-               height="9999.6055"
-               x="6875.0654"
-               y="12500.065"
-               inkscape:label="TestSpaceRect1, TargetArea=100m2" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.26624"
-               d="m 17000.001,12500.001 v 9999.546 0 l 9999.546,-9999.546 z"
-               id="path1"
-               sodipodi:nodetypes="ccccc"
-               inkscape:label="TestSpacePath1, TargetArea=50m2" />
+               width="499.99997"
+               height="624.99994"
+               x="962.5498"
+               y="124.94995"
+               inkscape:label="Test Space 4 rect" />
           </g>
         </g>
-      </g>
-      <g
-         inkscape:groupmode="layer"
-         id="layer9"
-         inkscape:label="Building=Test2">
         <g
            inkscape:groupmode="layer"
-           id="layer7-5"
-           inkscape:label="Storey=O1, h=0"
+           id="14zN82$QrDyPC_LT7Lv8kM-6-8"
+           inkscape:label="Storey=O2, Z=300"
            style="display:inline"
-           transform="rotate(-24.725377,61937.435,30351.246)">
+           transform="translate(250.00002,750.00001)">
           <g
              inkscape:groupmode="layer"
-             id="layer8-3"
-             inkscape:label="Space, h=10">
-            <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.395064"
-               id="rect1-5"
-               width="9999.6045"
-               height="9999.6055"
-               x="6875.0654"
-               y="12500.065"
-               inkscape:label="TestSpaceRect2, TargetArea=100m2" />
+             id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00-0-7"
+             inkscape:label="Spaces, h=260.00, relZ=0.00"
+             transform="translate(-475.66281,-516.76566)">
             <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.26624"
-               d="m 17000.001,12500.001 v 9999.546 0 l 9999.546,-9999.546 z"
-               id="path1-6"
-               sodipodi:nodetypes="ccccc"
-               inkscape:label="TestSpacePath2, TargetArea=50m2" />
-          </g>
-        </g>
-      </g>
-      <g
-         inkscape:groupmode="layer"
-         id="layer2-5-2"
-         inkscape:label="Building=Test3"
-         style="display:inline"
-         transform="translate(-2499.8677,39375.328)">
-        <g
-           inkscape:groupmode="layer"
-           id="layer7-6"
-           inkscape:label="Storey=NONUNIQUE, h=10.5">
-          <g
-             inkscape:groupmode="layer"
-             id="layer8-1"
-             inkscape:label="Space, h=10">
+               id="0YbXTLaPf18AltEWq3WAEH-6-9"
+               d="m -263.60003,-750.05001 v 775 h 952.3 v -775 z"
+               inkscape:label="Test Space 2"
+               style="fill:#c733db;fill-opacity:0.7;stroke:#000000;stroke-width:0.1" />
             <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.395064"
-               id="rect1-8"
-               width="9999.6045"
-               height="9999.6055"
-               x="6875.0654"
-               y="18124.672"
-               inkscape:label="TestSpaceRect1, TargetArea=100m2" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.26624"
-               d="m 17000.001,18124.607 v 9999.546 0 l 9999.546,-9999.546 z"
-               id="path1-7"
-               sodipodi:nodetypes="ccccc"
-               inkscape:label="TestSpacePath1, TargetArea=50m2" />
-          </g>
-        </g>
-        <g
-           inkscape:groupmode="layer"
-           id="layer7-6-2"
-           inkscape:label="Storey=NONUNIQUE, h=0"
-           style="display:inline"
-           transform="rotate(29.395667,13157.378,17031.936)">
-          <g
-             inkscape:groupmode="layer"
-             id="layer8-1-3"
-             inkscape:label="Space, h=10"
-             style="display:inline">
-            <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.395064"
-               id="rect1-8-7"
-               width="9999.6045"
-               height="9999.6055"
-               x="9635.834"
-               y="17400.51"
-               inkscape:label="TestSpaceRect1, TargetArea=100m2" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.26624"
-               d="m 19760.77,17400.444 v 9999.546 0 l 9999.546,-9999.546 z"
-               id="path1-7-5"
-               sodipodi:nodetypes="ccccc"
-               inkscape:label="TestSpacePath1, TargetArea=50m2" />
-            <path
-               style="display:inline;fill:#ffff00;stroke:#000000;stroke-width:0.264583"
-               d="m 13189.826,29889.094 3158.284,-1779.287 2288.552,1006.244 -3511.092,3699.711 z"
-               id="path2"
-               transform="translate(6.0972967e-4,8.3784099e-4)"
-               inkscape:label="TestSpacePath3" />
-          </g>
-        </g>
-      </g>
-      <g
-         inkscape:groupmode="layer"
-         id="layer2-5-8"
-         inkscape:label="Building=Test4"
-         style="display:inline"
-         transform="translate(-7.3602866e-5,26250)">
-        <g
-           inkscape:groupmode="layer"
-           id="layer7-9"
-           inkscape:label="Storey=O1, h=0"
-           transform="translate(-2625.0009,38125.453)">
-          <g
-             inkscape:groupmode="layer"
-             id="layer8-7"
-             inkscape:label="Space, h=10">
-            <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.395064"
+               style="display:inline;fill:#000000;stroke-width:0.0264583"
                id="rect1-3"
-               width="9999.6045"
-               height="9999.6055"
-               x="6875.0654"
-               y="12500.065"
-               inkscape:label="TestSpaceRect1, TargetArea=100m2" />
+               width="499.99997"
+               height="624.99994"
+               x="-546.5379"
+               y="-677.41156"
+               inkscape:label="Test Space 4 rect turned"
+               transform="rotate(-38.659811,-1194.0429,-18.65235)" />
             <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.26624"
-               d="m 17000.001,12500.001 v 9999.546 0 l 9999.546,-9999.546 z"
-               id="path1-61"
-               sodipodi:nodetypes="ccccc"
-               inkscape:label="TestSpacePath1, TargetArea=50m2" />
-          </g>
-        </g>
-      </g>
-      <g
-         inkscape:groupmode="layer"
-         id="layer2-5-8-5"
-         inkscape:label="Building=Test5"
-         style="display:inline"
-         transform="translate(28875.133,26249.482)">
-        <g
-           inkscape:groupmode="layer"
-           id="layer7-9-3"
-           inkscape:label="Storey=O1, h=0"
-           transform="translate(-34500.198,60000.846)">
-          <g
-             inkscape:groupmode="layer"
-             id="layer8-7-5"
-             inkscape:label="Space, h=10">
-            <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.395064"
-               id="rect1-3-6"
-               width="9999.6045"
-               height="9999.6055"
-               x="6875.0654"
-               y="12500.065"
-               inkscape:label="TestSpaceRect1, TargetArea=100m2" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.26624"
-               d="m 17000.001,12500.001 v 9999.546 0 l 9999.546,-9999.546 z"
-               id="path1-61-2"
-               sodipodi:nodetypes="ccccc"
-               inkscape:label="TestSpacePath1, TargetArea=50m2" />
-          </g>
-        </g>
-        <g
-           inkscape:groupmode="layer"
-           id="layer7-9-3-6"
-           inkscape:label="Storey=O2, h=10.5"
-           transform="translate(-34500.001,60000.453)"
-           style="display:inline">
-          <g
-             inkscape:groupmode="layer"
-             id="layer8-7-5-2"
-             inkscape:label="Space, h=10">
-            <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.395064"
-               id="rect1-3-6-6"
-               width="9999.6045"
-               height="9999.6055"
-               x="6875.0654"
-               y="12500.065"
-               inkscape:label="TestSpaceRect1, TargetArea=100m2" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.26624"
-               d="m 17000.001,12500.001 v 9999.546 0 l 9999.546,-9999.546 z"
-               id="path1-61-2-1"
-               sodipodi:nodetypes="ccccc"
-               inkscape:label="TestSpacePath1, TargetArea=50m2" />
+               style="display:inline;fill:#000000;stroke-width:0.0264583"
+               d="M -662.45005,687.44987 -349.95008,466.32488 -99.950108,781.17901 -133.28345,999.94984 -599.95006,812.44987 Z"
+               id="path1"
+               inkscape:label="Test Space 5 Poly turnded"
+               transform="translate(-250.00003,-750.00002)" />
           </g>
         </g>
       </g>
     </g>
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer4"
-     inkscape:label="Help">
-    <g
-       inkscape:groupmode="layer"
-       id="layer5"
-       inkscape:label="GFA" />
-    <text
-       xml:space="preserve"
-       style="display:inline;font-weight:bold;font-size:423.333px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#ffff00;stroke:#000000;stroke-width:0.264583"
-       x="9500.001"
-       y="-41250.453"
-       id="text2"
-       transform="translate(-2625.001,64375.452)"><tspan
-         sodipodi:role="line"
-         id="tspan2"
-         style="fill:#000000;stroke-width:0.264583"
-         x="9500.001"
-         y="-41250.453">Test1</tspan></text>
-    <text
-       xml:space="preserve"
-       style="display:inline;font-weight:bold;font-size:423.333px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:#000000;stroke-width:0.264583"
-       x="7625.001"
-       y="-17500.455"
-       id="text3"
-       transform="translate(-2625.001,64375.452)"><tspan
-         sodipodi:role="line"
-         id="tspan3"
-         style="stroke-width:0.264583"
-         x="7625.001"
-         y="-17500.455">Test2</tspan></text>
-    <text
-       xml:space="preserve"
-       style="display:inline;font-weight:bold;font-size:423.333px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:#000000;stroke-width:0.264583"
-       x="6375.001"
-       y="7499.5454"
-       id="text4"
-       transform="translate(-2625.001,64375.452)"><tspan
-         sodipodi:role="line"
-         id="tspan4"
-         style="stroke-width:0.264583"
-         x="6375.001"
-         y="7499.5454">Test3</tspan></text>
-    <text
-       xml:space="preserve"
-       style="display:inline;font-weight:bold;font-size:423.333px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:#000000;stroke-width:0.264583"
-       x="6375.001"
-       y="23124.547"
-       id="text5"
-       transform="translate(-2625.001,64375.452)"><tspan
-         sodipodi:role="line"
-         id="tspan5"
-         style="stroke-width:0.264583"
-         x="6375.001"
-         y="23124.547">Test4</tspan><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="6375.001"
-         y="23653.713"
-         id="tspan6" /></text>
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:423.333px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:#000000;stroke:#000000;stroke-width:0.264583"
-       x="1250"
-       y="109375"
-       id="text5-7"><tspan
-         sodipodi:role="line"
-         id="tspan5-0"
-         style="stroke-width:0.264583"
-         x="1250"
-         y="109375">Test5</tspan><tspan
-         sodipodi:role="line"
-         style="stroke-width:0.264583"
-         x="1250"
-         y="109904.16"
-         id="tspan6-9" /></text>
   </g>
 </svg>

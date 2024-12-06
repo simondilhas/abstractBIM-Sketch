@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
-   width="10000cm"
-   height="10000cm"
-   viewBox="0 0 100000 100000"
+   width="2368.8151165371655cm"
+   height="2451.6906992229965cm"
+   viewBox="-864.3128343669194 -929.2656900006708 2368.8151165371655 2451.6906992229965"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    sodipodi:docname="groundfloor_test1.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,29 +21,23 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="cm"
-     showguides="true"
-     inkscape:zoom="0.032771827"
-     inkscape:cx="75873.096"
-     inkscape:cy="61623.052"
+     showgrid="true"
+     inkscape:zoom="0.01"
+     inkscape:cx="49000"
+     inkscape:cy="41050"
      inkscape:window-width="1832"
      inkscape:window-height="1076"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer6"
-     showgrid="true">
-    <sodipodi:guide
-       position="2719.9999,9199.9929"
-       orientation="0,-1"
-       id="guide1"
-       inkscape:locked="false" />
+     inkscape:current-layer="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00">
     <inkscape:grid
        id="grid1"
        units="cm"
        originx="0"
        originy="0"
-       spacingx="125"
-       spacingy="125"
+       spacingx="12.5"
+       spacingy="12.5"
        empcolor="#0099e5"
        empopacity="0.30196078"
        color="#0099e5"
@@ -54,238 +46,38 @@
        enabled="true"
        visible="true"
        dotted="false" />
-    <inkscape:grid
-       type="modular"
-       id="grid2"
-       units="cm"
-       originx="0"
-       originy="0"
-       spacingx="40.000001"
-       spacingy="40.000001"
-       empcolor="#0047cb"
-       empopacity="0.30196078"
-       color="#0099e5"
-       opacity="0.14901961"
-       empspacing="0"
-       marginx="0"
-       marginy="0"
-       gapx="10"
-       gapy="10"
-       enabled="false"
-       visible="true" />
-    <inkscape:grid
-       id="grid3"
-       units="cm"
-       originx="0"
-       originy="0"
-       spacingx="10"
-       spacingy="10"
-       empcolor="#0099e5"
-       empopacity="0.30196078"
-       color="#97dcff"
-       opacity="0.14901961"
-       empspacing="5"
-       enabled="false"
-       visible="true" />
   </sodipodi:namedview>
   <defs
      id="defs1" />
   <g
-     inkscape:groupmode="layer"
-     id="layer3"
-     inkscape:label="Project=Testprojekt">
+     id="2SrQusz6LCbugW83s5znJT"
+     inkscape:label="Project=Template Project Name">
     <g
-       inkscape:groupmode="layer"
-       id="layer2"
-       inkscape:label="Site=Perimeter1">
+       id="14xUw2jb9EUe1uv_qH4xUe"
+       inkscape:label="Site=Template Site Name">
       <g
-         inkscape:groupmode="layer"
-         id="layer2-5"
-         inkscape:label="Building=Example Building"
+         id="1Nf2kYXcb8XPrY4rfkICA1"
+         inkscape:label="Building=Template Building Name"
          style="display:inline">
-        <rect
-           style="fill:#333333;stroke:#000000;stroke-width:0.406765"
-           id="rect2"
-           width="22749.725"
-           height="5249.8564"
-           x="7250.0718"
-           y="12875.073"
-           inkscape:label="GFA" />
         <g
-           inkscape:label="Storey=EG, h=0.0"
            inkscape:groupmode="layer"
-           id="layer1">
+           id="14zN82$QrDyPC_LT7Lv8kM"
+           inkscape:label="Storey=Template Storey Name, Z=690.00">
           <g
              inkscape:groupmode="layer"
-             id="layer6"
-             inkscape:label="Space, h=2.5">
+             id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00"
+             inkscape:label="Spaces, h=100.00, relZ=0.00">
             <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
+               style="fill:#000000;stroke-width:0.0264583"
                id="rect1"
-               width="2750.0024"
-               height="3749.9673"
-               x="7500.0059"
-               y="13124.992"
-               inkscape:label="Office" />
-            <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-               id="rect1-5"
-               width="2750.0024"
-               height="3749.9673"
-               x="10374.998"
-               y="13125.017"
-               inkscape:label="Office" />
-            <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-               id="rect1-5-2"
-               width="2750.0024"
-               height="3749.9673"
-               x="13249.998"
-               y="13125.017"
-               inkscape:label="Office" />
-            <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.0806285"
-               id="rect7"
-               width="8499.8428"
-               height="874.8974"
-               x="7500.1167"
-               y="17000.117"
-               inkscape:label="Cooridor" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
-               d="m 16125,13125 v 4750 h 2625 v -4750 z"
-               id="path3" />
-            <rect
-               style="fill:#0fff00;fill-opacity:1;stroke:#000000;stroke-width:0.264583"
-               id="rect6"
-               width="2875"
-               height="2500"
-               x="19000"
-               y="13125"
-               inkscape:label="Storage" />
-            <rect
-               style="fill:#00ffff;fill-opacity:1;stroke:#000000;stroke-width:0.264583"
-               id="rect8"
-               width="2875"
-               height="2125"
-               x="19000"
-               y="15750" />
+               width="721.02075"
+               height="687.49994"
+               x="-614.31287"
+               y="-804.26569"
+               inkscape:label="Template Room Name" />
           </g>
         </g>
-        <g
-           inkscape:groupmode="layer"
-           id="layer7"
-           inkscape:label="Storey=O1, h=3.0">
-          <g
-             inkscape:groupmode="layer"
-             id="layer8"
-             inkscape:label="Space, h=2.5">
-            <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-               id="rect1-2"
-               width="2750.0024"
-               height="3749.9673"
-               x="7500.0059"
-               y="13124.992"
-               inkscape:label="Office" />
-            <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-               id="rect1-5-9"
-               width="2750.0024"
-               height="3749.9673"
-               x="10374.998"
-               y="13125.017"
-               inkscape:label="Office" />
-            <rect
-               style="fill:#c83737;stroke:#000000;stroke-width:0.0812947"
-               id="rect1-5-2-1"
-               width="2750.0024"
-               height="3749.9673"
-               x="13249.998"
-               y="13125.017"
-               inkscape:label="Office" />
-            <rect
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.0806285"
-               id="rect7-2"
-               width="8499.8428"
-               height="874.8974"
-               x="7500.1167"
-               y="17000.117"
-               inkscape:label="Cooridor" />
-            <path
-               style="fill:#ffff00;stroke:#000000;stroke-width:0.264583"
-               d="m 16125,13125 v 4750 h 2625 v -4750 z"
-               id="path3-7" />
-          </g>
-        </g>
-        <text
-           xml:space="preserve"
-           style="font-weight:bold;font-size:416.772px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:#333333;stroke:#000000;stroke-width:0.260483"
-           x="-16342.83"
-           y="14264.312"
-           id="text2"
-           transform="matrix(1.0157423,-1.6169855e-8,0,1.0157423,24019.86,4256.7697)"><tspan
-             sodipodi:role="line"
-             id="tspan2"
-             style="stroke-width:0.260483"
-             x="-16342.83"
-             y="14264.312">Example Building</tspan></text>
       </g>
-    </g>
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer4"
-     inkscape:label="Help">
-    <text
-       xml:space="preserve"
-       style="font-weight:bold;font-size:789.912px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:#333333;stroke:#000000;stroke-width:0.493695"
-       x="5875.2607"
-       y="20346.992"
-       id="text2-5-0"
-       inkscape:label="Help"
-       transform="scale(0.95740431,1.0444908)"><tspan
-         sodipodi:role="line"
-         id="tspan2-3-9"
-         style="stroke-width:0.493695"
-         x="5875.2607"
-         y="20346.992">Help</tspan></text>
-    <text
-       xml:space="preserve"
-       style="display:inline;font-weight:bold;font-size:1021.48px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#333333;stroke:#000000;stroke-width:0.638425"
-       x="-18152.354"
-       y="7046.1777"
-       id="text2-5"
-       transform="matrix(1.0157423,-1.6169855e-8,0,1.0157423,24019.86,4256.7697)"
-       inkscape:label="Header: abstractBIM Sketcher"><tspan
-         sodipodi:role="line"
-         id="tspan2-3"
-         style="stroke-width:0.638425"
-         x="-18152.354"
-         y="7046.1777">abstractBIM Sketch</tspan></text>
-    <g
-       inkscape:groupmode="layer"
-       id="layer5"
-       inkscape:label="GFA">
-      <rect
-         style="display:inline;fill:#333333;stroke:#000000;stroke-width:0.292334"
-         id="rect2-9"
-         width="11749.985"
-         height="5249.9707"
-         x="7250.0073"
-         y="21875"
-         inkscape:label="GFA" />
-      <text
-         xml:space="preserve"
-         style="font-weight:bold;font-size:423.333px;font-family:Sans;-inkscape-font-specification:'Sans Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;display:inline;fill:#333333;stroke:#000000;stroke-width:0.264584"
-         x="7225.4541"
-         y="27823.822"
-         id="text3"><tspan
-           sodipodi:role="line"
-           id="tspan3"
-           style="stroke-width:0.264584"
-           x="7225.4541"
-           y="27823.822">Only GFA wont transfrom to a space</tspan></text>
     </g>
   </g>
 </svg>

@@ -11,6 +11,7 @@ from svg.path import Path
 import ifcopenshell.guid
 import os
 from lxml import etree
+from math import sin, cos, radians
 
 from utils.unit_class import UnitConverter, ModelUnit
 
@@ -55,20 +56,57 @@ class SVGGeometryParser:
 
 
     def parse_rect(self, attr: Dict[str, str]) -> List[Point3D]:
-        """Parse rectangle from SVG attributes (cm) to meters."""
+        """Parse rectangle from SVG attributes (cm) to meters, handling rotation."""
+        # Get basic rectangle properties
         x = self.converter.convert(float(attr.get('x', 0)))
         y = self.converter.convert(float(attr.get('y', 0)))
         width = self.converter.convert(float(attr.get('width', 0)))
         height = self.converter.convert(float(attr.get('height', 0)))
-
-        return [
-            Point3D(x, y),
-            Point3D(x + width, y),
-            Point3D(x + width, y + height),
-            Point3D(x, y + height),
-            Point3D(x, y)
+        
+        # Parse rotation if it exists
+        transform = attr.get('transform', '')
+        angle = 0
+        cx = x + width/2  # Default rotation center is rectangle center
+        cy = y + height/2
+        
+        if 'rotate' in transform:
+            # Extract rotation parameters
+            rotate_params = transform.split('rotate(')[1].split(')')[0].split(',')
+            angle = float(rotate_params[0])
+            if len(rotate_params) == 3:
+                # If rotation center is specified, use it
+                cx = self.converter.convert(float(rotate_params[1]))
+                cy = self.converter.convert(float(rotate_params[2]))
+        
+        # Convert angle to radians
+        angle_rad = radians(angle)
+        
+        # Function to rotate a point around center
+        def rotate_point(px, py):
+            # Translate point to origin
+            translated_x = px - cx
+            translated_y = py - cy
+            
+            # Rotate
+            rotated_x = translated_x * cos(angle_rad) - translated_y * sin(angle_rad)
+            rotated_y = translated_x * sin(angle_rad) + translated_y * cos(angle_rad)
+            
+            # Translate back
+            final_x = rotated_x + cx
+            final_y = rotated_y + cy
+            
+            return Point3D(final_x, final_y)
+        
+        # Get corners and rotate them
+        corners = [
+            rotate_point(x, y),                    # Top-left
+            rotate_point(x + width, y),            # Top-right
+            rotate_point(x + width, y + height),   # Bottom-right
+            rotate_point(x, y + height),           # Bottom-left
+            rotate_point(x, y)                     # Back to start (closes the shape)
         ]
-
+        
+        return corners
     def parse_path(self, path_obj) -> List[Point3D]:
         """Parse path from SVG (cm) to meters."""
         points = []
