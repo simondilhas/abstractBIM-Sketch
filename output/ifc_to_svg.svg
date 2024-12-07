@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-    width="2368.8151165371655cm"
-    height="2451.6906992229965cm"
-    viewBox="-864.3128343669194 -929.2656900006708 2368.8151165371655 2451.6906992229965"
+    width="5924.9294405850005cm"
+    height="7752.187703189999cm"
+    viewBox="-2772.8156419525 -1824.2156431775002 5924.9294405850005 7752.187703189999"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -36,138 +36,1538 @@
             </sodipodi:namedview>
             <defs id="defs1" />
     <g
-        id="2SrQusz6LCbugW83s5znJT"
-        inkscape:label="Project=default project">
+        id="344O7vICcwH8qAEnwJDjSU"
+        inkscape:label="Project=Bro- Geschftshaus Suurstoffi S22, 6343 Risch-Rotkreuz	">
         <g
-            id="14xUw2jb9EUe1uv_qH4xUe"
-            inkscape:label="Site=Grundstück">
+            id="20FpTZCqJy2vhVJYtjuIce"
+            inkscape:label="Site=Gelaende">
             <g
-                id="1Nf2kYXcb8XPrY4rfkICA1"
-                inkscape:label="Building=Gebäude"
+                id="00tMo7QcxqWdIGvc4sMN2A"
+                inkscape:label="Building=Gebaeude"
                 style="display:inline">
                 <g
                     inkscape:groupmode="layer"
-                    id="3fRjRsBzT8Ye_nDbA6a9xN"
-                    inkscape:label="Storey=UG, Z=-340.00">
+                    id="20HA3XRcIrJBGWXV3nMC0_"
+                    inkscape:label="Storey=2 Untergeschoss, Z=-572.00">
  <g
                 inkscape:groupmode="layer"
-                id="spaces_3fRjRsBzT8Ye_nDbA6a9xN_h300.00_z0.00"
-                inkscape:label="Spaces, h=300.00, relZ=0.00">
+                id="spaces_20HA3XRcIrJBGWXV3nMC0__h91.00_z-6.00"
+                inkscape:label="Spaces, h=91.00, relZ=-6.00">
                         <path
-                                id="1R1f5ig8f2n9tJiDInF$9J"
-                                d="M -0.000,-0.000 V 775.000 H 712.500 V -0.000 Z"
-                                inkscape:label="Keller"
-                                style="fill:#e4676f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="2xlkGAY$0DH8WB$cnWRM5R"
+                                d="M 340.000,519.000 H -250.000 V 609.000 L 40.000,609.000 L 40.000,1133.700 L 1205.003,1133.700 V 1163.700 L 1476.000,1163.700 V 913.700 H 615.000 V 485.000 H 340.000 Z"
+                                inkscape:label="RDA Kanal"
+                                style="fill:#b8da2e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_20HA3XRcIrJBGWXV3nMC0__h113.00_z0.00"
+                inkscape:label="Spaces, h=113.00, relZ=0.00">
+                        <path
+                                id="1dXYyj3CyiJBuNI7Cgf8VX"
+                                d="M 340.000,-90.000 V 75.000 H 615.000 V -90.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2Zxkij5q_VHRqEGjL5yFn5"
+                                d="M 615.000,455.000 V 290.000 H 340.000 V 455.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2u3E8_ZJUAJgJUCvtIxvLR"
+                                d="M -250.000,819.000 V 979.000 H 10.000 L 10.000,819.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3hR9lMf1k4H8oXlFA8FvJZ"
+                                d="M -250.000,799.000 H 10.000 L 10.000,639.000 H -250.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1q7QttuS8QIQXDo9C6QO3u"
+                                d="M 615.000,265.000 V 100.000 H 340.000 V 265.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_20HA3XRcIrJBGWXV3nMC0__h222.00_z0.00"
+                inkscape:label="Spaces, h=222.00, relZ=0.00">
+                        <path
+                                id="08jj8vfiPqHxjxerYLVmXE"
+                                d="M 1011.098,2690.535 V 4590.298 L 1003.598,4594.628 L 1319.598,5141.956 L 1449.502,5066.956 L 1146.098,4541.445 V 2825.600 H 1476.000 V 2199.465 H 1220.003 V 2690.535 Z"
+                                inkscape:label="RDA Kanal"
+                                style="fill:#b8da2e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_20HA3XRcIrJBGWXV3nMC0__h427.51_z-3.00"
+                inkscape:label="Spaces, h=427.51, relZ=-3.00">
+                        <path
+                                id="1oXasKLMYwGeId5bs45FHF"
+                                d="M 2031.000,1163.700 H 1506.000 V 2046.600 H 2031.000 Z"
+                                inkscape:label="Technik Sanitr"
+                                style="fill:#8de155;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_20HA3XRcIrJBGWXV3nMC0__h492.00_z-3.00"
+                inkscape:label="Spaces, h=492.00, relZ=-3.00">
+                        <path
+                                id="3lq1T3786_IgLNZdR02RZN"
+                                d="M 1476.000,1163.700 H 1205.003 V 2199.465 H 1476.000 Z"
+                                inkscape:label="Technik RDA"
+                                style="fill:#6bd8e4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_20HA3XRcIrJBGWXV3nMC0__h545.00_z-3.00"
+                inkscape:label="Spaces, h=545.00, relZ=-3.00">
+                        <path
+                                id="2YxaGVpEvYJAG7GJIVXTA9"
+                                d="M -510.679,3781.581 L 197.450,5008.097 L 405.280,4888.106 L 330.280,4758.202 L 356.261,4743.202 L 431.261,4873.106 L 966.098,4564.317 V 2645.535 H 1175.003 V 2445.600 H 615.000 V 2415.600 H 1175.003 L 1175.003,1507.600 H 615.000 V 1477.600 H 1175.003 V 1163.700 H 10.000 L 10.000,1009.000 L -551.800,1009.000 V 3781.581 Z"
+                                inkscape:label="Technik HLK"
+                                style="fill:#86e25e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
                 </g>
                 <g
                     inkscape:groupmode="layer"
-                    id="3Grfa0xNX31RW_79ewGkrq"
-                    inkscape:label="Storey=EG, Z=0.00">
+                    id="3KoeUntYeqIw0KTU9tDbFW"
+                    inkscape:label="Storey=1. Untergeschoss, Z=-459.00">
  <g
                 inkscape:groupmode="layer"
-                id="spaces_3Grfa0xNX31RW_79ewGkrq_h100.00_z-0.00"
-                inkscape:label="Spaces, h=100.00, relZ=0.00">
+                id="spaces_3KoeUntYeqIw0KTU9tDbFW_h250.50_z108.50"
+                inkscape:label="Spaces, h=250.50, relZ=108.50">
                         <path
-                                id="2t0LvWo7v1chh9ls1iserM"
-                                d="M -488.905,-40.000 H 752.500 L 765.750,1226.842 L 1300.195,1318.117 L 1134.369,-473.276 L -208.205,-724.958 H -374.382 Z"
-                                inkscape:label="BUF"
-                                style="fill:#e4e067;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
-                        <path
-                                id="37VWRD3Rj79RILAO6JmsmC"
-                                d="M -660.005,983.343 L 765.750,1226.842 L 762.363,815.000 H -266.688 V 483.799 L -26.888,483.999 V -40.000 H -488.905 Z"
-                                inkscape:label="UUF"
-                                style="fill:#4cdb33;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="27SmFcJiNvIxOrH1avXULX"
+                                d="M 414.790,4934.577 L 337.290,4800.343 L 142.450,4912.834 L 279.950,5150.991 L 1037.617,4713.551 L 977.617,4609.628 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
  <g
                 inkscape:groupmode="layer"
-                id="spaces_3Grfa0xNX31RW_79ewGkrq_h300.00_z0.00"
-                inkscape:label="Spaces, h=300.00, relZ=0.00">
+                id="spaces_3KoeUntYeqIw0KTU9tDbFW_h314.00_z75.00"
+                inkscape:label="Spaces, h=314.00, relZ=75.00">
                         <path
-                                id="0tKQ4bcJ991Pc4SPg6P8M7"
-                                d="M -0.000,262.500 V 512.500 H 400.000 V 262.500 Z"
-                                inkscape:label="Büro"
-                                style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="0qupvBx9bbIuEQtkyVgciT"
+                                d="M 2091.000,1143.700 H 2506.098 V 1129.900 H 2091.000 Z"
+                                inkscape:label="Veloraum"
+                                style="fill:#4d54df;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3KoeUntYeqIw0KTU9tDbFW_h355.50_z108.50"
+                inkscape:label="Spaces, h=355.50, relZ=108.50">
                         <path
-                                id="264dv7pp1As8rJ9tI8DkGm"
-                                d="M -239.800,525.000 V 775.000 H 400.000 V 525.000 Z"
-                                inkscape:label="Büro"
-                                style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="3MFxZNTkgmGP5zynMH4vjc"
+                                d="M 1078.598,4724.532 L 1319.598,5141.956 L 1449.502,5066.956 L 1208.502,4649.532 Z"
+                                inkscape:label="RDA Schacht"
+                                style="fill:#3526d8;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                         <path
-                                id="0RGPEQT7D7_gnmpntPO01R"
-                                d="M 412.500,0.000 V 775.000 H 712.500 V 0.000 Z"
-                                inkscape:label="Eingangsbereich"
-                                style="fill:#6f8de5;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="0PVAE4Lm3yGhEljKuMkNe3"
+                                d="M 1052.618,4739.532 L 836.111,4864.532 L 1077.111,5281.956 L 1293.617,5156.956 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3KoeUntYeqIw0KTU9tDbFW_h416.07_z0.00"
+                inkscape:label="Spaces, h=416.07, relZ=0.00">
                         <path
-                                id="0MvsuEqR9EWP0Fhf$6c8n5"
-                                d="M -0.000,0.000 V 250.000 H 400.000 V 0.000 Z"
-                                inkscape:label="Büro"
-                                style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="3rhhlOT_xFJveRViEiWQ2c"
+                                d="M 1506.000,429.400 V 979.000 H 2031.000 V 429.400 Z"
+                                inkscape:label="Schwachstr."
+                                style="fill:#3373db;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3KoeUntYeqIw0KTU9tDbFW_h429.00_z0.00"
+                inkscape:label="Spaces, h=429.00, relZ=0.00">
+                        <path
+                                id="3oUxlvpjiVHx10CccU_utR"
+                                d="M 40.000,-90.000 V 1133.700 H 310.000 V -90.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="28HTHaikPUH9$A2zdpFaHP"
+                                d="M -551.800,1009.000 H -280.000 V 30.000 H -551.800 Z"
+                                inkscape:label="HLK Schacht"
+                                style="fill:#5ce15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1CQokGIx1aJxhTDTQeOGbW"
+                                d="M 615.000,75.000 V -90.000 H 340.000 V 75.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3k$nYeK8QbGfDKIWpBMU7o"
+                                d="M -250.000,799.000 H 10.000 V 639.000 H -250.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2dV5Ehz5EtHfv8FceogYHT"
+                                d="M -250.000,979.000 H 10.000 V 819.000 H -250.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0CrKSBh1p6HvNiWZN2cS8Z"
+                                d="M 340.000,290.000 V 455.000 H 615.000 V 290.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3C1sihtD98IhIIsQyGBlnf"
+                                d="M 615.000,265.000 V 100.000 H 340.000 V 265.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1bnVDV_vnZJgNs6HeAF42A"
+                                d="M 927.000,414.400 V 979.000 H 1476.000 V 414.400 Z"
+                                inkscape:label="Starkstrom"
+                                style="fill:#c5e362;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1U5l5TuZNYJgobN1EaXYdq"
+                                d="M -1671.152,2068.327 L -1668.308,2070.115 L -1665.138,2071.224 L -1661.800,2071.600 H -1641.800 L -1638.462,2071.224 L -1635.292,2070.115 L -1632.448,2068.327 L -1630.073,2065.952 L -1628.285,2063.108 L -1627.176,2059.938 L -1626.809,2056.684 L -1676.791,2056.680 L -1676.424,2059.938 L -1675.315,2063.108 L -1673.527,2065.952 L -2126.800,1972.995 L -2076.800,1972.988 V 1979.700 H -646.800 V 1972.812 L -596.800,1972.806 V -15.000 H -38.000 V -135.000 H 660.000 V -117.895 L 2063.327,79.071 L 2230.930,76.400 L 2337.098,-1165.200 H -2126.800 L -1088.308,2070.115 L -1085.138,2071.224 L -1081.800,2071.600 H -1061.800 L -1058.462,2071.224 L -1055.292,2070.115 L -1052.448,2068.327 L -1050.073,2065.952 L -1048.285,2063.108 L -1047.176,2059.938 L -1046.821,2056.790 L -1096.778,2056.796 L -1096.424,2059.938 L -1095.315,2063.108 L -1093.527,2065.952 L -1091.152,2068.327 Z"
+                                inkscape:label="Garage (85PP)"
+                                style="fill:#6274e3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1UdlSkNO7EJuw$GlklVHfi"
+                                d="M -250.000,30.000 V 569.000 H 10.000 V 30.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2N7GSQ4w7jIAA$2FlW25JV"
+                                d="M 340.000,1009.000 V 1133.700 L 2031.000,1133.700 V 1009.000 Z"
+                                inkscape:label="Korridor"
+                                style="fill:#e17455;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3wRRZI_W9lGgZWr_ZDBg7V"
+                                d="M 615.000,485.000 H 501.000 V 570.000 H 340.000 V 979.000 H 615.000 Z"
+                                inkscape:label="Sprinklerzentrale"
+                                style="fill:#d45ae1;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3Q1G41L7xoJ9xLH_Slh8sJ"
+                                d="M 645.000,414.400 V 979.000 H 897.000 V 414.400 Z"
+                                inkscape:label="Hauswart"
+                                style="fill:#e6b174;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3KoeUntYeqIw0KTU9tDbFW_h1229.50_z-350.50"
+                inkscape:label="Spaces, h=1229.50, relZ=-350.50">
+                        <path
+                                id="3u$8Dze5t4HhUaHvYTxhlk"
+                                d="M 1235.003,2207.600 V 2619.600 H 1476.000 L 1476.000,2267.600 H 1430.000 L 1430.000,2207.600 Z"
+                                inkscape:label="Rampe"
+                                style="fill:#5433db;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2zON1YxGFpIBMQhz$bB3DH"
+                                d="M 2030.998,2207.600 H 1506.000 V 2619.600 H 2030.998 Z"
+                                inkscape:label="Rampe"
+                                style="fill:#5433db;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
                 </g>
                 <g
                     inkscape:groupmode="layer"
-                    id="2itJGxRlD8ZgRnkf7QwMDP"
-                    inkscape:label="Storey=O1, Z=340.00">
+                    id="3eYt9TfVT42ezAX4OpSOsQ"
+                    inkscape:label="Storey=Erdgeschoss, Z=0.00">
  <g
                 inkscape:groupmode="layer"
-                id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h100.00_z0.00"
-                inkscape:label="Spaces, h=100.00, relZ=0.00">
+                id="spaces_3eYt9TfVT42ezAX4OpSOsQ_h275.00_z145.00"
+                inkscape:label="Spaces, h=275.00, relZ=145.00">
                         <path
-                                id="1JbHP3cbHDKRL3nSR_KOpa"
-                                d="M -239.800,0.000 V 775.000 H -39.800 V 0.000 Z"
-                                inkscape:label="Balkon"
-                                style="fill:#44de93;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="2bqk2tMRVvGON26cuBzHxw"
+                                d="M 2031.000,2407.600 V 2267.600 H 1205.003 V 2407.600 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="373QrT9c7eJwVsm3mjsuVJ"
+                                d="M 915.002,2415.600 H 1175.003 V 1617.600 H 915.002 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
  <g
                 inkscape:groupmode="layer"
-                id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h300.00_z-0.00"
-                inkscape:label="Spaces, h=300.00, relZ=0.00">
+                id="spaces_3eYt9TfVT42ezAX4OpSOsQ_h397.00_z0.00"
+                inkscape:label="Spaces, h=397.00, relZ=0.00">
                         <path
-                                id="27wGAU67LDvf_xrIGTTPnn"
-                                d="M 412.500,-0.000 V 775.000 H 562.500 V -0.000 Z"
-                                inkscape:label="Flur"
-                                style="fill:#db33b9;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="1LYws$iLnpIw6QI9MHK7vQ"
+                                d="M -1061.000,-638.000 H -1091.000 V -404.400 H -1061.000 V -374.400 H -1091.000 V -257.900 H -1061.000 V -123.300 H -552.000 V -230.000 H -230.104 V -638.000 H -239.000 V -668.000 H -493.000 V -638.000 H -523.000 V -668.000 H -777.000 V -638.000 H -807.000 V -668.000 H -1061.000 Z"
+                                inkscape:label="Foyer"
+                                style="fill:#7de155;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                         <path
-                                id="2P3NoYPgb5hBqc4ezJkJYV"
-                                d="M -0.000,262.500 V 512.500 H 400.000 V 262.500 Z"
-                                inkscape:label="Büro"
-                                style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="27BipCvQp0H8qvOxK7m8QS"
+                                d="M 645.000,1477.600 H 690.001 V 1507.600 H 645.000 V 1789.600 H 885.002 V 1507.600 H 840.001 V 1477.600 H 1175.003 V 934.850 H 927.000 V 943.600 H 897.000 V 934.850 H 645.000 Z"
+                                inkscape:label="Nebenraum"
+                                style="fill:#71e46b;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                         <path
-                                id="2I5QpeFq98MBuYZ1ESoFI9"
-                                d="M -0.000,0.000 V 250.000 H 400.000 V 0.000 Z"
-                                inkscape:label="Büro"
-                                style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="1GqRQSpQ6yHhzSDy9Dkjfm"
+                                d="M 615.000,485.000 H 501.000 V 560.000 H 615.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                         <path
-                                id="2WllkenNPEROqWYrH1ZuQD"
-                                d="M -0.000,525.000 V 775.000 H 400.000 V 525.000 Z"
-                                inkscape:label="Büro"
-                                style="fill:#74e6b3;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="1Cf3wjOLzQGgO3Q6IIoyKa"
+                                d="M 611.000,75.000 V -90.000 H 340.000 V 75.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1yfztaj2gdJwp1KFyx84fh"
+                                d="M -552.000,-110.800 H -1061.000 V 161.500 H -552.000 V 136.000 H -522.000 V 161.500 H -280.000 V 30.000 H -552.000 Z"
+                                inkscape:label="Fluchtweg"
+                                style="fill:#672ad9;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="321umwIch_J8_EbS2QsY__"
+                                d="M 1175.003,1587.600 V 1507.600 H 915.002 V 1587.600 Z"
+                                inkscape:label="Schacht E"
+                                style="fill:#e69474;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0vKkXKfwzBJOCFPv7BDhng"
+                                d="M 611.000,100.000 H 340.000 V 265.000 H 611.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0bLjF7IUFfHfGrATN9$Z_k"
+                                d="M 40.000,-200.000 V 979.000 H 310.000 V -200.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0aoH2ANG61IvByTxmonvgH"
+                                d="M 340.000,290.000 V 455.000 H 611.000 V 290.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3NXartM1ZvIu8nn$nZHVfj"
+                                d="M -209.000,-668.000 V -638.000 H -217.604 V -230.000 H 621.750 V -638.000 H 613.000 V -668.000 H 359.000 V -638.000 H 329.000 V -668.000 H 75.000 V -638.000 H 45.000 V -668.000 Z"
+                                inkscape:label="Foyer"
+                                style="fill:#7de155;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1DQ0mSFme1Ixx40Lk2SfZN"
+                                d="M 615.000,979.000 V 819.000 H 340.000 V 979.000 Z"
+                                inkscape:label="IV WC"
+                                style="fill:#6fe5db;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1DqF4M1DkaIR7Pn_TzoFkR"
+                                d="M -522.000,-200.000 V 0.000 H 10.000 V -200.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="11RzfUUudCJAiGV9zrRnvs"
+                                d="M -1661.000,174.000 V 384.400 H -1627.000 V 418.400 H -1661.000 V 648.000 H -1627.000 V 682.000 H -1661.000 V 878.610 H -1627.000 V 924.350 H -1091.000 V 915.600 H -1061.000 V 924.350 H -552.000 V 914.000 H -522.000 V 979.000 H -280.000 V 639.000 H -522.000 V 704.000 H -552.000 V 480.500 H -554.500 V 210.000 H -552.000 V 174.000 H -1124.000 V 144.000 H -1231.000 V 174.000 H -1261.000 V 144.000 H -1485.000 V 174.000 H -1515.000 V 144.000 H -1627.000 V 174.000 Z"
+                                inkscape:label="Foyer"
+                                style="fill:#7de155;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="04UFLG6ZwfGOPfFELMG0U6"
+                                d="M 340.000,-200.000 V -120.000 H 615.000 V -200.000 Z"
+                                inkscape:label="Schacht E"
+                                style="fill:#e69474;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2R4bsp2jj5I8E$FI44B8bt"
+                                d="M 927.000,-638.000 H 897.000 V -668.000 H 643.000 V -638.000 H 634.250 V -230.000 H 654.000 V -98.000 H 645.000 V 297.998 H 1175.002 V 269.200 H 1205.002 V 152.800 H 1175.002 V 122.800 H 1205.002 V -110.800 H 1175.002 V -140.800 H 1205.002 V -374.400 H 1175.002 V -404.400 H 1205.002 V -638.000 H 1175.002 V -668.000 H 927.000 Z"
+                                inkscape:label="Foyer"
+                                style="fill:#7de155;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2WGMqjjDBmH8Jno$SrsUUZ"
+                                d="M -1073.000,3209.600 V 2932.600 H -1627.000 V 3227.600 H -1091.000 L -1091.000,3209.600 Z"
+                                inkscape:label="Entree"
+                                style="fill:#d8268b;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2ZmNsEbbjwJQNVqolOeMNN"
+                                d="M 491.000,485.000 H 422.500 V 570.000 H 491.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0TGGn8W89EIB7$AP8AB512"
+                                d="M -250.000,639.000 V 799.000 H 10.000 V 639.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="09INEUFzqMJRttNxv2M7s5"
+                                d="M -522.000,174.000 V 609.000 H -280.000 V 174.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1lQE1hOHesIPfSq3u1gZuZ"
+                                d="M -1091.000,936.850 H -1627.000 V 2920.600 H -1061.000 V 3239.600 L -1627.000,3239.600 V 3781.600 L 615.000,3781.609 V 1009.000 H -552.000 V 936.850 H -1061.000 V 945.600 H -1091.000 Z"
+                                inkscape:label="Drittmieter"
+                                style="fill:#44de59;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3sdCUYW4CbIABK0wVfIU96"
+                                d="M 645.000,2445.600 V 2645.600 H 1175.003 V 2445.600 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2lPIrRjiK$IP8Q0e0xBM5c"
+                                d="M 615.000,587.500 H 340.000 V 796.500 H 615.000 Z"
+                                inkscape:label="Putzraum"
+                                style="fill:#e5a26f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3fLrEscNqbGgZ0$ZMotqfk"
+                                d="M 627.500,2675.600 V 3209.600 H 829.002 V 3515.600 H 627.500 V 3781.609 L 2031.000,3781.600 V 2437.600 H 1205.002 V 2675.600 Z"
+                                inkscape:label="Nebenraum"
+                                style="fill:#71e46b;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0_eqRowEzCGfPOf8b6q0BC"
+                                d="M -250.000,819.000 V 979.000 H 10.000 V 819.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0furbFpMlQIP31oJJLl_RD"
+                                d="M 627.500,3503.100 H 816.503 V 3222.100 H 627.500 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3zXsEKjJO6H8iiVkcJ2Q2m"
+                                d="M 340.000,570.000 H 407.500 V 485.000 H 340.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2TyKDeqh4IGf1FNkkK_g3_"
+                                d="M 645.000,310.498 V 922.350 H 897.000 V 913.600 H 927.000 V 922.350 H 1175.003 V 310.498 Z"
+                                inkscape:label="Entsorgung"
+                                style="fill:#e4b26b;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
  <g
                 inkscape:groupmode="layer"
-                id="spaces_2itJGxRlD8ZgRnkf7QwMDP_h340.00_z-40.00"
-                inkscape:label="Spaces, h=340.00, relZ=-40.00">
+                id="spaces_3eYt9TfVT42ezAX4OpSOsQ_h418.00_z2.00"
+                inkscape:label="Spaces, h=418.00, relZ=2.00">
                         <path
-                                id="1a3xgiKMv1g9hVbx3L0AlJ"
-                                d="M 562.500,0.000 V 775.000 H 712.500 V 0.000 Z"
-                                inkscape:label="Luftraum"
-                                style="fill:#44dedb;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="0LWiESn1hpHh$6NnrPap24"
+                                d="M -250.000,30.000 V 569.000 H 10.000 L 10.000,30.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3eYt9TfVT42ezAX4OpSOsQ_h420.00_z0.00"
+                inkscape:label="Spaces, h=420.00, relZ=0.00">
+                        <path
+                                id="0W4K4T$JTJJxNpW8V13OMy"
+                                d="M 645.000,2415.600 H 885.002 V 1799.600 H 645.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
                 </g>
                 <g
                     inkscape:groupmode="layer"
-                    id="14zN82$QrDyPC_LT7Lv8kM"
-                    inkscape:label="Storey=O2, Z=690.00">
+                    id="0T3eESeDgmJunP8ctQ$fhd"
+                    inkscape:label="Storey=1. Obergeschoss, Z=450.00">
  <g
                 inkscape:groupmode="layer"
-                id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00"
-                inkscape:label="Spaces, h=100.00, relZ=0.00">
+                id="spaces_0T3eESeDgmJunP8ctQ$fhd_h318.00_z2.00"
+                inkscape:label="Spaces, h=318.00, relZ=2.00">
                         <path
-                                id="0YbXTLaPf18AltEWq3WAEH"
-                                d="M -239.800,0.000 V 775.000 H 712.500 V 0.000 Z"
-                                inkscape:label="Flachdach"
-                                style="fill:#c733db;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                                id="3rJTf54glbJ9wMaRiJT_yW"
+                                d="M -704.500,979.000 V 875.000 H -1059.000 V 979.000 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3DeL6T1uA6HhWFFKU8tyiS"
+                                d="M 310.000,-200.000 H 39.846 V 979.000 H 310.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2$Y2fhHhl5HB6DMipBwFWy"
+                                d="M 615.000,587.500 H 340.000 V 979.000 H 615.000 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1lEjk31Jj9Iv2jTtm0_6Du"
+                                d="M -692.000,-200.000 V 979.000 H -552.000 V -200.000 Z"
+                                inkscape:label="Gang"
+                                style="fill:#5ee2e2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="36yxpKg864GwO0lVl95VE8"
+                                d="M -522.000,639.000 V 979.000 H -280.000 V 639.000 Z"
+                                inkscape:label="Server"
+                                style="fill:#e15ac2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1NOmSX9oskIOD9qnmzf$Bx"
+                                d="M -250.000,609.000 H 0.000 V 30.000 H -250.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1w7v5WOUKEJ84Ll8MCdQXx"
+                                d="M -522.000,609.000 H -280.000 V 514.000 H -522.000 Z"
+                                inkscape:label="Disponibel"
+                                style="fill:#a367e4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1rohcKwJ2PHv6kU3TaV3Xr"
+                                d="M -704.500,-10.000 V -200.000 H -1029.500 V 270.000 H -721.000 V -10.000 Z"
+                                inkscape:label="WC F"
+                                style="fill:#d06be4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0sR7T6SHvwGx_BhnGhHDMp"
+                                d="M -1029.500,862.500 H -704.500 V 672.500 H -721.000 V 282.500 H -1029.500 Z"
+                                inkscape:label="WC M"
+                                style="fill:#e17655;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_0T3eESeDgmJunP8ctQ$fhd_h320.00_z0.00"
+                inkscape:label="Spaces, h=320.00, relZ=0.00">
+                        <path
+                                id="3_dv$n6Z_1IeSQfMIXmDIE"
+                                d="M 0.000,979.000 V 819.000 H -250.000 V 979.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3HrPxt78VSHOqGIi1FcbA8"
+                                d="M 925.003,1625.600 V 2204.600 H 1175.003 V 1625.600 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3lYaj4YWV_HuTARp16qf5q"
+                                d="M 645.003,1882.600 H 885.002 V 1507.600 H 645.003 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1dHdwlJ_DqIQZebRais_WP"
+                                d="M 645.003,2147.600 V 2407.600 H 895.003 V 2147.600 Z"
+                                inkscape:label="Schacht AUL"
+                                style="fill:#e15ac6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="00UMV1eE47HRw7CRzadqKR"
+                                d="M 615.000,577.500 V 485.000 H 506.000 V 577.500 Z"
+                                inkscape:label="Schacht "
+                                style="fill:#334fdb;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3bogOtYML5IhC9lFNbvAOP"
+                                d="M 615.000,265.000 V 100.000 H 340.000 V 265.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2r07$weXY_JfneiRd1owlV"
+                                d="M 340.000,-200.000 V -120.000 H 615.000 V -200.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3opwpGzw2QHOIyTylbw7QP"
+                                d="M 615.000,75.000 V -90.000 H 340.000 V 75.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0$NLAqFq4JIhblYAAzev_t"
+                                d="M -539.500,30.000 V 405.000 H -522.000 V 504.000 H -280.000 V 30.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3fIEPhl$dTJ8BWP3xze7P$"
+                                d="M 340.000,455.000 H 615.000 V 290.000 H 340.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0sB4yxLFTCHh8wGR9dbFgt"
+                                d="M 645.003,2437.600 V 2637.600 H 1175.003 V 2437.600 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3HWEhRnkBAJeod6GijdjL9"
+                                d="M -250.000,639.000 V 799.000 H 0.000 V 639.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0W$mss$AFfIR37B_8zKHPc"
+                                d="M 925.003,1515.600 V 1595.600 H 1175.003 V 1515.600 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1_yqTcvqhTGhlftvrO6f4f"
+                                d="M 645.003,1895.100 V 2143.100 H 885.002 V 1895.100 Z"
+                                inkscape:label="Serverraum"
+                                style="fill:#2e79da;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1PCdFCdEDCIR0hzPKVcr8O"
+                                d="M -1911.000,-1163.200 H -1926.000 V -933.600 H -1911.000 V -899.600 H -1926.000 V -670.000 H -1911.000 V -636.000 H -1926.000 V -406.400 H -1911.000 V -372.400 H -1926.000 V -142.800 H -1911.000 V -108.800 H -1926.000 V 120.800 H -1911.000 V 154.800 H -1926.000 V 384.400 H -1911.000 V 418.400 H -1926.000 V 648.000 H -1911.000 V 682.000 H -1926.000 V 911.600 H -1911.000 V 926.600 H -1661.000 V 911.600 H -1627.000 V 945.600 H -1642.000 V 1198.600 H -1627.000 V 1232.600 H -1642.000 V 1485.600 H -1627.000 V 1519.600 H -1642.000 V 1772.600 H -1627.000 V 1806.600 H -1642.000 V 2059.600 H -1627.000 V 2093.600 H -1642.000 V 2346.600 H -1627.000 V 2380.600 H -1642.000 V 2633.600 H -1627.000 V 2667.600 H -1642.000 V 2920.600 H -1627.000 V 2954.600 H -1642.000 V 3207.600 H -1627.000 V 3241.600 H -1642.000 V 3494.600 H -1627.000 V 3528.600 H -1642.000 V 3781.600 H -1627.000 V 3796.500 H -1377.000 V 3781.600 H -1343.000 V 3796.500 H -1093.000 V 3781.600 H -1059.000 V 3796.500 H -837.400 V 3781.600 H -803.400 V 3796.500 H -581.800 V 3781.600 H -547.800 V 3796.500 H -326.200 V 3781.600 H -292.200 V 3796.500 H -70.600 V 3781.600 H -36.600 V 3796.500 H 185.000 V 3781.600 H 219.000 V 3796.500 H 440.600 V 3781.600 H 474.600 V 3796.500 H 696.200 V 3781.600 H 730.200 V 3796.500 H 951.800 V 3781.600 H 985.800 V 3796.500 H 1207.400 V 3781.600 H 1241.400 V 3796.500 H 1463.000 V 3781.600 H 1497.000 V 3796.500 H 1747.000 V 3781.600 H 1781.000 V 3796.500 H 2031.000 V 3781.600 H 2046.000 V 3528.600 H 2031.000 V 3494.600 H 2046.000 V 3241.600 H 2031.000 V 3207.600 H 2046.000 V 2954.600 H 2031.000 V 2920.600 H 2046.000 V 2667.600 H 2031.000 V 2633.600 H 2046.000 V 2380.600 H 2031.000 V 2346.600 H 2046.000 V 2093.600 H 2031.000 V 2059.600 H 2046.000 V 1806.600 H 2031.000 V 1772.600 H 2046.000 V 1519.600 H 2031.000 V 1485.600 H 2046.000 V 1232.600 H 2031.000 V 1198.600 H 2046.000 V 945.600 H 2031.000 V 911.600 H 2046.000 V 682.000 H 2031.000 V 648.000 H 2046.000 V 418.400 H 2031.000 V 403.400 H 1781.000 V 418.400 H 1747.000 V 403.400 H 1497.000 V 418.400 H 1463.000 V 384.400 H 1478.000 V 154.800 H 1463.000 V 120.800 H 1478.000 V -108.800 H 1463.000 V -142.800 H 1478.000 V -372.400 H 1463.000 V -406.400 H 1478.000 V -636.000 H 1463.000 V -670.000 H 1478.000 V -899.600 H 1463.000 V -933.600 H 1478.000 V -1163.200 H 1463.000 V -1178.200 H 1213.000 V -1163.200 H 1179.000 V -1178.200 H 929.000 V -1163.200 H 895.000 V -1178.200 H 645.000 V -1163.200 H 611.000 V -1178.200 H 361.000 V -1163.200 H 327.000 V -1178.200 H 77.000 V -1163.200 H 43.000 V -1178.200 H -207.000 V -1163.200 H -241.000 V -1178.200 H -491.000 V -1163.200 H -525.000 V -1178.200 H -775.000 V -1163.200 H -809.000 V -1178.200 H -1059.000 V -1163.200 H -1093.000 V -1178.200 H -1343.000 V -1163.200 H -1377.000 V -1178.200 H -1627.000 V -1163.200 H -1661.000 V -1178.200 H -1911.000 Z"
+                                inkscape:label="Bro"
+                                style="fill:#d1e25e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3jTe9OOoXpJwIa8YauZGAQ"
+                                d="M 491.000,570.000 V 485.000 H 340.000 V 570.000 Z"
+                                inkscape:label="RDA"
+                                style="fill:#e5a86f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1BtP3JScQoIfXiP3QmD8GO"
+                                d="M 925.003,2219.600 V 2407.600 H 1175.003 V 2219.600 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1RmGH9m189IQYQCnTcQcOY"
+                                d="M -522.000,-200.000 V -0.000 L 0.000,-0.000 V -200.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+                </g>
+                <g
+                    inkscape:groupmode="layer"
+                    id="2yYUgHqcXDHPG6b00w17l4"
+                    inkscape:label="Storey=2. Obergeschoss, Z=800.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_2yYUgHqcXDHPG6b00w17l4_h318.00_z2.00"
+                inkscape:label="Spaces, h=318.00, relZ=2.00">
+                        <path
+                                id="1hIEE2DQOKJh_zwiFHSskQ"
+                                d="M -704.500,979.000 V 875.000 H -1059.000 V 979.000 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="38E0i6UVVXIPdul5A7hW25"
+                                d="M -522.000,639.000 V 979.000 H -280.000 V 639.000 Z"
+                                inkscape:label="Server"
+                                style="fill:#e15ac2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3vPZkRUX33H8fUwtJVirtD"
+                                d="M 615.000,587.500 H 340.000 V 979.000 H 615.000 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1er5aabjzpHRUO3nhe8pZq"
+                                d="M -522.000,609.000 H -280.000 V 415.000 H -522.000 Z"
+                                inkscape:label="Disponibel"
+                                style="fill:#a367e4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="103jJCBybFJAR1oDH6lRsk"
+                                d="M -1029.500,862.500 H -704.500 V 672.500 H -721.000 V 282.500 H -1029.500 Z"
+                                inkscape:label="WC M"
+                                style="fill:#e17655;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0oiefjA241IuyNwgLBmVzd"
+                                d="M 310.000,-200.000 H 40.000 V 979.000 H 310.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="03SCba5McgHQkeEloyAAFq"
+                                d="M -704.500,-10.000 V -200.000 H -1029.500 V 270.000 H -721.000 V -10.000 Z"
+                                inkscape:label="WC F"
+                                style="fill:#d06be4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3Om4diBeNmIPF9vrACID$c"
+                                d="M -250.000,609.000 H 10.000 V 30.000 H -250.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2KpOelnMSnH9MLMEaP8tiT"
+                                d="M -692.000,-200.000 V 979.000 H -552.000 V -200.000 Z"
+                                inkscape:label="Gang"
+                                style="fill:#5ee2e2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_2yYUgHqcXDHPG6b00w17l4_h320.00_z0.00"
+                inkscape:label="Spaces, h=320.00, relZ=0.00">
+                        <path
+                                id="0aa7$BqU6LGvhYlge1p7lY"
+                                d="M 491.000,570.000 V 485.000 H 340.000 V 570.000 Z"
+                                inkscape:label="RDA"
+                                style="fill:#e5a86f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1zzlE8Z0LGHxbq1_5femr6"
+                                d="M -250.000,639.000 V 799.000 H 10.000 V 639.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0tdflr9GUmGQCmDxaYcie_"
+                                d="M 615.000,577.500 V 485.000 H 506.000 V 577.500 Z"
+                                inkscape:label="Schacht S"
+                                style="fill:#de44cc;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2PUXw$8at0IR_DAM$dBhTF"
+                                d="M 915.002,1507.600 V 1587.600 H 1175.003 V 1507.600 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1$9IbaTyayGxFXTTbYwBG5"
+                                d="M 340.000,-200.000 V -120.000 H 615.000 V -200.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2XVRHz57JSHvgLPOZ$Rz_8"
+                                d="M -539.500,405.000 H -280.000 V 30.000 H -539.500 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2FXTidZu9rIxOAwA5$pOX0"
+                                d="M -522.000,-200.000 V -0.000 L 10.000,-0.000 V -200.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3UEnhhkMZrGeGRvQHoBEma"
+                                d="M 615.000,265.000 V 100.000 H 340.000 V 265.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0FJU76ky1BHOaIDBHMl3o6"
+                                d="M 915.003,1617.600 V 2196.600 H 1175.003 V 1617.600 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2d_Pc9hNZHJRBXl8MRVmy2"
+                                d="M 340.000,455.000 H 615.000 V 290.000 H 340.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="35ZjttyGf6GPhcUPfimCbC"
+                                d="M 645.003,1882.600 H 885.002 V 1507.600 H 645.003 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="04xTHm6u3qJfRZsU3rzDL7"
+                                d="M -1911.000,-899.600 H -1926.000 V -670.000 H -1911.000 V -636.000 H -1926.000 V -406.400 H -1911.000 V -372.400 H -1926.000 V -142.800 H -1911.000 V -108.800 H -1926.000 V 120.800 H -1911.000 V 154.800 H -1926.000 V 384.400 H -1911.000 V 418.400 H -1926.000 V 648.000 H -1911.000 V 682.000 H -1926.000 V 911.600 H -1911.000 V 926.600 H -1661.000 V 911.600 H -1627.000 V 945.600 H -1642.000 V 1198.600 H -1627.000 V 1232.600 H -1642.000 V 1485.600 H -1627.000 V 1519.600 H -1642.000 V 1772.600 H -1627.000 V 1806.600 H -1642.000 V 2059.600 H -1627.000 V 2093.600 H -1642.000 V 2346.600 H -1627.000 V 2380.600 H -1642.000 V 2633.600 H -1627.000 V 2667.600 H -1642.000 V 2920.600 H -1627.000 V 2954.600 H -1642.000 V 3207.600 H -1627.000 V 3241.600 H -1642.000 V 3494.600 H -1627.000 V 3528.600 H -1642.000 V 3781.600 H -1627.000 V 3796.500 H -1377.000 V 3781.600 H -1343.000 V 3796.500 H -1093.000 V 3781.600 H -1059.000 V 3796.500 H -837.400 V 3781.600 H -803.400 V 3796.500 H -581.800 V 3781.600 H -547.800 V 3796.500 H -326.200 V 3781.600 H -292.200 V 3796.500 H -70.600 V 3781.600 H -36.600 V 3796.500 H 185.000 V 3781.600 H 219.000 V 3796.500 H 440.600 V 3781.600 H 474.600 V 3796.500 H 696.200 V 3781.600 H 730.200 V 3796.500 H 951.800 V 3781.600 H 985.800 V 3796.500 H 1207.400 V 3781.600 H 1241.400 V 3796.500 H 1463.000 V 3781.600 H 1497.000 V 3796.500 H 1747.000 V 3781.600 H 1781.000 V 3796.500 H 2031.000 V 3781.600 H 2046.000 V 3528.600 H 2031.000 V 3494.600 H 2046.000 V 3241.600 H 2031.000 V 3207.600 H 2046.000 V 2954.600 H 2031.000 V 2920.600 H 2046.000 V 2667.600 H 2031.000 V 2633.600 H 2046.000 V 2380.600 H 2031.000 V 2346.600 H 2046.000 V 2093.600 H 2031.000 V 2059.600 H 2046.000 V 1806.600 H 2031.000 V 1772.600 H 2046.000 V 1519.600 H 2031.000 V 1485.600 H 2046.000 V 1232.600 H 2031.000 V 1198.600 H 2046.000 V 945.600 H 2031.000 V 911.600 H 2046.000 V 682.000 H 2031.000 V 648.000 H 2046.000 V 418.400 H 2031.000 V 403.400 H 1781.000 V 418.400 H 1747.000 V 403.400 H 1497.000 V 418.400 H 1463.000 V 384.400 H 1478.000 V 154.800 H 1463.000 V 120.800 H 1478.000 V -108.800 H 1463.000 V -142.800 H 1478.000 V -372.400 H 1463.000 V -406.400 H 1478.000 V -636.000 H 1463.000 V -670.000 H 1478.000 V -899.600 H 1463.000 V -933.600 H 1478.000 V -1163.200 H 1463.000 V -1178.200 H 1213.000 V -1163.200 H 1179.000 V -1178.200 H 929.000 V -1163.200 H 895.000 V -1178.200 H 645.000 V -1163.200 H 611.000 V -1178.200 H 361.000 V -1163.200 H 327.000 V -1178.200 H 77.000 V -1163.200 H 43.000 V -1178.200 H -207.000 V -1163.200 H -241.000 V -1178.200 H -491.000 V -1163.200 H -525.000 V -1178.200 H -775.000 V -1163.200 H -809.000 V -1178.200 H -1059.000 V -1163.200 H -1093.000 V -1178.200 H -1343.000 V -1163.200 H -1377.000 V -1178.200 H -1627.000 V -1163.200 H -1661.000 V -1178.200 H -1911.000 V -1163.200 H -1926.000 V -933.600 H -1911.000 Z"
+                                inkscape:label="Bro"
+                                style="fill:#d1e25e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="37NtLwBcjXHw1TFUOKDwsS"
+                                d="M 645.003,2445.600 V 2645.600 H 1175.003 V 2445.600 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2nZdbuydsXH8zyRYA4CZK3"
+                                d="M 915.003,2209.100 V 2415.600 H 1175.003 V 2209.100 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0IakX_ilfRJBxq9o30JrUa"
+                                d="M 645.003,1895.100 V 2143.100 H 885.002 V 1895.100 Z"
+                                inkscape:label="Serverraum"
+                                style="fill:#2e79da;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1tdDXgDVikJwFkGFVw9XKQ"
+                                d="M 10.000,979.000 V 819.000 H -250.000 V 979.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0rfaNMPZeZHhA9howYVOud"
+                                d="M 615.000,75.000 V -90.000 H 340.000 V 75.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1Ue0ZYL1aSHOHsZVA8e2Bf"
+                                d="M 645.003,2155.600 V 2415.600 H 885.002 V 2155.600 Z"
+                                inkscape:label="Schacht AUL"
+                                style="fill:#e15ac6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+                </g>
+                <g
+                    inkscape:groupmode="layer"
+                    id="2Df9pxclFWJuexz8UcEduW"
+                    inkscape:label="Storey=3. Obergeschoss, Z=1150.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_2Df9pxclFWJuexz8UcEduW_h318.00_z2.00"
+                inkscape:label="Spaces, h=318.00, relZ=2.00">
+                        <path
+                                id="2zJD6qVFU5JPj_c2A8m8Wa"
+                                d="M -250.000,609.000 H 0.000 V 30.000 H -250.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3H1qNlUktTJPwotkYidNal"
+                                d="M -704.500,-10.000 V -200.000 H -1029.500 V 270.000 H -721.000 V -10.000 Z"
+                                inkscape:label="WC F"
+                                style="fill:#d06be4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1a2RADWW$LIOzTdsrpsfFq"
+                                d="M 615.000,619.000 H 340.000 V 979.000 H 615.000 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2sL1D5C91RJue07DL7fuoB"
+                                d="M -692.000,-200.000 V 979.000 H -552.000 V -200.000 Z"
+                                inkscape:label="Gang"
+                                style="fill:#5ee2e2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1D_X0Bb_8SIgjXE2VlTW3a"
+                                d="M -704.500,979.000 V 875.000 H -1059.000 V 979.000 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="36Q5b1JVAIHe2oWLV5w7KV"
+                                d="M 310.000,-200.000 H 30.000 V 979.000 H 310.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1QWIlCaNLmGeZkuQRbQYOQ"
+                                d="M -522.000,609.000 H -280.000 V 415.000 H -522.000 Z"
+                                inkscape:label="Disponibel"
+                                style="fill:#a367e4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2_gllYefIUHwJ3o3BeUSt2"
+                                d="M -522.000,639.000 V 979.000 H -280.000 V 639.000 Z"
+                                inkscape:label="Server"
+                                style="fill:#e15ac2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0C6Bm9epIZJwDa8RSJS94e"
+                                d="M -1029.500,862.500 H -704.500 V 672.500 H -721.000 V 282.500 H -1029.500 Z"
+                                inkscape:label="WC M"
+                                style="fill:#e17655;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_2Df9pxclFWJuexz8UcEduW_h320.00_z0.00"
+                inkscape:label="Spaces, h=320.00, relZ=0.00">
+                        <path
+                                id="3avXfVlNkUHvGPJigKF6KI"
+                                d="M 925.003,2219.600 V 2407.600 H 1175.003 V 2219.600 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0qANiL_9TLHxFhGjKM9MHy"
+                                d="M -522.000,-200.000 V -0.000 L 0.000,-0.000 V -200.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1WQyeF1zp4IfRY3NBiKuCZ"
+                                d="M 925.003,1625.600 V 2204.600 H 1175.003 V 1625.600 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="27zyE5VNdgGhl4wBuJoV5y"
+                                d="M 645.003,1895.100 V 2135.100 H 895.003 V 1895.100 Z"
+                                inkscape:label="Serverraum"
+                                style="fill:#2e79da;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1Rsj8RQQchJeLYn_uTu2xz"
+                                d="M 615.000,265.000 V 100.000 H 340.000 V 265.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1VgqD0IbQGHuQPd81XWLUu"
+                                d="M -1911.000,-1163.200 H -1926.000 V -933.600 H -1911.000 V -899.600 H -1926.000 V -670.000 H -1911.000 V -636.000 H -1926.000 V -406.400 H -1911.000 V -372.400 H -1926.000 V -142.800 H -1911.000 V -108.800 H -1926.000 V 120.800 H -1911.000 V 154.800 H -1926.000 V 384.400 H -1911.000 V 418.400 H -1926.000 V 648.000 H -1911.000 V 682.000 H -1926.000 V 911.600 H -1911.000 V 926.600 H -1661.000 V 911.600 H -1627.000 V 945.600 H -1642.000 V 1198.600 H -1627.000 V 1232.600 H -1642.000 V 1485.600 H -1627.000 V 1519.600 H -1642.000 V 1772.600 H -1627.000 V 1806.600 H -1642.000 V 2059.600 H -1627.000 V 2093.600 H -1642.000 V 2346.600 H -1627.000 V 2380.600 H -1642.000 V 2633.600 H -1627.000 V 2667.600 H -1642.000 V 2920.600 H -1627.000 V 2954.600 H -1642.000 V 3207.600 H -1627.000 V 3241.600 H -1642.000 V 3494.600 H -1627.000 V 3528.600 H -1642.000 V 3781.600 H -1627.000 V 3796.500 H -1377.000 V 3781.600 H -1343.000 V 3796.500 H -1093.000 V 3781.600 H -1059.000 V 3796.500 H -837.400 V 3781.600 H -803.400 V 3796.500 H -581.800 V 3781.600 H -547.800 V 3796.500 H -326.200 V 3781.600 H -292.200 V 3796.500 H -70.600 V 3781.600 H -36.600 V 3796.500 H 185.000 V 3781.600 H 219.000 V 3796.500 H 440.600 V 3781.600 H 474.600 V 3796.500 H 696.200 V 3781.600 H 730.200 V 3796.500 H 951.800 V 3781.600 H 985.800 V 3796.500 H 1207.400 V 3781.600 H 1241.400 V 3796.500 H 1463.000 V 3781.600 H 1497.000 V 3796.500 H 1747.000 V 3781.600 H 1781.000 V 3796.500 H 2031.000 V 3781.600 H 2046.000 V 3528.600 H 2031.000 V 3494.600 H 2046.000 V 3241.600 H 2031.000 V 3207.600 H 2046.000 V 2954.600 H 2031.000 V 2920.600 H 2046.000 V 2667.600 H 2031.000 V 2633.600 H 2046.000 V 2380.600 H 2031.000 V 2346.600 H 2046.000 V 2093.600 H 2031.000 V 2059.600 H 2046.000 V 1806.600 H 2031.000 V 1772.600 H 2046.000 V 1519.600 H 2031.000 V 1485.600 H 2046.000 V 1232.600 H 2031.000 V 1198.600 H 2046.000 V 945.600 H 2031.000 V 911.600 H 2046.000 V 682.000 H 2031.000 V 648.000 H 2046.000 V 418.400 H 2031.000 V 403.400 H 1781.000 V 418.400 H 1747.000 V 403.400 H 1497.000 V 418.400 H 1463.000 V 384.400 H 1478.000 V 154.800 H 1463.000 V 120.800 H 1478.000 V -108.800 H 1463.000 V -142.800 H 1478.000 V -372.400 H 1463.000 V -406.400 H 1478.000 V -636.000 H 1463.000 V -670.000 H 1478.000 V -899.600 H 1463.000 V -933.600 H 1478.000 V -1163.200 H 1463.000 V -1178.200 H 1213.000 V -1163.200 H 1179.000 V -1178.200 H 929.000 V -1163.200 H 895.000 V -1178.200 H 645.000 V -1163.200 H 611.000 V -1178.200 H 361.000 V -1163.200 H 327.000 V -1178.200 H 77.000 V -1163.200 H 43.000 V -1178.200 H -207.000 V -1163.200 H -241.000 V -1178.200 H -491.000 V -1163.200 H -525.000 V -1178.200 H -775.000 V -1163.200 H -809.000 V -1178.200 H -1059.000 V -1163.200 H -1093.000 V -1178.200 H -1343.000 V -1163.200 H -1377.000 V -1178.200 H -1627.000 V -1163.200 H -1661.000 V -1178.200 H -1911.000 Z"
+                                inkscape:label="Bro"
+                                style="fill:#d1e25e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1RoxtVTEKWJgN8lLz$HP2y"
+                                d="M 0.000,979.000 V 819.000 H -250.000 V 979.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0_r3mk1KIlHP8m9u27leaY"
+                                d="M 645.003,2147.600 V 2407.600 H 895.003 V 2147.600 Z"
+                                inkscape:label="Schacht AUL"
+                                style="fill:#e15ac6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2z9gvsRBKnJwSX6QTMFYCt"
+                                d="M 925.003,1515.600 V 1595.600 H 1175.003 V 1515.600 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2R090RshUGG8BQ8gDGCGyr"
+                                d="M 615.000,75.000 V -90.000 H 340.000 V 75.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2iJX48c0AvHgGkcPJwBOGv"
+                                d="M 615.000,609.000 V 570.000 H 340.000 V 609.000 Z"
+                                inkscape:label="Schacht "
+                                style="fill:#334fdb;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0UyRZlE4brIejiPneKkjRS"
+                                d="M 615.000,560.000 V 485.000 H 340.000 V 560.000 Z"
+                                inkscape:label="RDA"
+                                style="fill:#e5a86f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2xG6NweMaNHwOCKJ8qrxW0"
+                                d="M 645.003,2437.600 V 2637.600 H 1175.003 V 2437.600 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="03SdHQdYm6GPpk17ZcPIq_"
+                                d="M 340.000,-200.000 V -120.000 H 615.000 V -200.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1c$f_3AFR7GOV$uRoZtrqk"
+                                d="M -250.000,639.000 V 799.000 H 0.000 V 639.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3SYo_k_8TVHglb1dKWGaJ3"
+                                d="M 645.003,1882.600 H 895.003 V 1515.600 H 645.003 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3xdlXf8Ax8GhaHV1vrjKv0"
+                                d="M 340.000,455.000 H 615.000 V 290.000 H 340.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0kPdD35GVDGux1EC4Q4eNz"
+                                d="M -539.500,405.000 H -280.000 V 30.000 H -539.500 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+                </g>
+                <g
+                    inkscape:groupmode="layer"
+                    id="3J_u2VNGX8IvNZY8L1hRda"
+                    inkscape:label="Storey=4. Obergeschoss, Z=1500.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3J_u2VNGX8IvNZY8L1hRda_h318.00_z2.00"
+                inkscape:label="Spaces, h=318.00, relZ=2.00">
+                        <path
+                                id="32DBr65A$sGRuJMG7OQuEt"
+                                d="M -522.000,639.000 V 979.000 H -280.000 V 639.000 Z"
+                                inkscape:label="Server"
+                                style="fill:#e15ac2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1HhlxbkWfEGgPrKw9BcIIR"
+                                d="M -704.500,979.000 V 875.000 H -1059.000 V 979.000 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0V6yIJP$fNIRA1HjW5nEKb"
+                                d="M 310.000,-200.000 H 30.000 V 979.000 H 310.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3f$dftibjlI803WpWoX_Rq"
+                                d="M -692.000,-200.000 V 979.000 H -552.000 V -200.000 Z"
+                                inkscape:label="Gang"
+                                style="fill:#5ee2e2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2jYljnpqdaHP77yiu4ogec"
+                                d="M -250.000,609.000 H 0.000 V 30.000 H -250.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1F0BvgDNG2JumnllyrQpSO"
+                                d="M -704.500,-10.000 V -200.000 H -1029.500 V 270.000 H -721.000 V -10.000 Z"
+                                inkscape:label="WC F"
+                                style="fill:#d06be4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2TW96Jt_PyJgmZw1iXA$Cj"
+                                d="M -522.000,609.000 H -280.000 V 415.000 H -522.000 Z"
+                                inkscape:label="Disponibel"
+                                style="fill:#a367e4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3vbqiSMfXZIuw7eGH$4_$o"
+                                d="M 615.000,619.000 H 340.000 V 979.000 H 615.000 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="32kPl29l$nJfI2qgcyCBSQ"
+                                d="M -1029.500,862.500 H -704.500 V 672.500 H -721.000 V 282.500 H -1029.500 Z"
+                                inkscape:label="WC M"
+                                style="fill:#e17655;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3J_u2VNGX8IvNZY8L1hRda_h320.00_z0.00"
+                inkscape:label="Spaces, h=320.00, relZ=0.00">
+                        <path
+                                id="03KvWZRFmmGuU_M2Qx8PnW"
+                                d="M -522.000,-200.000 V -0.000 L 0.000,-0.000 V -200.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2KZILlJNrpGAV3Q6DMrhhG"
+                                d="M 925.003,1625.600 V 2204.600 H 1175.003 V 1625.600 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3y6N_JQnQkHftcCu2g8Pc$"
+                                d="M 0.000,979.000 V 819.000 H -250.000 V 979.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1ofGd4AIDZIhUr9nd2KLCN"
+                                d="M 340.000,455.000 H 615.000 V 290.000 H 340.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1r7zwoxQGTG9UiGplRufWf"
+                                d="M -539.500,405.000 H -280.000 V 30.000 H -539.500 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1qCmABZxhVJRrALnDnjjh6"
+                                d="M 645.003,1882.600 H 895.003 V 1515.600 H 645.003 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2t6JkY7764GPUmIXIFb7Et"
+                                d="M 340.000,-200.000 V -120.000 H 615.000 V -200.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3LFPXq3w0rHPp2q7MfoOoI"
+                                d="M -1911.000,-1163.200 H -1926.000 V -933.600 H -1911.000 V -899.600 H -1926.000 V -670.000 H -1911.000 V -636.000 H -1926.000 V -406.400 H -1911.000 V -372.400 H -1926.000 V -142.800 H -1911.000 V -108.800 H -1926.000 V 120.800 H -1911.000 V 154.800 H -1926.000 V 384.400 H -1911.000 V 418.400 H -1926.000 V 648.000 H -1911.000 V 682.000 H -1926.000 V 911.600 H -1911.000 V 926.600 H -1661.000 V 911.600 H -1627.000 V 945.600 H -1642.000 V 1198.600 H -1627.000 V 1232.600 H -1642.000 V 1485.600 H -1627.000 V 1519.600 H -1642.000 V 1772.600 H -1627.000 V 1806.600 H -1642.000 V 2059.600 H -1627.000 V 2093.600 H -1642.000 V 2346.600 H -1627.000 V 2380.600 H -1642.000 V 2633.600 H -1627.000 V 2667.600 H -1642.000 V 2920.600 H -1627.000 V 2954.600 H -1642.000 V 3207.600 H -1627.000 V 3241.600 H -1642.000 V 3494.600 H -1627.000 V 3528.600 H -1642.000 V 3781.600 H -1627.000 V 3796.500 H -1377.000 V 3781.600 H -1343.000 V 3796.500 H -1093.000 V 3781.600 H -1059.000 V 3796.500 H -837.400 V 3781.600 H -803.400 V 3796.500 H -581.800 V 3781.600 H -547.800 V 3796.500 H -326.200 V 3781.600 H -292.200 V 3796.500 H -70.600 V 3781.600 H -36.600 V 3796.500 H 185.000 V 3781.600 H 219.000 V 3796.500 H 440.600 V 3781.600 H 474.600 V 3796.500 H 696.200 V 3781.600 H 730.200 V 3796.500 H 951.800 V 3781.600 H 985.800 V 3796.500 H 1207.400 V 3781.600 H 1241.400 V 3796.500 H 1463.000 V 3781.600 H 1497.000 V 3796.500 H 1747.000 V 3781.600 H 1781.000 V 3796.500 H 2031.000 V 3781.600 H 2046.000 V 3528.600 H 2031.000 V 3494.600 H 2046.000 V 3241.600 H 2031.000 V 3207.600 H 2046.000 V 2954.600 H 2031.000 V 2920.600 H 2046.000 V 2667.600 H 2031.000 V 2633.600 H 2046.000 V 2380.600 H 2031.000 V 2346.600 H 2046.000 V 2093.600 H 2031.000 V 2059.600 H 2046.000 V 1806.600 H 2031.000 V 1772.600 H 2046.000 V 1519.600 H 2031.000 V 1485.600 H 2046.000 V 1232.600 H 2031.000 V 1198.600 H 2046.000 V 945.600 H 2031.000 V 911.600 H 2046.000 V 682.000 H 2031.000 V 648.000 H 2046.000 V 418.400 H 2031.000 V 403.400 H 1781.000 V 418.400 H 1747.000 V 403.400 H 1497.000 V 418.400 H 1463.000 V 384.400 H 1478.000 V 154.800 H 1463.000 V 120.800 H 1478.000 V -108.800 H 1463.000 V -142.800 H 1478.000 V -372.400 H 1463.000 V -406.400 H 1478.000 V -636.000 H 1463.000 V -670.000 H 1478.000 V -899.600 H 1463.000 V -933.600 H 1478.000 V -1163.200 H 1463.000 V -1178.200 H 1213.000 V -1163.200 H 1179.000 V -1178.200 H 929.000 V -1163.200 H 895.000 V -1178.200 H 645.000 V -1163.200 H 611.000 V -1178.200 H 361.000 V -1163.200 H 327.000 V -1178.200 H 77.000 V -1163.200 H 43.000 V -1178.200 H -207.000 V -1163.200 H -241.000 V -1178.200 H -491.000 V -1163.200 H -525.000 V -1178.200 H -775.000 V -1163.200 H -809.000 V -1178.200 H -1059.000 V -1163.200 H -1093.000 V -1178.200 H -1343.000 V -1163.200 H -1377.000 V -1178.200 H -1627.000 V -1163.200 H -1661.000 V -1178.200 H -1911.000 Z"
+                                inkscape:label="Bro"
+                                style="fill:#d1e25e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0$r4n_grXBGhGSEKzdJcSp"
+                                d="M 615.000,265.000 V 100.000 H 340.000 V 265.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1ffACR0gmAJvCG6kh2ogG1"
+                                d="M 645.003,2147.600 V 2407.600 H 895.003 V 2147.600 Z"
+                                inkscape:label="Schacht AUL"
+                                style="fill:#e15ac6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0FnQrP$sSLGBchHi9XVhH3"
+                                d="M -250.000,639.000 V 799.000 H 0.000 V 639.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0FGxNdt_YdGfdK9NYmumMC"
+                                d="M 925.003,2219.600 V 2407.600 H 1175.003 V 2219.600 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2Y4tgKHXD6IBL299scwEu_"
+                                d="M 925.003,1515.600 V 1595.600 H 1175.003 V 1515.600 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="07jnAfCwyfGRMSd__Yr5jn"
+                                d="M 615.000,560.000 V 485.000 H 340.000 V 560.000 Z"
+                                inkscape:label="RDA"
+                                style="fill:#e5a86f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1V$2OA0JYJHxB5i9UlTxeB"
+                                d="M 645.003,2437.600 V 2637.600 H 1175.003 V 2437.600 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="22msHrcEXwH9uW28E_EoUw"
+                                d="M 615.000,75.000 V -90.000 H 340.000 V 75.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3VCe8TcKr6HxLk63eAZ_FE"
+                                d="M 615.000,609.000 V 570.000 H 340.000 V 609.000 Z"
+                                inkscape:label="Schacht "
+                                style="fill:#334fdb;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1rQf_GvNliGA9f90WM5Gnw"
+                                d="M 645.003,1895.100 V 2135.100 H 895.003 V 1895.100 Z"
+                                inkscape:label="Serverraum"
+                                style="fill:#2e79da;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+                </g>
+                <g
+                    inkscape:groupmode="layer"
+                    id="3SHSmoZefzJRVJ1dN$R192"
+                    inkscape:label="Storey=5. Obergeschoss, Z=1850.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3SHSmoZefzJRVJ1dN$R192_h318.00_z2.00"
+                inkscape:label="Spaces, h=318.00, relZ=2.00">
+                        <path
+                                id="0Uf4zTrIZOIO2vJLufvBjm"
+                                d="M -692.000,-200.000 V 979.000 H -552.000 V -200.000 Z"
+                                inkscape:label="Gang"
+                                style="fill:#5ee2e2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2HNZeHACd_JQUD0srOCRny"
+                                d="M -522.000,639.000 V 979.000 H -280.000 V 639.000 Z"
+                                inkscape:label="Server"
+                                style="fill:#e15ac2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="00P83ymXtIH9AH9vKvcAjN"
+                                d="M -1029.500,862.500 H -704.500 V 672.500 H -721.000 V 282.500 H -1029.500 Z"
+                                inkscape:label="WC M"
+                                style="fill:#e17655;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0LOitbDBOkJxYsm1LBhm7X"
+                                d="M -704.500,979.000 V 875.000 H -1059.000 V 979.000 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0SeiMve03WIhA9Y2rzrzb3"
+                                d="M 310.000,-200.000 H 30.000 V 979.000 H 310.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0alnpcEuXaGg1GjOJpIZVV"
+                                d="M -522.000,609.000 H -280.000 V 415.000 H -522.000 Z"
+                                inkscape:label="Disponibel"
+                                style="fill:#a367e4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2lcZZAgbr7HAEb_ydxYYG3"
+                                d="M -250.000,609.000 H 0.000 V 30.000 H -250.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="14k6tS1AobJB5YYnR93yBr"
+                                d="M 615.000,619.000 H 340.000 V 979.000 H 615.000 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="16iR4DXIAJHPoHs5ObR$La"
+                                d="M -704.500,-10.000 V -200.000 H -1029.500 V 270.000 H -721.000 V -10.000 Z"
+                                inkscape:label="WC F"
+                                style="fill:#d06be4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3SHSmoZefzJRVJ1dN$R192_h320.00_z0.00"
+                inkscape:label="Spaces, h=320.00, relZ=0.00">
+                        <path
+                                id="3cWq8cweiXIB$DjMfAc3zd"
+                                d="M 0.000,979.000 V 819.000 H -250.000 V 979.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="04SSaS_fsCJPBchtOiNTWs"
+                                d="M 645.003,2437.600 V 2637.600 H 1175.003 V 2437.600 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0z2diFD78kIRlH_8STOVux"
+                                d="M -522.000,-200.000 V -0.000 L 0.000,-0.000 V -200.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2Ih05YHflTHO2gZCy7RCma"
+                                d="M 340.000,455.000 H 615.000 V 290.000 H 340.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1Vd1MLDsroIxRKCk3cYk8s"
+                                d="M 615.000,265.000 V 100.000 H 340.000 V 265.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1zZUkN4D5IJwtnd0ZZodjW"
+                                d="M 645.003,1882.600 H 895.003 V 1515.600 H 645.003 Z"
+                                inkscape:label="Dispo./Kche"
+                                style="fill:#9be778;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2LcvprVMR9HvA7IAm4shLh"
+                                d="M 615.000,75.000 V -90.000 H 340.000 V 75.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2TzGTqR1heGvHBUC7IdRZX"
+                                d="M 615.000,560.000 V 485.000 H 340.000 V 560.000 Z"
+                                inkscape:label="RDA"
+                                style="fill:#e5a86f;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3RinYhwa$7JgKflWHhOKlB"
+                                d="M -250.000,639.000 V 799.000 H 0.000 V 639.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1T3Zv9MFucGujOvuERJo$_"
+                                d="M 645.003,2147.600 V 2407.600 H 895.003 V 2147.600 Z"
+                                inkscape:label="Schacht AUL"
+                                style="fill:#e15ac6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1yEwy$3IHAH9ddC6DHDA0z"
+                                d="M 340.000,-200.000 V -120.000 H 615.000 V -200.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="065Pr7dNukGBXx04rofvdI"
+                                d="M -539.500,405.000 H -280.000 V 30.000 H -539.500 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3VOTWvyHbCIR6apph1GrMi"
+                                d="M 925.003,1625.600 V 2204.600 H 1175.003 V 1625.600 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1A3smZS4BIJgjlDBx_sxhT"
+                                d="M 925.003,1515.600 V 1595.600 H 1175.003 V 1515.600 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0CAr0gWV6NJvW91qBZyWyM"
+                                d="M 615.000,609.000 V 570.000 H 340.000 V 609.000 Z"
+                                inkscape:label="Schacht "
+                                style="fill:#334fdb;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1XbJt9R8_kJudsOP2Hrxmc"
+                                d="M 925.003,2219.600 V 2407.600 H 1175.003 V 2219.600 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2555P7DQByIuyTgoBP3xrh"
+                                d="M -1911.000,-1163.200 H -1926.000 V -933.600 H -1911.000 V -899.600 H -1926.000 V -670.000 H -1911.000 V -636.000 H -1926.000 V -406.400 H -1911.000 V -372.400 H -1926.000 V -142.800 H -1911.000 V -108.800 H -1926.000 V 120.800 H -1911.000 V 154.800 H -1926.000 V 384.400 H -1911.000 V 418.400 H -1926.000 V 648.000 H -1911.000 V 682.000 H -1926.000 V 911.600 H -1911.000 V 926.600 H -1661.000 V 911.600 H -1627.000 V 945.600 H -1642.000 V 1198.600 H -1627.000 V 1232.600 H -1642.000 V 1485.600 H -1627.000 V 1519.600 H -1642.000 V 1772.600 H -1627.000 V 1806.600 H -1642.000 V 2059.600 H -1627.000 V 2093.600 H -1642.000 V 2346.600 H -1627.000 V 2380.600 H -1642.000 V 2633.600 H -1627.000 V 2667.600 H -1642.000 V 2920.600 H -1627.000 V 2954.600 H -1642.000 V 3207.600 H -1627.000 V 3241.600 H -1642.000 V 3494.600 H -1627.000 V 3528.600 H -1642.000 V 3781.600 H -1627.000 V 3796.500 H -1377.000 V 3781.600 H -1343.000 V 3796.500 H -1093.000 V 3781.600 H -1059.000 V 3796.500 H -837.400 V 3781.600 H -803.400 V 3796.500 H -581.800 V 3781.600 H -547.800 V 3796.500 H -326.200 V 3781.600 H -292.200 V 3796.500 H -70.600 V 3781.600 H -36.600 V 3796.500 H 185.000 V 3781.600 H 219.000 V 3796.500 H 440.600 V 3781.600 H 474.600 V 3796.500 H 696.200 V 3781.600 H 730.200 V 3796.500 H 951.800 V 3781.600 H 985.800 V 3796.500 H 1207.400 V 3781.600 H 1241.400 V 3796.500 H 1463.000 V 3781.600 H 1497.000 V 3796.500 H 1747.000 V 3781.600 H 1781.000 V 3796.500 H 2031.000 V 3781.600 H 2046.000 V 3528.600 H 2031.000 V 3494.600 H 2046.000 V 3241.600 H 2031.000 V 3207.600 H 2046.000 V 2954.600 H 2031.000 V 2920.600 H 2046.000 V 2667.600 H 2031.000 V 2633.600 H 2046.000 V 2380.600 H 2031.000 V 2346.600 H 2046.000 V 2093.600 H 2031.000 V 2059.600 H 2046.000 V 1806.600 H 2031.000 V 1772.600 H 2046.000 V 1519.600 H 2031.000 V 1485.600 H 2046.000 V 1232.600 H 2031.000 V 1198.600 H 2046.000 V 945.600 H 2031.000 V 911.600 H 2046.000 V 682.000 H 2031.000 V 648.000 H 2046.000 V 418.400 H 2031.000 V 403.400 H 1781.000 V 418.400 H 1747.000 V 403.400 H 1497.000 V 418.400 H 1463.000 V 384.400 H 1478.000 V 154.800 H 1463.000 V 120.800 H 1478.000 V -108.800 H 1463.000 V -142.800 H 1478.000 V -372.400 H 1463.000 V -406.400 H 1478.000 V -636.000 H 1463.000 V -670.000 H 1478.000 V -899.600 H 1463.000 V -933.600 H 1478.000 V -1163.200 H 1463.000 V -1178.200 H 1213.000 V -1163.200 H 1179.000 V -1178.200 H 929.000 V -1163.200 H 895.000 V -1178.200 H 645.000 V -1163.200 H 611.000 V -1178.200 H 361.000 V -1163.200 H 327.000 V -1178.200 H 77.000 V -1163.200 H 43.000 V -1178.200 H -207.000 V -1163.200 H -241.000 V -1178.200 H -491.000 V -1163.200 H -525.000 V -1178.200 H -775.000 V -1163.200 H -809.000 V -1178.200 H -1059.000 V -1163.200 H -1093.000 V -1178.200 H -1343.000 V -1163.200 H -1377.000 V -1178.200 H -1627.000 V -1163.200 H -1661.000 V -1178.200 H -1911.000 Z"
+                                inkscape:label="Bro"
+                                style="fill:#d1e25e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="01TmdrAkrLGPlpkRmSfTJt"
+                                d="M 645.003,1895.100 V 2135.100 H 895.003 V 1895.100 Z"
+                                inkscape:label="Serverraum"
+                                style="fill:#2e79da;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+                </g>
+                <g
+                    inkscape:groupmode="layer"
+                    id="1D8cOJiFUhI9eOA1WXGTT5"
+                    inkscape:label="Storey=6. Obergeschoss, Z=2200.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_1D8cOJiFUhI9eOA1WXGTT5_h320.00_z0.00"
+                inkscape:label="Spaces, h=320.00, relZ=0.00">
+                        <path
+                                id="3OgjAQCo$NGAtcRsgAO0oR"
+                                d="M 925.003,2204.600 H 1175.003 V 1625.600 H 925.003 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0pNlmsdq$oHPEE9fgkB6kK"
+                                d="M -518.900,669.000 V 974.200 H -262.600 V 890.000 H -185.400 V 974.200 H 21.400 V 890.000 H 98.600 V 974.200 H 305.400 V 890.000 H 382.600 V 974.200 H 589.400 V 890.000 H 666.600 V 974.200 H 865.002 V 669.000 Z"
+                                inkscape:label="Laubengang"
+                                style="fill:#e15aa7;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1qUJjZ88X6JhOuZ1lKg775"
+                                d="M 645.002,2407.600 H 865.003 V 1835.435 L 645.002,1761.243 Z"
+                                inkscape:label="Reduit"
+                                style="fill:#268bd8;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="207knEu9NDIeZJDt1VT_FC"
+                                d="M -518.900,1500.899 H 865.002 V 974.200 H -518.900 Z"
+                                inkscape:label="Terrasse"
+                                style="fill:#74e6ba;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1grw8pxNJ7H9u_g8BgVoFu"
+                                d="M 615.000,75.000 V -90.000 H 340.000 V 75.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3B27tuCiavJxDFNPs5CdlE"
+                                d="M -539.500,30.000 V 405.000 H -280.000 V 30.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3PLK4LedjkHBHUpA9QnVS7"
+                                d="M 615.000,265.000 V 100.000 H 340.000 V 265.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0GKcpz0gfiIgMxGnGX8Cfn"
+                                d="M -692.000,-200.000 V 609.000 H -552.000 V -200.000 Z"
+                                inkscape:label="Gang"
+                                style="fill:#5ee2e2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3QI62ZI5jtIQzYOJ0Cx3MB"
+                                d="M -1029.500,609.000 H -704.500 V 419.000 H -721.000 V 187.500 H -1029.500 Z"
+                                inkscape:label="WC M"
+                                style="fill:#e17655;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3pmv4vn9sTJPsAmqkDlNFb"
+                                d="M -1911.000,-1178.200 V -1163.200 H -1926.000 V -933.600 H -1911.000 V -899.600 H -1926.000 V -670.000 H -1911.000 V -636.000 H -1926.000 V -406.400 H -1911.000 V -372.400 H -1926.000 V -142.800 H -1911.000 V -108.800 H -1926.000 V 120.800 H -1911.000 V 154.800 H -1926.000 V 384.400 H -1911.000 V 418.400 H -1926.000 V 648.000 H -1911.000 V 682.000 H -1926.000 V 911.600 H -1911.000 V 926.600 H -1661.000 V 911.600 H -1627.000 V 945.600 H -1642.000 V 1198.600 H -1627.000 V 1232.600 H -1642.000 V 1485.600 H -1627.000 V 1519.600 H -1642.000 V 1772.600 H -1627.000 V 1806.600 H -1642.000 V 2059.600 H -1627.000 V 2093.600 H -1642.000 V 2346.600 H -1627.000 V 2380.600 H -1642.000 V 2633.600 H -1627.000 V 2667.600 H -1642.000 V 2920.600 H -1627.000 V 2954.600 H -1642.000 V 3207.600 H -1627.000 V 3241.600 H -1642.000 V 3494.600 H -1627.000 V 3528.600 H -1642.000 V 3781.600 H -1627.000 V 3796.500 H -1377.000 V 3781.600 H -1343.000 V 3796.500 H -1093.000 V 3781.600 H -1059.000 V 3796.500 H -837.400 V 3781.600 H -803.400 V 3796.500 H -581.800 V 3781.600 H -547.800 V 3796.500 H -326.200 V 3781.600 H -292.200 V 3796.500 H -70.600 V 3781.600 H -36.600 V 3796.500 H 185.000 V 3781.600 H 219.000 V 3796.500 H 440.600 V 3781.600 H 474.600 V 3796.500 H 696.200 V 3781.600 H 730.200 V 3796.500 H 951.800 V 3781.600 H 985.800 V 3796.500 H 1207.400 V 3781.600 H 1241.400 V 3796.500 H 1463.000 V 3781.600 H 1497.000 V 3796.500 H 1747.000 V 3781.600 H 1781.000 V 3796.500 H 2031.000 V 3781.600 H 2046.000 V 3528.600 H 2031.000 V 3494.600 H 2046.000 V 3241.600 H 2031.000 V 3207.600 H 2046.000 V 2954.600 H 2031.000 V 2920.600 H 2046.000 V 2667.600 H 2031.000 V 2633.600 H 2046.000 V 2380.600 H 2031.000 V 2346.600 H 2046.000 V 2093.600 H 2031.000 V 2059.600 H 2046.000 V 1806.600 H 2031.000 V 1772.600 H 2046.000 V 1519.600 H 2031.000 V 1485.600 H 2046.000 V 1232.600 H 2031.000 V 1198.600 H 2046.000 V 945.600 H 2031.000 V 911.600 H 2046.000 V 682.000 H 2031.000 V 648.000 H 2046.000 V 418.400 H 2031.000 V 403.400 H 1781.000 V 418.400 H 1747.000 V 403.400 H 1497.000 V 418.400 H 1463.000 V 384.400 H 1478.000 V 154.800 H 1463.000 V 120.800 H 1478.000 V -108.800 H 1463.000 V -142.800 H 1478.000 V -372.400 H 1463.000 V -406.400 H 1478.000 V -636.000 H 1463.000 V -670.000 H 1478.000 V -899.600 H 1463.000 V -933.600 H 1478.000 V -1163.200 H 1463.000 V -1178.200 H 1213.000 V -1163.200 H 1179.000 V -1178.200 H 929.000 V -1163.200 H 895.000 V -1178.200 H 645.000 V -1163.200 H 611.000 V -1178.200 H 361.000 V -1163.200 H 327.000 V -1178.200 H 77.000 V -1163.200 H 43.000 V -1178.200 H -207.000 V -1163.200 H -241.000 V -1178.200 H -491.000 V -1163.200 H -525.000 V -1178.200 H -775.000 V -1163.200 H -809.000 V -1178.200 H -1059.000 V -1163.200 H -1093.000 V -1178.200 H -1343.000 V -1163.200 H -1377.000 V -1178.200 H -1627.000 V -1163.200 H -1661.000 V -1178.200 Z"
+                                inkscape:label="Bro"
+                                style="fill:#d1e25e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2GoMwGnyfqGeUbfWmHmie6"
+                                d="M -704.500,-10.000 V -200.000 H -1029.500 V 175.000 H -721.000 V -10.000 Z"
+                                inkscape:label="WC F"
+                                style="fill:#d06be4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1nYhsejtqaJePrpjSxAFxq"
+                                d="M 30.000,-200.000 V 609.000 H 310.000 V -200.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="30zB8COQH9GOVruROlU7r1"
+                                d="M -522.000,415.000 V 609.000 H -280.000 V 415.000 Z"
+                                inkscape:label="Server/ Archiv"
+                                style="fill:#3786db;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3nQUNiJSadJ8_krZvr$g43"
+                                d="M 645.003,2437.600 V 2637.600 H 1175.003 V 2437.600 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0k_LWUWNsNGg10C1XIz$$$"
+                                d="M 340.000,-200.000 V -120.000 H 615.000 V -200.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2Naz1$dZ3dGuLXbDroAhVr"
+                                d="M 1175.003,2219.600 H 925.003 V 2407.600 H 1175.003 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1_MGOsqXU1JA$CrMl9aKO5"
+                                d="M -522.000,-200.000 V -0.000 H 0.000 V -200.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1PNPXRdxwXJPpnrTbIcjdh"
+                                d="M 1175.003,1595.600 V 1515.600 H 925.003 V 1595.600 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3erURi_$COIvi6uunhMX9n"
+                                d="M 340.000,455.000 H 615.000 V 290.000 H 340.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1VkM8K8rW5Iwq8oy_IHn$E"
+                                d="M -250.000,30.000 V 609.000 H 0.000 V 30.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+                </g>
+                <g
+                    inkscape:groupmode="layer"
+                    id="0JeDYMEWU$GxGDj1DXlaLS"
+                    inkscape:label="Storey=7. Obergeschoss, Z=2550.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_0JeDYMEWU$GxGDj1DXlaLS_h320.00_z0.00"
+                inkscape:label="Spaces, h=320.00, relZ=0.00">
+                        <path
+                                id="3ygky2646AIAvOjMYmET$s"
+                                d="M 1175.003,1625.600 H 925.003 V 2204.600 H 1175.003 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3mxFgqwbUuJvxA5mhrXt6Z"
+                                d="M 615.000,265.000 V 100.000 H 340.000 V 265.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0vM2NCLpjAJu5H9TYG_e3G"
+                                d="M -539.500,30.000 V 405.000 H -280.000 V 30.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0qx3xHcN_TI8LGYf1SNACW"
+                                d="M -1029.500,609.000 H -704.500 V 419.000 H -721.000 V 187.500 H -1029.500 Z"
+                                inkscape:label="WC M"
+                                style="fill:#e17655;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0U0Cg0r$WdJQDIb5GWSdq7"
+                                d="M -692.000,-200.000 V 609.000 H -552.000 V -200.000 Z"
+                                inkscape:label="Gang"
+                                style="fill:#5ee2e2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1nvwIkrosyIA6SVDFKPOWa"
+                                d="M 615.000,75.000 V -90.000 H 340.000 V 75.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2UA0ulC1TnJgHig4wvQQZf"
+                                d="M -250.000,30.000 V 609.000 H 0.000 V 30.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="36GLDywn0hIAsPl$d3AFB3"
+                                d="M -1627.000,-1178.200 V -1163.200 H -1661.000 V -1178.200 H -1911.000 V -1163.200 H -1926.000 V -933.600 H -1911.000 V -899.600 H -1926.000 V -670.000 H -1911.000 V -636.000 H -1926.000 V -406.400 H -1911.000 V -372.400 H -1926.000 V -142.800 H -1911.000 V -108.800 H -1926.000 V 120.800 H -1911.000 V 154.800 H -1926.000 V 384.400 H -1911.000 V 418.400 H -1926.000 V 648.000 H -1911.000 V 682.000 H -1926.000 V 911.600 H -1911.000 V 926.600 H -1661.000 V 911.600 H -1627.000 V 926.600 H -1377.000 V 911.600 H -1343.000 V 926.600 H -1093.000 V 911.600 H -1059.000 V 926.600 H -809.000 V 911.600 H -775.000 V 926.600 H -525.000 V 911.600 H -491.000 V 926.600 H -241.000 V 911.600 H -207.000 V 926.600 H 43.000 V 911.600 H 77.000 V 926.600 H 327.000 V 911.600 H 361.000 V 926.600 H 611.000 V 911.600 H 645.000 V 926.600 H 895.000 V 911.600 H 929.000 V 926.600 H 1179.000 V 911.600 H 1213.000 V 926.600 H 1463.000 V 911.600 H 1478.000 V 682.000 H 1463.000 V 648.000 H 1478.000 V 418.400 H 1463.000 V 384.400 H 1478.000 V 154.800 H 1463.000 V 120.800 H 1478.000 V -108.800 H 1463.000 V -142.800 H 1478.000 V -372.400 H 1463.000 V -406.400 H 1478.000 V -636.000 H 1463.000 V -670.000 H 1478.000 V -899.600 H 1463.000 V -933.600 H 1478.000 V -1163.200 H 1463.000 V -1178.200 H 1213.000 V -1163.200 H 1179.000 V -1178.200 H 929.000 V -1163.200 H 895.000 V -1178.200 H 645.000 V -1163.200 H 611.000 V -1178.200 H 361.000 V -1163.200 H 327.000 V -1178.200 H 77.000 V -1163.200 H 43.000 V -1178.200 H -207.000 V -1163.200 H -241.000 V -1178.200 H -491.000 V -1163.200 H -525.000 V -1178.200 H -775.000 V -1163.200 H -809.000 V -1178.200 H -1059.000 V -1163.200 H -1093.000 V -1178.200 H -1343.000 V -1163.200 H -1377.000 V -1178.200 Z"
+                                inkscape:label="Bro"
+                                style="fill:#d1e25e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3ciwYZlQtxGu2CQ3_X$iVe"
+                                d="M -765.700,989.200 V 979.200 H -818.300 V 989.200 H -828.300 V 974.200 H -1323.700 V 989.200 H -1333.700 V 979.200 H -1386.300 V 989.200 H -1396.300 V 1548.499 H -866.500 V 3452.300 H 865.003 V 2902.300 H 1746.000 V 2276.140 H 1542.600 V 403.400 H 1530.500 V 427.700 H 1540.500 V 437.700 H 1525.600 V 892.300 H 1540.600 V 902.300 H 1530.600 V 954.900 H 1540.600 V 964.900 H 1525.600 V 974.200 H 1516.300 V 989.200 H 1506.300 V 979.200 H 1453.700 V 989.200 H 1443.700 V 974.200 H 948.300 V 989.200 H 938.300 V 979.200 H 912.603 V 1565.600 H 1235.003 V 2467.600 H 645.003 V 2667.600 H 585.003 V 2652.300 H -509.700 V 974.200 H -755.700 V 989.200 Z"
+                                inkscape:label="Terrasse"
+                                style="fill:#74e6ba;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2Nq1nhQEwvGu8mTE0GygQy"
+                                d="M -522.000,415.000 V 609.000 H -280.000 V 415.000 Z"
+                                inkscape:label="Server/ Archiv"
+                                style="fill:#3786db;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3VFpft5CplHwv5F3CYT$cv"
+                                d="M 340.000,455.000 H 615.000 V 290.000 H 340.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3BYdD0HJrNGeVqC_N6ICSe"
+                                d="M 30.000,-200.000 V 609.000 H 310.000 V -200.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2AehR6WuDpJQiNMfK6kzIV"
+                                d="M 340.000,-200.000 V -120.000 H 615.000 V -200.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="04SBshh5bJHOYM0Y9btLEl"
+                                d="M -704.500,-10.000 V -200.000 H -1029.500 V 175.000 H -721.000 V -10.000 Z"
+                                inkscape:label="WC F"
+                                style="fill:#d06be4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2D8NnKHs7LIu83pY6hRe0S"
+                                d="M -522.000,-200.000 V -0.000 H 0.000 V -200.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+                </g>
+                <g
+                    inkscape:groupmode="layer"
+                    id="0Um5KtrEjtJwRQwsem7RiV"
+                    inkscape:label="Storey=8. Obergeschoss, Z=2900.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_0Um5KtrEjtJwRQwsem7RiV_h320.00_z0.00"
+                inkscape:label="Spaces, h=320.00, relZ=0.00">
+                        <path
+                                id="3aZ3J1IJ_lHwoz6sdIilGY"
+                                d="M -539.500,30.000 V 405.000 H -280.000 V 30.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="03vlyXLGMVGuswQgEFoLph"
+                                d="M -1029.500,609.000 H -704.500 V 419.000 H -721.000 V 187.500 H -1029.500 Z"
+                                inkscape:label="WC M"
+                                style="fill:#e17655;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0fTiGCtjn7Jxdc0IiZ_xCb"
+                                d="M -250.000,30.000 V 609.000 H 0.000 V 30.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3OroELnPifI8QyvLnmMNg7"
+                                d="M -692.000,-200.000 V 609.000 H -552.000 V -200.000 Z"
+                                inkscape:label="Gang"
+                                style="fill:#5ee2e2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="202YwK0$9zJxAYdhaANL5G"
+                                d="M 615.000,75.000 V -90.000 H 340.000 V 75.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2iRChu8KgIHONYMApjYLpB"
+                                d="M 340.000,-200.000 V -120.000 H 615.000 V -200.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1zpubOS4pJIe82BpDL34VT"
+                                d="M -522.000,415.000 V 609.000 H -280.000 V 415.000 Z"
+                                inkscape:label="Server/ Archiv"
+                                style="fill:#3786db;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0YacsaKgDRIw7FHRj3HWNm"
+                                d="M -704.500,-10.000 V -200.000 H -1029.500 V 175.000 H -721.000 V -10.000 Z"
+                                inkscape:label="WC F"
+                                style="fill:#d06be4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2qdx_0p$pNGeK_Fbo95eWg"
+                                d="M 340.000,455.000 H 615.000 V 290.000 H 340.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0tiOz9kfsyGuORl3vQouDH"
+                                d="M 30.000,-200.000 V 609.000 H 310.000 V -200.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="38EGHdufvNHOPffCdJTW3q"
+                                d="M -1627.000,-1178.200 V -1163.200 H -1661.000 V -1178.200 H -1911.000 V -1163.200 H -1926.000 V -933.600 H -1911.000 V -899.600 H -1926.000 V -670.000 H -1911.000 V -636.000 H -1926.000 V -406.400 H -1911.000 V -372.400 H -1926.000 V -142.800 H -1911.000 V -108.800 H -1926.000 V 120.800 H -1911.000 V 154.800 H -1926.000 V 384.400 H -1911.000 V 418.400 H -1926.000 V 648.000 H -1911.000 V 682.000 H -1926.000 V 911.600 H -1911.000 V 926.600 H -1661.000 V 911.600 H -1627.000 V 926.600 H -1377.000 V 911.600 H -1343.000 V 926.600 H -1093.000 V 911.600 H -1059.000 V 926.600 H -809.000 V 911.600 H -775.000 V 926.600 H -525.000 V 911.600 H -491.000 V 926.600 H -241.000 V 911.600 H -207.000 V 926.600 H 43.000 V 911.600 H 77.000 V 926.600 H 327.000 V 911.600 H 361.000 V 926.600 H 611.000 V 911.600 H 645.000 V 926.600 H 895.000 V 911.600 H 929.000 V 926.600 H 1179.000 V 911.600 H 1213.000 V 926.600 H 1463.000 V 911.600 H 1478.000 V 682.000 H 1463.000 V 648.000 H 1478.000 V 418.400 H 1463.000 V 384.400 H 1478.000 V 154.800 H 1463.000 V 120.800 H 1478.000 V -108.800 H 1463.000 V -142.800 H 1478.000 V -372.400 H 1463.000 V -406.400 H 1478.000 V -636.000 H 1463.000 V -670.000 H 1478.000 V -899.600 H 1463.000 V -933.600 H 1478.000 V -1163.200 H 1463.000 V -1178.200 H 1213.000 V -1163.200 H 1179.000 V -1178.200 H 929.000 V -1163.200 H 895.000 V -1178.200 H 645.000 V -1163.200 H 611.000 V -1178.200 H 361.000 V -1163.200 H 327.000 V -1178.200 H 77.000 V -1163.200 H 43.000 V -1178.200 H -207.000 V -1163.200 H -241.000 V -1178.200 H -491.000 V -1163.200 H -525.000 V -1178.200 H -775.000 V -1163.200 H -809.000 V -1178.200 H -1059.000 V -1163.200 H -1093.000 V -1178.200 H -1343.000 V -1163.200 H -1377.000 V -1178.200 Z"
+                                inkscape:label="Bro"
+                                style="fill:#d1e25e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="10RFwU06r1HAYFsQZSQBcB"
+                                d="M 615.000,265.000 V 100.000 H 340.000 V 265.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1lDg8HNX2tJ9J$gU$PM2B_"
+                                d="M -522.000,-200.000 V -0.000 H 0.000 V -200.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+                </g>
+                <g
+                    inkscape:groupmode="layer"
+                    id="2lMmd2xpsVGvkSat75nFpX"
+                    inkscape:label="Storey=9. Obergeschoss, Z=3250.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_2lMmd2xpsVGvkSat75nFpX_h320.00_z0.00"
+                inkscape:label="Spaces, h=320.00, relZ=0.00">
+                        <path
+                                id="3xD7aaST2oHvJWiDeGcWv5"
+                                d="M -1029.500,609.000 H -704.500 V 419.000 H -721.000 V 187.500 H -1029.500 Z"
+                                inkscape:label="WC M"
+                                style="fill:#e17655;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1QMG9ZzfB2Jw$cscnjX$wY"
+                                d="M -692.000,-200.000 V 609.000 H -552.000 V -200.000 Z"
+                                inkscape:label="Gang"
+                                style="fill:#5ee2e2;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="27niqCat$4HxSdyEAImFWx"
+                                d="M -522.000,-200.000 V -0.000 H 0.000 V -200.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="32fS5hAUFtHwBlXqW3iADI"
+                                d="M 30.000,-200.000 V 609.000 H 310.000 V -200.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3NMUjktbGYGwplyFUMaOrl"
+                                d="M 340.000,-200.000 V -120.000 H 615.000 V -200.000 Z"
+                                inkscape:label="Schacht EL"
+                                style="fill:#33db6d;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0JGgYKE3myHREhFNKlcqDO"
+                                d="M -522.000,415.000 V 609.000 H -280.000 V 415.000 Z"
+                                inkscape:label="Server/ Archiv"
+                                style="fill:#3786db;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1$$_FYbkMFGuQq23FN1ffH"
+                                d="M 615.000,75.000 V -90.000 H 340.000 V 75.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0iN$9tcJ7HJepiuztqGJG5"
+                                d="M 340.000,455.000 H 615.000 V 290.000 H 340.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1oREaVAzvJJf7bIwk5_R4X"
+                                d="M -1627.000,-1178.200 V -1163.200 H -1661.000 V -1178.200 H -1911.000 V -1163.200 H -1926.000 V -933.600 H -1911.000 V -899.600 H -1926.000 V -670.000 H -1911.000 V -636.000 H -1926.000 V -406.400 H -1911.000 V -372.400 H -1926.000 V -142.800 H -1911.000 V -108.800 H -1926.000 V 120.800 H -1911.000 V 154.800 H -1926.000 V 384.400 H -1911.000 V 418.400 H -1926.000 V 648.000 H -1911.000 V 682.000 H -1926.000 V 911.600 H -1911.000 V 926.600 H -1661.000 V 911.600 H -1627.000 V 926.600 H -1377.000 V 911.600 H -1343.000 V 926.600 H -1093.000 V 911.600 H -1059.000 V 926.600 H -809.000 V 911.600 H -775.000 V 926.600 H -525.000 V 911.600 H -491.000 V 926.600 H -241.000 V 911.600 H -207.000 V 926.600 H 43.000 V 911.600 H 77.000 V 926.600 H 327.000 V 911.600 H 361.000 V 926.600 H 611.000 V 911.600 H 645.000 V 926.600 H 895.000 V 911.600 H 929.000 V 926.600 H 1179.000 V 911.600 H 1213.000 V 926.600 H 1463.000 V 911.600 H 1478.000 V 682.000 H 1463.000 V 648.000 H 1478.000 V 418.400 H 1463.000 V 384.400 H 1478.000 V 154.800 H 1463.000 V 120.800 H 1478.000 V -108.800 H 1463.000 V -142.800 H 1478.000 V -372.400 H 1463.000 V -406.400 H 1478.000 V -636.000 H 1463.000 V -670.000 H 1478.000 V -899.600 H 1463.000 V -933.600 H 1478.000 V -1163.200 H 1463.000 V -1178.200 H 1213.000 V -1163.200 H 1179.000 V -1178.200 H 929.000 V -1163.200 H 895.000 V -1178.200 H 645.000 V -1163.200 H 611.000 V -1178.200 H 361.000 V -1163.200 H 327.000 V -1178.200 H 77.000 V -1163.200 H 43.000 V -1178.200 H -207.000 V -1163.200 H -241.000 V -1178.200 H -491.000 V -1163.200 H -525.000 V -1178.200 H -775.000 V -1163.200 H -809.000 V -1178.200 H -1059.000 V -1163.200 H -1093.000 V -1178.200 H -1343.000 V -1163.200 H -1377.000 V -1178.200 Z"
+                                inkscape:label="Bro"
+                                style="fill:#d1e25e;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="1Cb$vwFV9LJPbfMSBZ9yOS"
+                                d="M -250.000,30.000 V 609.000 H 0.000 V 30.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3l8hTlRTopGOZaWGBesQoX"
+                                d="M -539.500,30.000 V 405.000 H -280.000 V 30.000 Z"
+                                inkscape:label="Schacht HLK"
+                                style="fill:#c3db37;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3J8V14wJdVHR7Q7UAGaL6D"
+                                d="M 615.000,265.000 V 100.000 H 340.000 V 265.000 Z"
+                                inkscape:label="Lift"
+                                style="fill:#e6ad74;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0DqvhJkH7wI9GJv3my14ma"
+                                d="M -704.500,-10.000 V -200.000 H -1029.500 V 175.000 H -721.000 V -10.000 Z"
+                                inkscape:label="WC F"
+                                style="fill:#d06be4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                    </g>
+                </g>
+                <g
+                    inkscape:groupmode="layer"
+                    id="3Zgo2Lo4E6HgBT6_Kfavq3"
+                    inkscape:label="Storey=10. Obergeschoss, Z=3600.00">
+ <g
+                inkscape:groupmode="layer"
+                id="spaces_3Zgo2Lo4E6HgBT6_Kfavq3_h230.00_z0.00"
+                inkscape:label="Spaces, h=230.00, relZ=0.00">
+                        <path
+                                id="0wd1SG3r8UH9mxP2ZHbYMk"
+                                d="M -0.000,-0.000 V -200.000 H -1059.000 V 609.000 H -552.000 V -0.000 Z"
+                                inkscape:label="Technik"
+                                style="fill:#9dd826;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="0gNx0dwP71HR7cxky$eDJK"
+                                d="M -539.500,415.000 V 609.000 H -280.000 V 415.000 Z"
+                                inkscape:label="Schleuse"
+                                style="fill:#74a1e6;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="3MPHN6E2ugI8kYqk$gwH7M"
+                                d="M -250.000,30.000 V 609.000 H 0.000 V 30.000 Z"
+                                inkscape:label="Treppe"
+                                style="fill:#73e15a;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
+                        <path
+                                id="2QnGzFE4g5Her8C4RRAMsa"
+                                d="M -539.500,30.000 V 405.000 H -280.000 V 30.000 Z"
+                                inkscape:label="Schacht HKL"
+                                style="fill:#b867e4;stroke:#000000;stroke-width:0.1;fill-opacity:0.7"/>
                     </g>
                 </g>
             </g>

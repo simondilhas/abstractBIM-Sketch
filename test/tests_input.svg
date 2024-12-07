@@ -23,14 +23,14 @@
      inkscape:document-units="cm"
      showgrid="true"
      inkscape:zoom="0.01"
-     inkscape:cx="43000"
-     inkscape:cy="36650"
+     inkscape:cx="37200"
+     inkscape:cy="154150"
      inkscape:window-width="1832"
      inkscape:window-height="1076"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00-0-7">
+     inkscape:current-layer="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00-3-3">
     <inkscape:grid
        id="grid1"
        units="cm"
@@ -57,13 +57,13 @@
        inkscape:label="Site=Test Site">
       <g
          id="1Nf2kYXcb8XPrY4rfkICA1"
-         inkscape:label="Building=Test Building 2"
+         inkscape:label="Building=Test Building 4"
          style="display:inline"
          transform="translate(273.80003,1124.95)">
         <g
            inkscape:groupmode="layer"
            id="14zN82$QrDyPC_LT7Lv8kM"
-           inkscape:label="Storey=O2, Z=690.00">
+           inkscape:label="Storey=0, Z=0">
           <g
              inkscape:groupmode="layer"
              id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00"
@@ -71,6 +71,58 @@
              transform="translate(-475.66281,-516.76566)">
             <path
                id="0YbXTLaPf18AltEWq3WAEH"
+               d="m -138.60001,2337.5501 v 775 h 952.29998 v -775 z"
+               inkscape:label="Test Space 1"
+               style="fill:#c733db;fill-opacity:0.7;stroke:#000000;stroke-width:0.1" />
+          </g>
+        </g>
+        <g
+           inkscape:groupmode="layer"
+           id="14zN82$QrDyPC_LT7Lv8kM-9"
+           inkscape:label="Storey=1, Z=260"
+           style="display:inline"
+           transform="translate(-9.5752532e-6,1.0249933e-4)">
+          <g
+             inkscape:groupmode="layer"
+             id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00-3"
+             inkscape:label="Spaces, h=260.00, relZ=0.00"
+             transform="translate(-850.66281,-516.76579)">
+            <path
+               id="0YbXTLaPf18AltEWq3WAEH-7"
+               d="m -138.60001,2337.5501 v 775 h 952.29998 v -775 z"
+               inkscape:label="Test Space 1"
+               style="fill:#c733db;fill-opacity:0.7;stroke:#000000;stroke-width:0.1" />
+          </g>
+          <g
+             inkscape:groupmode="layer"
+             id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00-3-3"
+             inkscape:label="Spaces, h=260.00, relZ=50.00"
+             transform="translate(-475.66281,-704.26567)"
+             style="display:inline">
+            <path
+               id="0YbXTLaPf18AltEWq3WAEH-7-0"
+               d="m 438.69997,2525.05 v 775 H 1391 v -775 z"
+               inkscape:label="Plus 50"
+               style="fill:#c733db;fill-opacity:0.7;stroke:#000000;stroke-width:0.1" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="1Nf2kYXcb8XPrY4rfkICA1-0"
+         inkscape:label="Building=Test Building 2"
+         style="display:inline"
+         transform="translate(336.30004,2312.45)">
+        <g
+           inkscape:groupmode="layer"
+           id="14zN82$QrDyPC_LT7Lv8kM-63"
+           inkscape:label="Storey=O2, Z=690.00">
+          <g
+             inkscape:groupmode="layer"
+             id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00-2"
+             inkscape:label="Spaces, h=260.00, relZ=0.00"
+             transform="translate(-475.66281,-516.76566)">
+            <path
+               id="0YbXTLaPf18AltEWq3WAEH-0"
                d="M -239.8,0 V 775 H 712.5 V 0 Z"
                inkscape:label="Test Space 1"
                style="fill:#c733db;fill-opacity:0.7;stroke:#000000;stroke-width:0.1" />
@@ -137,6 +189,75 @@
                id="path1"
                inkscape:label="Test Space 5 Poly turnded"
                transform="translate(-250.00003,-750.00002)" />
+          </g>
+        </g>
+      </g>
+      <g
+         id="1Nf2kYXcb8XPrY4rfkICA1-3-2"
+         inkscape:label="Building=Test Building 3"
+         style="display:inline"
+         transform="translate(2415.4669,1931.3003)">
+        <g
+           inkscape:groupmode="layer"
+           id="14zN82$QrDyPC_LT7Lv8kM-6-2"
+           inkscape:label="Storey=O1, Z=0">
+          <g
+             inkscape:groupmode="layer"
+             id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00-0-8"
+             inkscape:label="Spaces, h=260.00, relZ=0.00"
+             transform="translate(-475.66281,-516.76566)">
+            <path
+               id="0YbXTLaPf18AltEWq3WAEH-6-97"
+               d="M -239.8,0 V 775 H 712.5 V 0 Z"
+               inkscape:label="Test Space 3"
+               style="fill:#c733db;fill-opacity:0.7;stroke:#000000;stroke-width:0.1" />
+            <rect
+               style="fill:#000000;stroke-width:0.0264583"
+               id="rect1-36"
+               width="499.99997"
+               height="624.99994"
+               x="962.5498"
+               y="124.94995"
+               inkscape:label="Test Space 4 rect" />
+          </g>
+        </g>
+        <g
+           inkscape:groupmode="layer"
+           id="14zN82$QrDyPC_LT7Lv8kM-6-8-1"
+           inkscape:label="Storey=O2, Z=300"
+           style="display:inline"
+           transform="translate(250.00002,750.00001)">
+          <g
+             inkscape:groupmode="layer"
+             id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00-0-7-2"
+             inkscape:label="Spaces, h=260.00, relZ=0.00"
+             transform="translate(-475.66281,-516.76566)">
+            <path
+               id="0YbXTLaPf18AltEWq3WAEH-6-9-9"
+               d="m -263.60003,-750.05001 v 775 h 952.3 v -775 z"
+               inkscape:label="Test Space 2"
+               style="fill:#c733db;fill-opacity:0.7;stroke:#000000;stroke-width:0.1" />
+            <rect
+               style="display:inline;fill:#000000;stroke-width:0.0264583"
+               id="rect1-3-3"
+               width="499.99997"
+               height="624.99994"
+               x="-546.5379"
+               y="-677.41156"
+               inkscape:label="Test Space 4 rect turned"
+               transform="rotate(-38.659811,-1194.0429,-18.65235)" />
+          </g>
+          <g
+             inkscape:groupmode="layer"
+             id="spaces_14zN82$QrDyPC_LT7Lv8kM_h100.00_z0.00-0-7-2-8"
+             inkscape:label="Spaces, h=600.00, relZ=0.00"
+             transform="translate(289.30172,-1286.2113)"
+             style="display:inline">
+            <path
+               style="display:inline;fill:#000000;stroke-width:0.0264583"
+               d="m -850.33136,-324.35464 312.49997,-221.12499 249.99997,314.85413 -33.33334,218.770825 -466.66661,-187.499965 z"
+               id="path1-1-0"
+               inkscape:label="Test Space 5 Poly turnded" />
           </g>
         </g>
       </g>

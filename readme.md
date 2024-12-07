@@ -1,4 +1,4 @@
-# abstractBIM Sketch
+# abstractBIM Sketch (early Beta)
 
 abstractBIM Sketch is an Inkscape plugin that bridges the gap between intuitive architectural sketching and Building Information Modeling (BIM). It enables architects and engineers to create and modify building information models using Inkscape - a userfriendly and free SVG drawing tool.
 
@@ -38,12 +38,12 @@ The project addresses a fundamental challenge in the BIM workflow:
 
 ## Features
 
-- Convert SVG drawings to IFC (Industry Foundation Classes) format
+- Fast modeling of spaces and converting these SVG drawings to IFC (Industry Foundation Classes) format
+- Fast adding and remodeling existing spaces from a imported IFC Space model to SVG shapes while conserving the hirachical structure of the ifc
 - Layer-based organization system (Project → Site → Building → Storey → Space)
 - Support for multiple buildings within a project
 - Precise measurement grid system (12.5cm raster)
 - Height and metadata management for spaces
-- On the roadmap: Importing IFC to create the basic structure
 
 ## Getting Started
 
@@ -71,27 +71,24 @@ pip install -r requirements.txt
 
 ### Basic Usage
 
-1. Use the provided template.svg as your starting point in Inkscape
-2. Follow the layer structure:
-   - Project (top level)
-   - Site (one per project)
-   - Building (multiple allowed)
-   - Storey (with height information)
-   - Space (with height information)
+1. Start with the provided template.svg
+2. Follow the standardized layer naming convention:
 3. Draw spaces using rectangles or paths
 4. Execute the converter script:
+
 ```bash
-python execute_create_ifc_from_svg.py
+execute_svg_to_ifc.py
 ```
 
 ## Inkscape Template Structure
 
 ### Layer Organization
-- Project Layer: `Project=ProjectName`
-- Site Layer: `Site=SiteName`
-- Building Layer: `Building=BuildingName`
-- Storey Layer: `Storey=StoreyName, h=HeightValue`
-- Space Layer: `Space, h=HeightValue`
+  - Project Layer: Project=Your Project Name
+    - Site Layer: Site=Your Site Name
+     - Building Layer: Building=Your Building Name
+      - Storey Layer: Storey= Your Storey Name, Z=HeightValue 
+        - Space Layer: Spaces, h=Height, relZ=RelativeHeight (TODO: Better handeling of spaces with different starting heights on one floor)
+          - Add your Shapes here, the name will be the LongName in the IFC
 
 ### Grid Settings
 - Base unit: Centimeters (cm)
@@ -109,14 +106,19 @@ python execute_create_ifc_from_svg.py
 ## Current Limitations & Roadmap
 
 ### In Progress / Planned
-- Extensive testing phase & Bugfixes
-    - rotaed rectangles ... done
-    - issue with transformations in second building ... done
-- IFC importer development (IfcSpaces → SVG conversion)
+- Import tests with different IFC files
+- Handeling of spaces with a negative relZ (e.g. to model a void space)
 - Update capability for existing IFC files
 - Inkscape plugin packaging
 - Direct "Send to abstractBIM" functionality
 - Window and door support
+
+### Done
+- Extensive testing phase & Bugfixes
+    - rotaed rectangles ... done
+    - issue with transformations in second building ... done
+    - issues with units ... done
+- IFC importer development (IfcSpaces → SVG conversion) ... done
 
 ### Future Development Ideas
 - Handeling more shapes besides rectangles and polylines
@@ -135,7 +137,7 @@ python execute_create_ifc_from_svg.py
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details. But basicly it's contact me and we will figure it out.
 
 ## License
 
