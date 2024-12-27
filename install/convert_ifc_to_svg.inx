@@ -1,0 +1,37 @@
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Import IFC to SVG</_name>
+  <id>import-ifc-to-svg</id>
+  
+  <param name="parameters" type="notebook">
+    <!-- Input Page -->
+    <page name="input_page" gui-text="Input">
+      <param type="path" name="input_file" gui-text="IFC File"
+             mode="file" filetypes="ifc" indent="1"/>
+      <param type="string" name="output_file" gui-text="Output SVG Name"
+             indent="1"/>
+    </page>
+
+    <!-- Settings Page (Optional) -->
+    <page name="settings_page" gui-text="Settings">
+      <param name="padding" type="float" min="0.0" max="1.0" precision="2"
+             gui-text="Padding Percentage" indent="1">0.1</param>
+      <param name="output_units" type="enum" gui-text="Output Units">
+        <item value="centimeters">Centimeters</item>
+        <item value="meters">Meters</item>
+      </param>
+    </page>
+  </param>
+
+  <dependency type="executable" location="extensions">convert_ifc_to_svg.py</dependency>
+
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+       <submenu _name="BIM Tools"/>
+    </effects-menu>
+  </effect>
+
+  <script>
+    <command reldir="extensions" interpreter="python3">convert_ifc_to_svg.py</command>
+  </script>
+</inkscape-extension>

@@ -1,0 +1,27 @@
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Export SVG to IFC</_name>
+  <id>export-svg-to-ifc</id>
+  
+  <param name="parameters" type="notebook">
+    <!-- Input Page -->
+    <page name="input_page" gui-text="Input">
+      <param type="path" name="input_file" gui-text="SVG File"
+             mode="file" filetypes="svg" indent="1"/>
+      <param type="path" name="output_folder" gui-text="Output Folder"
+             mode="folder" indent="1"/>
+    </page>
+  </param>
+
+  <dependency type="executable" location="extensions">convert_svg_to_ifc.py</dependency>
+
+  <effect>
+    <object-type>all</object-type>
+    <effects-menu>
+       <submenu _name="BIM Tools"/>
+    </effects-menu>
+  </effect>
+
+  <script>
+    <command reldir="extensions" interpreter="python3">convert_svg_to_ifc.py</command>
+  </script>
+</inkscape-extension>
