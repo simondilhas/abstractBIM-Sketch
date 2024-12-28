@@ -1,4 +1,4 @@
-from convert_svg_to_ifc import process_svg_layers
+from utils.convert_svg_to_ifc import process_svg_layers
 import os
 
 
